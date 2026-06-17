@@ -98,3 +98,6 @@ public/mockups-desktop.html
 2xl-*.png
 tree-*.png
 .superpowers/
+
+# Offline photos: staged locally, hosted in GCS (gs://foray-field-guide), not committed
+.image-staging/

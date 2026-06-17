@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { FULL_IMAGE_PATHS } from "@/lib/local-images";
+import { OFFLINE_IMAGE_URLS } from "@/lib/local-images";
 
 /** Shows how many full-resolution photos are saved for offline use. */
 export default function OfflineStatus() {
@@ -11,7 +11,7 @@ export default function OfflineStatus() {
     (async () => {
       if (typeof window === "undefined" || !("caches" in window)) return;
       try {
-        const cache = await caches.open("foray-photos-full");
+        const cache = await caches.open("foray-photos");
         const keys = await cache.keys();
         if (alive) setSaved(keys.length);
       } catch {
@@ -23,7 +23,7 @@ export default function OfflineStatus() {
     };
   }, []);
 
-  const total = FULL_IMAGE_PATHS.length;
+  const total = OFFLINE_IMAGE_URLS.length;
   const ready = saved !== null && saved >= total;
 
   return (

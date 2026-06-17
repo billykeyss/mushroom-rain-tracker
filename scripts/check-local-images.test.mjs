@@ -1,17 +1,22 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFile, access } from "node:fs/promises";
-import { constants } from "node:fs";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { LOCAL_IMAGES } from "../lib/local-images.ts";
+import { LOCAL_IMAGES, OFFLINE_IMAGE_URLS } from "../lib/local-images.ts";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
+const GCS_PREFIX = "https://storage.googleapis.com/foray-field-guide/img/";
 
-test("every localized path exists on disk", async () => {
-  for (const localPath of Object.values(LOCAL_IMAGES)) {
-    const abs = path.join(ROOT, "public", localPath.replace(/^\//, ""));
-    await assert.doesNotReject(access(abs, constants.F_OK), `missing ${abs}`);
+test("every mapped value is a GCS bucket URL", () => {
+  for (const url of Object.values(LOCAL_IMAGES)) {
+    assert.ok(url.startsWith(GCS_PREFIX), `not a bucket URL: ${url}`);
   }
+});
+
+test("OFFLINE_IMAGE_URLS covers every unique mapped URL", () => {
+  const unique = new Set(Object.values(LOCAL_IMAGES));
+  assert.equal(OFFLINE_IMAGE_URLS.length, unique.size);
+  for (const u of OFFLINE_IMAGE_URLS) assert.ok(unique.has(u));
 });
 
 test("at least 90% of catalog Wikimedia URLs are localized", async () => {

@@ -6,15 +6,15 @@ import path from "node:path";
 const ROOT = path.resolve(import.meta.dirname, "..");
 const OUT = path.join(ROOT, "out");
 
-// Precache: every HTML page, Next static JS/CSS, thumbnails, icons, manifest, offline page.
+// Precache the same-origin app shell: every HTML page, Next static JS/CSS,
+// icons, manifest, offline page. Photos live in GCS and are runtime-cached.
 const INCLUDE = [
   /\.html$/i,
   /^_next\/static\/.+\.(js|css)$/i,
-  /^img\/thumb\/.+\.(jpg|png)$/i,
   /^icons\/.+\.png$/i,
   /^manifest\.webmanifest$/i,
 ];
-const EXCLUDE = [/^sw\.js$/i, /\.map$/i, /^img\/full\//i];
+const EXCLUDE = [/^sw\.js$/i, /\.map$/i, /^img\//i];
 
 async function walk(dir, base = "") {
   const out = [];

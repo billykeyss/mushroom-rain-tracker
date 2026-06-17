@@ -19,11 +19,14 @@ const serwist = new Serwist({
   precacheOptions: { cleanupOutdatedCaches: true },
   runtimeCaching: [
     {
-      matcher: ({ url }) => url.pathname.startsWith("/img/full/"),
+      // Self-hosted field-guide photos in the public GCS bucket.
+      matcher: ({ url }) =>
+        url.hostname === "storage.googleapis.com" &&
+        url.pathname.startsWith("/foray-field-guide/img/"),
       handler: new CacheFirst({
-        cacheName: "foray-photos-full",
+        cacheName: "foray-photos",
         plugins: [
-          new ExpirationPlugin({ maxEntries: 400, maxAgeSeconds: 60 * 60 * 24 * 365, purgeOnQuotaError: true }),
+          new ExpirationPlugin({ maxEntries: 1200, maxAgeSeconds: 60 * 60 * 24 * 365, purgeOnQuotaError: true }),
         ],
       }),
     },

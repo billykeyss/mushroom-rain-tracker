@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import { FULL_IMAGE_PATHS } from "@/lib/local-images";
+import { OFFLINE_IMAGE_URLS } from "@/lib/local-images";
 
 const FLAG = "foray-offline-warmed-v1";
 
@@ -14,7 +14,7 @@ export default function OfflineWarmer() {
     let cancelled = false;
     (async () => {
       await navigator.serviceWorker.ready;
-      const queue = [...FULL_IMAGE_PATHS];
+      const queue = [...OFFLINE_IMAGE_URLS];
       const worker = async () => {
         while (!cancelled && queue.length) {
           const p = queue.shift();
