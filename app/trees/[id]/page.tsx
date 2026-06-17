@@ -273,6 +273,7 @@ const KIND_LABEL: Record<TreeDetailImage["kind"], string> = {
   cone: "Cone",
   leaf: "Leaf",
   flower: "Flower",
+  fruit: "Fruit",
   habitat: "Habitat",
 };
 
