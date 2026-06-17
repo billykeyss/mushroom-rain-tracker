@@ -11,6 +11,7 @@ import SideNav from "@/components/side-nav";
 import TopBar from "@/components/top-bar";
 import FieldClipboard from "@/components/field-clipboard";
 import KeyboardShortcuts from "@/components/keyboard-shortcuts";
+import SwRegister from "@/components/sw-register";
 
 // Display: Production Type's editorial workhorse — variable optical size, italic.
 const display = Newsreader({
@@ -69,6 +70,7 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} ${mono.variable}`}
     >
       <body>
+        <SwRegister />
         <UnitsProvider>
           <RegionProvider>
             <ApiKeyProvider>

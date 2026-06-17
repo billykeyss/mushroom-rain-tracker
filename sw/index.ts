@@ -1,0 +1,73 @@
+import {
+  Serwist,
+  CacheFirst,
+  NetworkFirst,
+  NetworkOnly,
+  ExpirationPlugin,
+  type PrecacheEntry,
+} from "serwist";
+
+declare const self: ServiceWorkerGlobalScope;
+// Injected at build time by scripts/build-sw.mjs (esbuild `define`).
+declare const __SERWIST_MANIFEST: (PrecacheEntry | string)[];
+
+const serwist = new Serwist({
+  precacheEntries: __SERWIST_MANIFEST,
+  skipWaiting: true,
+  clientsClaim: true,
+  navigationPreload: true,
+  precacheOptions: { cleanupOutdatedCaches: true },
+  runtimeCaching: [
+    {
+      matcher: ({ url }) => url.pathname.startsWith("/img/full/"),
+      handler: new CacheFirst({
+        cacheName: "foray-photos-full",
+        plugins: [
+          new ExpirationPlugin({ maxEntries: 400, maxAgeSeconds: 60 * 60 * 24 * 365, purgeOnQuotaError: true }),
+        ],
+      }),
+    },
+    {
+      matcher: ({ url }) => url.hostname === "upload.wikimedia.org",
+      handler: new CacheFirst({
+        cacheName: "foray-wikimedia",
+        plugins: [
+          new ExpirationPlugin({ maxEntries: 400, maxAgeSeconds: 60 * 60 * 24 * 180, purgeOnQuotaError: true }),
+        ],
+      }),
+    },
+    {
+      matcher: ({ url }) => url.hostname === "api.open-meteo.com",
+      handler: new NetworkFirst({
+        cacheName: "foray-weather",
+        networkTimeoutSeconds: 6,
+        plugins: [
+          new ExpirationPlugin({ maxEntries: 32, maxAgeSeconds: 60 * 60 * 12, purgeOnQuotaError: true }),
+        ],
+      }),
+    },
+    {
+      matcher: ({ url }) => url.hostname.endsWith("basemaps.cartocdn.com"),
+      handler: new CacheFirst({
+        cacheName: "foray-tiles",
+        plugins: [
+          new ExpirationPlugin({ maxEntries: 600, maxAgeSeconds: 60 * 60 * 24 * 30, purgeOnQuotaError: true }),
+        ],
+      }),
+    },
+    {
+      matcher: ({ url }) => url.hostname === "api.anthropic.com",
+      handler: new NetworkOnly(),
+    },
+  ],
+  fallbacks: {
+    entries: [
+      {
+        url: "/~offline",
+        matcher: ({ request }) => request.destination === "document",
+      },
+    ],
+  },
+});
+
+serwist.addEventListeners();
