@@ -564,6 +564,36 @@ function EdibilityBlock({
       bg: "rgba(168, 116, 44, 0.12)",
       fg: "#a8742c",
     },
+    inedible: {
+      label: "Inedible",
+      sub: "Not poisonous, but not eaten — bitter, woody, or unpalatable.",
+      bg: "rgba(107, 107, 107, 0.1)",
+      fg: "#6b6b6b",
+    },
+    psychoactive: {
+      label: "Psychoactive — do not eat",
+      sub: "Contains neurotoxins (ibotenic acid, muscimol). Severe GI distress and delirium common.",
+      bg: "rgba(125, 74, 143, 0.12)",
+      fg: "#7d4a8f",
+    },
+    "medicinal-only": {
+      label: "Medicinal only",
+      sub: "Not eaten as food — too woody or bitter — but used as tea, tincture, or extract.",
+      bg: "rgba(63, 82, 56, 0.1)",
+      fg: "var(--moss-mid)",
+    },
+    toxic: {
+      label: "Toxic — do not eat",
+      sub: "Causes severe illness. Will cause hospitalization in most adults; can be fatal in vulnerable patients.",
+      bg: "rgba(192, 84, 32, 0.12)",
+      fg: "#c05420",
+    },
+    deadly: {
+      label: "DEADLY — do not eat",
+      sub: "Contains lethal toxins (amatoxins, orellanine, etc.) with delayed onset. No reliable antidote.",
+      bg: "rgba(160, 40, 40, 0.13)",
+      fg: "#a02828",
+    },
   };
   const m = map[edibility];
   return (

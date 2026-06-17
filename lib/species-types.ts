@@ -14,7 +14,12 @@ export type Edibility =
   | "choice"
   | "edible"
   | "edible-with-caution"
-  | "edible-when-cooked";
+  | "edible-when-cooked"
+  | "inedible"
+  | "psychoactive"
+  | "medicinal-only"
+  | "toxic"
+  | "deadly";
 
 export type Danger =
   | "deadly"
@@ -69,6 +74,79 @@ export interface Culinary {
   preservation: string | null;
 }
 
+/* ─────────── Enrichment fields (optional, added 2026) ─────────── */
+
+/** Microscopy data — useful for definitive ID under a scope */
+export interface SporeMicroscopy {
+  /** [min, max] long axis in microns */
+  lengthMicrons: [number, number];
+  /** [min, max] short axis in microns */
+  widthMicrons: [number, number];
+  /** ellipsoid, subglobose, fusiform, citriform, etc. */
+  shape: string;
+  /** smooth, warty, reticulate, echinulate, ridged */
+  ornamentation: string;
+  /** Melzer's reaction: amyloid, dextrinoid, inamyloid, or null */
+  reaction: string | null;
+  /** spore print color confirmation, basidia, cystidia notes */
+  notes: string | null;
+}
+
+/** Beyond habitat description — concrete microsite preferences */
+export interface Microhabitat {
+  /** "north-facing", "any", "ridge-top", "drainage bottom", etc. */
+  slopeAspect: string | null;
+  /** [min, max] soil pH preference */
+  soilPh: [number, number] | null;
+  /** "sandy loam", "duff-rich", "decomposed granite", etc. */
+  soilTexture: string | null;
+  /** "consistently moist", "well-drained", "boggy" */
+  moisturePreference: string | null;
+  /** common-name plants frequently co-occurring at fruiting sites */
+  indicatorPlants: string[];
+  notes: string | null;
+}
+
+/** Phenological correlations — when other plants/events signal a flush */
+export interface PhenologyCue {
+  cue: string;
+  reliability: "strong" | "moderate" | "anecdotal";
+}
+
+/** Bioactive compounds — medicinal and toxic both */
+export interface Bioactive {
+  /** named compounds isolated from this species */
+  compounds: string[];
+  /** documented or studied therapeutic uses */
+  medicinalUses: string[];
+  /** named toxins (amatoxins, orellanine, muscarine, etc.) */
+  toxinsOfNote: string[];
+  notes: string | null;
+}
+
+/** Molecular ID metadata */
+export interface DnaBarcode {
+  /** ITS clade / section assignment per recent phylogeny */
+  itsClade: string | null;
+  /** key paper / monograph anchor for the modern concept */
+  keyPaper: string | null;
+  notes: string | null;
+}
+
+/** Cross-source verification status */
+export interface Verification {
+  /** how many independent reputable sources agree on the core facts */
+  sourcesAgreeing: number;
+  /** YYYY-MM-DD of most recent verification pass */
+  lastVerified: string;
+  /** are sources broadly in agreement, mixed, or actively disputed */
+  consensus: "strong" | "moderate" | "disputed";
+  /** what's being disputed, if anything */
+  disputeNotes: string | null;
+}
+
+/* ─────────── The main entry ─────────── */
+
 export interface MushroomSpecies {
   id: string;
   commonNames: string[];
@@ -96,4 +174,12 @@ export interface MushroomSpecies {
   culinary: Culinary;
   conservationNotes: string | null;
   sources: Source[];
+
+  /* Enrichment fields — all optional so old entries remain valid */
+  spores?: SporeMicroscopy;
+  microhabitat?: Microhabitat;
+  phenologyCues?: PhenologyCue[];
+  bioactive?: Bioactive;
+  dnaBarcode?: DnaBarcode;
+  verification?: Verification;
 }

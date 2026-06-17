@@ -358,6 +358,31 @@ function EdibilityBadge({ edibility }: { edibility: Edibility }) {
       color: "#a8742c",
       bg: "rgba(168, 116, 44, 0.1)",
     },
+    inedible: {
+      label: "Inedible",
+      color: "#6b6b6b",
+      bg: "rgba(107, 107, 107, 0.1)",
+    },
+    psychoactive: {
+      label: "Psychoactive",
+      color: "#7d4a8f",
+      bg: "rgba(125, 74, 143, 0.1)",
+    },
+    "medicinal-only": {
+      label: "Medicinal",
+      color: "var(--moss-mid)",
+      bg: "rgba(63, 82, 56, 0.1)",
+    },
+    toxic: {
+      label: "Toxic",
+      color: "#c05420",
+      bg: "rgba(192, 84, 32, 0.12)",
+    },
+    deadly: {
+      label: "Deadly",
+      color: "#a02828",
+      bg: "rgba(160, 40, 40, 0.12)",
+    },
   };
   const m = map[edibility];
   return (
