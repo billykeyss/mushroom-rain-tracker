@@ -76,7 +76,7 @@ function MushIcon({ active }: { active: boolean }) {
       <circle cx="54" cy="24" r="2.8" fill="rgba(255,235,200,0.55)" />
       <path
         d="M30 42 L30 75 Q30 88, 40 88 Q50 88, 50 75 L50 42"
-        fill={active ? "#c87a4a" : "#a1958170"}
+        fill={active ? "#e0a043" : "#a1958170"}
         stroke="currentColor"
         strokeWidth="0.5"
         opacity="0.9"

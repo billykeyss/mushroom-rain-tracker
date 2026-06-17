@@ -6,40 +6,41 @@
 
 @layer base {
   :root {
-    --parchment: #f0e4c8;
-    --parchment-deep: #e6d6b3;
-    --moss: #2c3a2a;
-    --moss-mid: #3f5238;
-    --moss-soft: #6b7d5d;
-    --rust: #a14a2a;
-    --rust-deep: #7d3418;
-    --cap: #c87a4a;
+    /* Chanterelle — warm eggshell · forest green · chanterelle gold */
+    --parchment: #faf5e9;
+    --parchment-deep: #f0e7d2;
+    --moss: #33492e;
+    --moss-mid: #45603c;
+    --moss-soft: #6f7d56;
+    --rust: #bd7a12;
+    --rust-deep: #8c5a0e;
+    --cap: #e0a043;
     --rain: #486476;
     --rain-deep: #2e4452;
-    --ink: #1a1410;
-    --ink-soft: #4a3f33;
-    --line: rgba(26, 20, 16, 0.18);
-    --line-soft: rgba(26, 20, 16, 0.08);
+    --ink: #2c2620;
+    --ink-soft: #6a5f4e;
+    --line: rgba(44, 38, 32, 0.15);
+    --line-soft: rgba(44, 38, 32, 0.07);
 
-    --background: 41 50% 86%;
-    --foreground: 24 21% 9%;
-    --card: 40 45% 90%;
-    --card-foreground: 24 21% 9%;
-    --popover: 40 45% 92%;
-    --popover-foreground: 24 21% 9%;
-    --primary: 113 15% 20%;
-    --primary-foreground: 41 50% 92%;
-    --secondary: 41 40% 80%;
-    --secondary-foreground: 113 15% 20%;
-    --muted: 41 35% 82%;
-    --muted-foreground: 24 14% 28%;
-    --accent: 16 58% 40%;
-    --accent-foreground: 41 50% 92%;
+    --background: 42 63% 95%;
+    --foreground: 30 16% 15%;
+    --card: 45 70% 97%;
+    --card-foreground: 30 16% 15%;
+    --popover: 44 67% 98%;
+    --popover-foreground: 30 16% 15%;
+    --primary: 109 23% 23%;
+    --primary-foreground: 43 60% 95%;
+    --secondary: 42 48% 87%;
+    --secondary-foreground: 109 23% 23%;
+    --muted: 42 42% 89%;
+    --muted-foreground: 34 16% 36%;
+    --accent: 37 83% 41%;
+    --accent-foreground: 43 60% 95%;
     --destructive: 0 60% 40%;
-    --destructive-foreground: 41 50% 92%;
-    --border: 24 21% 9% / 0.18;
-    --input: 24 21% 9% / 0.18;
-    --ring: 16 58% 40%;
+    --destructive-foreground: 43 60% 95%;
+    --border: 30 16% 15% / 0.15;
+    --input: 30 16% 15% / 0.15;
+    --ring: 37 83% 41%;
     --radius: 1rem;
   }
 }
@@ -47,7 +48,7 @@
 html, body {
   background: var(--parchment);
   color: var(--ink);
-  font-family: var(--font-body, "Spectral", Georgia, serif);
+  font-family: var(--font-body, "Inter", system-ui, sans-serif);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -74,12 +75,12 @@ body::before {
   z-index: 0;
 }
 
-.font-display { font-family: var(--font-display, "Newsreader", Georgia, serif);  }
-.font-body { font-family: var(--font-body, "Spectral", Georgia, serif); }
+.font-display { font-family: var(--font-display, "Fraunces", Georgia, serif);  }
+.font-body { font-family: var(--font-body, "Inter", system-ui, sans-serif); }
 .font-mono { font-family: var(--font-mono, "IBM Plex Mono", ui-monospace, monospace); }
 
 .title-hero {
-  font-family: var(--font-display, "Newsreader", Georgia, serif);
+  font-family: var(--font-display, "Fraunces", Georgia, serif);
   
   font-weight: 320;
   letter-spacing: -0.02em;
@@ -290,7 +291,7 @@ body::before {
 @media (min-width: 1536px) {
   .dropcap::first-letter,
   [class*="2xl:dropcap"]::first-letter {
-    font-family: var(--font-display, "Newsreader", Georgia, serif);
+    font-family: var(--font-display, "Fraunces", Georgia, serif);
     float: left;
     font-size: 4.6em;
     line-height: 0.82;
@@ -316,7 +317,7 @@ body::before {
 
 /* Marginalia (small italic annotations in the gutter) */
 .marginalia {
-  font-family: var(--font-body, "Spectral", Georgia, serif);
+  font-family: var(--font-body, "Inter", system-ui, sans-serif);
   font-style: italic;
   font-size: 13px;
   line-height: 1.5;

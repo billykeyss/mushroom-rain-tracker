@@ -18,15 +18,15 @@ const PIN_HTML = `
 <div style="position:relative;display:flex;flex-direction:column;align-items:center;">
   <div style="
     position:absolute;width:48px;height:48px;border-radius:50%;
-    border:1px solid rgba(161,74,42,0.45);top:-13px;left:-13px;
+    border:1px solid rgba(189,122,18,0.45);top:-13px;left:-13px;
     animation:mp 2.4s ease-out infinite;"></div>
   <div style="
     width:22px;height:22px;border-radius:50%;
-    background:#a14a2a;
+    background:#bd7a12;
     box-shadow:
-      0 0 0 3px rgba(240,228,200,0.9),
-      0 0 0 8px rgba(161,74,42,0.25),
-      0 6px 14px -3px rgba(26,20,16,0.5);"></div>
+      0 0 0 3px rgba(250,245,233,0.9),
+      0 0 0 8px rgba(189,122,18,0.25),
+      0 6px 14px -3px rgba(44,38,32,0.5);"></div>
 </div>
 <style>
 @keyframes mp {

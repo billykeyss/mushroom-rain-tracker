@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { Newsreader, Spectral, IBM_Plex_Mono } from "next/font/google";
+import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
 import { LocationProvider } from "@/lib/location-context";
 import { UnitsProvider } from "@/lib/units-context";
 import { RegionProvider } from "@/lib/region-context";
@@ -13,19 +13,18 @@ import FieldClipboard from "@/components/field-clipboard";
 import KeyboardShortcuts from "@/components/keyboard-shortcuts";
 import SwRegister from "@/components/sw-register";
 
-// Display: Production Type's editorial workhorse — variable optical size, italic.
-const display = Newsreader({
+// Display: Fraunces — organic high-contrast serif, variable optical size + italic.
+const display = Fraunces({
   subsets: ["latin"],
   variable: "--font-display",
   style: ["normal", "italic"],
   axes: ["opsz"],
   display: "swap",
 });
-// Body: Spectral was designed as Newsreader's book-text companion.
-const body = Spectral({
+// Body: Inter — humanist sans, tuned for on-screen legibility.
+const body = Inter({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });
@@ -56,7 +55,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: "#f0e4c8",
+  themeColor: "#faf5e9",
 };
 
 export default function RootLayout({

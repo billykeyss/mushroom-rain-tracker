@@ -30,8 +30,8 @@ export default function SporeGauge({ score, label }: Props) {
         </g>
         <defs>
           <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#a14a2a" />
-            <stop offset="1" stopColor="#3f5238" />
+            <stop offset="0" stopColor="#bd7a12" />
+            <stop offset="1" stopColor="#45603c" />
           </linearGradient>
         </defs>
         <circle
