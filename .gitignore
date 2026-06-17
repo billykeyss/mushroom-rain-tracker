@@ -88,3 +88,11 @@ out/
 # MacOS Finder files
 ._*
 
+
+# Design mockups (kept locally, not tracked)
+public/mockups.html
+public/mockups-desktop.html
+
+# Playwright/inspection artifacts
+.playwright-mcp/
+2xl-*.png
