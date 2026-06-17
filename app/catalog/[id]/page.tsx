@@ -9,7 +9,23 @@ import type {
 import SpeciesPhoto from "@/components/species-photo";
 import ElevationCell from "@/components/elevation-cell";
 import TasteSmellCallout from "@/components/taste-smell-callout";
+import ClipboardTouch from "@/components/clipboard-touch";
 import { TREES_BY_SCIENTIFIC } from "@/lib/tree-catalog";
+
+/** Roman numeral for plate-of-the-day style numbering, indexed off catalog order. */
+function plateNumeral(id: string): string {
+  const idx = PNW_CATALOG.findIndex((s) => s.id === id);
+  const n = idx >= 0 ? idx + 1 : 1;
+  const map: [number, string][] = [
+    [100, "C"], [90, "XC"], [50, "L"], [40, "XL"],
+    [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"],
+  ];
+  let r = "", x = n;
+  for (const [v, s] of map) {
+    while (x >= v) { r += s; x -= v; }
+  }
+  return r;
+}
 
 const MONTHS = [
   "Jan",
@@ -40,7 +56,19 @@ export default async function SpeciesDetail({
   if (!s) notFound();
 
   return (
-    <main className="relative z-10 px-6 pt-14 pb-6 lg:px-12 lg:pt-16 lg:max-w-[1280px]">
+    <main className="relative z-10 px-6 pt-14 pb-6 lg:px-12 lg:pt-16 lg:max-w-[1280px] 2xl:max-w-none 2xl:px-16">
+      <ClipboardTouch
+        id={s.id}
+        commonName={s.commonNames[0]}
+        scientific={s.scientific}
+      />
+
+      <div className="running-head">
+        <span className="chapter">Chapter V · Plate {plateNumeral(s.id)}</span>
+        <span className="center">{s.family} · {s.commonNames[0]}</span>
+        <span className="right">003</span>
+      </div>
+
       <Link
         href="/catalog"
         className="font-mono inline-flex items-center gap-2"
@@ -60,7 +88,8 @@ export default async function SpeciesDetail({
           {s.family} · {s.trophicMode}
           {s.order ? ` · ${s.order}` : ""}
         </div>
-        <h1 className="title-hero" style={{ fontSize: "clamp(34px, 6vw, 64px)" }}>
+        <span className="plate-no mb-3">Plate {plateNumeral(s.id)} · {s.family}</span>
+        <h1 className="title-hero" style={{ fontSize: "clamp(34px, 6vw, 96px)" }}>
           {s.commonNames[0]}
         </h1>
         <div
@@ -110,7 +139,7 @@ export default async function SpeciesDetail({
         <div className="space-y-8">
           <Section title="Habitat">
             <p
-              className="font-body"
+              className="font-body 2xl:dropcap"
               style={{
                 fontSize: 16,
                 lineHeight: 1.55,

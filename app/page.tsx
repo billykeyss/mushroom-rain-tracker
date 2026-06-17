@@ -30,19 +30,25 @@ export default function TodayPage() {
   );
 
   return (
-    <main className="relative z-10 px-6 pt-14 lg:px-12 lg:pt-16 lg:max-w-[1280px]">
+    <main className="relative z-10 px-6 pt-14 lg:px-12 lg:pt-16 lg:max-w-[1280px] 2xl:max-w-none 2xl:px-16 2xl:pt-12">
+      <div className="running-head">
+        <span className="chapter">Chapter I · The Day&rsquo;s Reading</span>
+        <span className="center">Foray · The Field Book · No. CCCXVII</span>
+        <span className="right">001</span>
+      </div>
+
       <header>
         <LocationChooser />
 
         <h1
-          className="title-hero mt-4"
-          style={{ fontSize: "clamp(38px, 8vw, 84px)" }}
+          className="title-hero mt-4 2xl:mt-6"
+          style={{ fontSize: "clamp(38px, 8vw, 124px)" }}
         >
           {dayjs().format("dddd")}{" "}
           <em>{reading?.hook ?? "is loading."}</em>
         </h1>
         <div
-          className="font-mono mt-2"
+          className="font-mono mt-2 2xl:mt-3"
           style={{
             fontSize: 10,
             letterSpacing: "0.22em",

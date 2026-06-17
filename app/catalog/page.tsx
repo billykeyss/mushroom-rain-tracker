@@ -74,13 +74,18 @@ export default function CatalogPage() {
   }, [q, edibility, trophic, inSeasonOnly, month, filterTerms]);
 
   return (
-    <main className="relative z-10 px-6 pt-14 pb-6 lg:px-12 lg:pt-16 lg:max-w-[1280px]">
+    <main className="relative z-10 px-6 pt-14 pb-6 lg:px-12 lg:pt-16 lg:max-w-[1280px] 2xl:max-w-none 2xl:px-16">
+      <div className="running-head">
+        <span className="chapter">Chapter V · The Library</span>
+        <span className="center">Foray · The Atlas · {PNW_CATALOG.length} plates</span>
+        <span className="right">002</span>
+      </div>
       <div className="eyebrow mb-3">
         Knowledge log · {PNW_CATALOG.length} species
       </div>
       <h1
         className="title-hero"
-        style={{ fontSize: "clamp(34px, 7vw, 72px)" }}
+        style={{ fontSize: "clamp(34px, 7vw, 96px)" }}
       >
         Pacific NW <em>field catalog.</em>
       </h1>

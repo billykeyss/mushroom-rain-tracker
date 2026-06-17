@@ -347,7 +347,7 @@ function SumStat({
 const sharedAxis = {
   axisLine: { stroke: "rgba(26,20,16,0.18)" },
   tickLine: false,
-  tick: { fill: "var(--ink-soft)", fontSize: 9, fontFamily: "JetBrains Mono" },
+  tick: { fill: "var(--ink-soft)", fontSize: 9, fontFamily: "IBM Plex Mono" },
 };
 
 function chartTooltip(unit: string) {
@@ -453,7 +453,7 @@ function RainChart({
               position: "top",
               fill: "var(--rust)",
               fontSize: 8,
-              fontFamily: "JetBrains Mono",
+              fontFamily: "IBM Plex Mono",
               letterSpacing: "0.2em",
             }}
           />
@@ -509,7 +509,7 @@ function TempChart({
               position: "top",
               fill: "var(--rust)",
               fontSize: 8,
-              fontFamily: "JetBrains Mono",
+              fontFamily: "IBM Plex Mono",
               letterSpacing: "0.2em",
             }}
           />
@@ -586,7 +586,7 @@ function SingleLineChart({
               position: "top",
               fill: "var(--rust)",
               fontSize: 8,
-              fontFamily: "JetBrains Mono",
+              fontFamily: "IBM Plex Mono",
               letterSpacing: "0.2em",
             }}
           />

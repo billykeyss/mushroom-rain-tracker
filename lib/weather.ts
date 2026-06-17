@@ -349,15 +349,27 @@ export function speciesInRegions(
 
 /**
  * Top N matches, including weaker ones — used by a "what could be fruiting"
- * list. Filtered to in-season species and ranked by criteria met.
+ * list. Filtered to in-season species (and optionally to active region)
+ * and ranked by criteria met.
  */
 export function suggestSpeciesList(
   reading: SporeReading,
-  limit = 5
+  filterTermsOrLimit?: string[] | null | number,
+  limitArg = 5
 ): MushroomSpecies[] {
+  // Back-compat: callers used to pass just `(reading, limit)`.
+  let filterTerms: string[] | null = null;
+  let limit = limitArg;
+  if (typeof filterTermsOrLimit === "number") {
+    limit = filterTermsOrLimit;
+  } else if (Array.isArray(filterTermsOrLimit)) {
+    filterTerms = filterTermsOrLimit;
+  }
+
   const month = new Date().getMonth() + 1;
   return PNW_CATALOG
     .filter((s) => s.fruitingMonths.includes(month))
+    .filter((s) => speciesInRegions(s, filterTerms))
     .map((s) => ({ s, m: scoreSpecies(s, reading).match }))
     .sort((a, b) => b.m - a.m)
     .slice(0, limit)
