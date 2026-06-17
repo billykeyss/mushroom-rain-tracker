@@ -514,7 +514,7 @@ function IDRow({
 
 function ConfusableBlock({ items }: { items: ConfusableNote[] }) {
   const tellsByTree = items
-    .map((i) => ({ note: i, target: TREES_BY_ID.get(i.treeId) }))
+    .map((i) => ({ note: i, target: i.treeId ? TREES_BY_ID.get(i.treeId) : undefined }))
     .filter((x) => x.target);
 
   if (!tellsByTree.length) return null;
