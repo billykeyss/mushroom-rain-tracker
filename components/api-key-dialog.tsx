@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useApiKey } from "@/lib/api-key-context";
+import OfflineStatus from "@/components/offline-status";
 
 interface Props {
   open: boolean;
@@ -153,6 +154,8 @@ export default function ApiKeyDialog({ open, onClose }: Props) {
             {input.trim() ? "Save key" : "Clear key"}
           </button>
         </div>
+
+        <OfflineStatus />
       </form>
     </div>
   );
