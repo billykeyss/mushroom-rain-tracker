@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { TREE_CATALOG } from "@/lib/tree-catalog";
+import { localImage } from "@/lib/image-src";
 
 export default function TreesPage() {
   const [q, setQ] = useState("");
@@ -109,7 +110,7 @@ export default function TreesPage() {
                   >
                     {t.image ? (
                       <img
-                        src={t.image.thumb ?? t.image.url}
+                        src={localImage(t.image.thumb ?? t.image.url)}
                         alt={t.scientific}
                         loading="lazy"
                         style={{

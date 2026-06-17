@@ -1,4 +1,5 @@
 import { SPECIES_IMAGES, type SpeciesImage } from "@/lib/species-images";
+import { localImage } from "@/lib/image-src";
 
 interface Props {
   speciesId: string;
@@ -22,7 +23,7 @@ export default function SpeciesPhoto({
     );
   }
 
-  const src = variant === "hero" ? img.url : (img.thumb ?? img.url);
+  const src = localImage(variant === "hero" ? img.url : (img.thumb ?? img.url));
 
   if (variant === "tiny") {
     return (

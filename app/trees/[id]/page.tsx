@@ -8,6 +8,7 @@ import {
   type TreeDetailImage,
   type TreeIdentification,
 } from "@/lib/tree-catalog";
+import { localImage } from "@/lib/image-src";
 
 export function generateStaticParams() {
   return TREE_CATALOG.map((t) => ({ id: t.id }));
@@ -78,7 +79,7 @@ export default async function TreeDetail({
         tree.image && (
           <figure className="mt-7" style={{ margin: 0 }}>
             <img
-              src={tree.image.url}
+              src={localImage(tree.image.url)}
               alt={tree.scientific}
               style={{
                 width: "100%",
@@ -297,7 +298,7 @@ function PhotoGallery({
               style={{ display: "block" }}
             >
               <img
-                src={img.thumb ?? img.url}
+                src={localImage(img.thumb ?? img.url)}
                 alt={`${scientific} — ${KIND_LABEL[img.kind]}`}
                 loading="lazy"
                 style={{
