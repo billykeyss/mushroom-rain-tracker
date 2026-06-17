@@ -39,6 +39,16 @@ const mono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Foray · A Mushrooming Field Book",
   description: "A field book for the rain.",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Foray",
+  },
+  icons: {
+    icon: "/icons/icon-192.png",
+    apple: "/icons/icon-192.png",
+  },
 };
 
 export const viewport: Viewport = {
