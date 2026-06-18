@@ -2,10 +2,12 @@
 // Only probes URLs NOT already localized into LOCAL_IMAGES (those are known-good),
 // so it is fast and precise. Classifies 400/403/404/410 as dead vs 429/5xx as
 // rate-limited (inconclusive). Run: node --experimental-strip-types scripts/find-dead-images.mjs
-import { readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { stripQuery, cappedThumbUrl } from "./lib/wikimedia-url.mjs";
 import { LOCAL_IMAGES } from "../lib/local-images.ts";
+
+const FIX = process.argv.includes("--fix"); // strip confirmed-dead images from tree-catalog.ts
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const UA = "ForayFieldGuide/1.0 (info@gocapsule.ai) link-check";
@@ -94,6 +96,49 @@ async function main() {
   }
   const byEntry = [...new Set(dead.map((d) => `${d.source.replace("lib/", "")}:${d.id}`))];
   console.log(`\nSummary: ${dead.length} dead URL(s) across ${byEntry.length} catalog entr(y/ies).`);
+
+  if (FIX && dead.length) await fixCatalog(new Set(dead.map((d) => d.url)));
+}
+
+// Strip confirmed-dead images from tree-catalog.ts (entries are one JSON object
+// per line). Drops dead gallery images; if a primary `image` is dead, promotes
+// the first surviving gallery photo, else sets it null.
+async function fixCatalog(deadSet) {
+  const file = path.join(ROOT, "lib/tree-catalog.ts");
+  const lines = (await readFile(file, "utf8")).split("\n");
+  const isDead = (im) => !!im && (deadSet.has(im.url) || (im.thumb && deadSet.has(im.thumb)));
+  let entries = 0, droppedGallery = 0, primaryFixed = 0;
+
+  for (let i = 0; i < lines.length; i++) {
+    const start = lines[i].indexOf('{"id":');
+    if (start === -1) continue;
+    const body = lines[i].slice(start);
+    const hadComma = body.trimEnd().endsWith(",");
+    let obj;
+    try { obj = JSON.parse(hadComma ? body.trimEnd().replace(/,$/, "") : body); } catch { continue; }
+
+    let changed = false;
+    if (Array.isArray(obj.images)) {
+      const before = obj.images.length;
+      obj.images = obj.images.filter((im) => !isDead(im));
+      if (obj.images.length !== before) { droppedGallery += before - obj.images.length; changed = true; }
+      if (obj.images.length === 0) delete obj.images;
+    }
+    if (isDead(obj.image)) {
+      if (obj.images && obj.images[0]) {
+        const { kind, caption, ...img } = obj.images[0];
+        obj.image = img;
+      } else obj.image = null;
+      primaryFixed++; changed = true;
+    }
+    if (changed) {
+      lines[i] = lines[i].slice(0, start) + JSON.stringify(obj) + (hadComma ? "," : "");
+      entries++;
+    }
+  }
+
+  await writeFile(file, lines.join("\n"));
+  console.log(`\n--fix: updated ${entries} entr(y/ies) — dropped ${droppedGallery} dead gallery photo(s), repaired ${primaryFixed} dead primary image(s). Re-run localize:images + sync:images.`);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
