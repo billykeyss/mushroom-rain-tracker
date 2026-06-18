@@ -1,4 +1,5 @@
 import { SPECIES_IMAGES, type SpeciesImage } from "@/lib/species-images";
+import { SPECIES_GALLERY } from "@/lib/species-gallery";
 import { localImage } from "@/lib/image-src";
 
 interface Props {
@@ -15,7 +16,8 @@ export default function SpeciesPhoto({
   variant,
   className,
 }: Props) {
-  const img: SpeciesImage | undefined = SPECIES_IMAGES[speciesId];
+  const img: SpeciesImage | undefined =
+    SPECIES_IMAGES[speciesId] ?? galleryLead(speciesId);
 
   if (!img) {
     return (
@@ -117,6 +119,14 @@ export default function SpeciesPhoto({
       </figcaption>
     </figure>
   );
+}
+
+/** Fallback hero/thumbnail for the ~33 species without a dedicated lead image:
+ *  use the first gallery photo, preferring a whole-mushroom shot. */
+function galleryLead(speciesId: string): SpeciesImage | undefined {
+  const gal = SPECIES_GALLERY[speciesId];
+  if (!gal || gal.length === 0) return undefined;
+  return gal.find((g) => g.kind === "whole") ?? gal[0];
 }
 
 function truncate(s: string, max: number) {
