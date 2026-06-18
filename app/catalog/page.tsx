@@ -11,6 +11,8 @@ import type {
 import { speciesInRegions } from "@/lib/weather";
 import { useRegion } from "@/lib/region-context";
 import SpeciesPhoto from "@/components/species-photo";
+import GuideSegmented from "@/components/guide-segmented";
+import { TREE_CATALOG } from "@/lib/tree-catalog";
 
 const EDIBILITY_FILTERS: { key: Edibility | "all"; label: string }[] = [
   { key: "all", label: "Any" },
@@ -90,19 +92,17 @@ export default function CatalogPage() {
         Pacific NW <em>field catalog.</em>
       </h1>
       <p
-        className="font-body italic mt-2"
+        className="font-body italic mt-2 mb-5"
         style={{ fontSize: 15, color: "var(--ink-soft)", maxWidth: 620 }}
       >
         {PNW_CATALOG.length} edible species researched against MykoWeb, PNW Key
         Council, peer-reviewed mycology, and IUCN. Tap any entry for full
-        details.{" "}
-        <Link
-          href="/trees"
-          style={{ color: "var(--rust)", textDecoration: "underline", textDecorationStyle: "dotted" }}
-        >
-          Browse host trees →
-        </Link>
+        details.
       </p>
+      <GuideSegmented
+        mushroomCount={PNW_CATALOG.length}
+        treeCount={TREE_CATALOG.length}
+      />
 
       <div
         className="font-mono mt-5"

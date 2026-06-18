@@ -7,10 +7,12 @@ const tabs = [
   { href: "/", label: "Today", icon: MushIcon },
   { href: "/map", label: "Map", icon: MapIcon },
   { href: "/catalog", label: "Guide", icon: BookIcon },
-  { href: "/trees", label: "Trees", icon: TreeIcon },
   { href: "/charts", label: "Charts", icon: ChartIcon },
   { href: "/journal", label: "Journal", icon: JournalIcon },
 ];
+
+// /trees lives under the Guide tab — toggled via the in-page segmented control
+const GUIDE_ROUTES = ["/catalog", "/trees"];
 
 export default function TabBar() {
   const pathname = usePathname();
@@ -24,24 +26,28 @@ export default function TabBar() {
         paddingTop: "10px",
       }}
     >
-      <ul className="grid grid-cols-6 px-1">
+      <ul className="grid grid-cols-5 px-2">
         {tabs.map((t) => {
           const active =
-            t.href === "/" ? pathname === "/" : pathname.startsWith(t.href);
+            t.href === "/"
+              ? pathname === "/"
+              : t.href === "/catalog"
+                ? GUIDE_ROUTES.some((r) => pathname.startsWith(r))
+                : pathname.startsWith(t.href);
           const Icon = t.icon;
           return (
             <li key={t.href} className="flex justify-center">
               <Link
                 href={t.href}
-                className="flex flex-col items-center gap-1.5 py-1 px-1"
+                className="flex flex-col items-center gap-1.5 py-1 px-2"
                 style={{ color: active ? "var(--rust)" : "var(--ink-soft)" }}
               >
                 <Icon active={active} />
                 <span
                   className="font-mono"
                   style={{
-                    fontSize: 8.5,
-                    letterSpacing: "0.14em",
+                    fontSize: 9,
+                    letterSpacing: "0.18em",
                     textTransform: "uppercase",
                     opacity: active ? 1 : 0.65,
                   }}

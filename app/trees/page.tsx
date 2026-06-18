@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { TREE_CATALOG } from "@/lib/tree-catalog";
 import { localImage } from "@/lib/image-src";
+import GuideSegmented from "@/components/guide-segmented";
+import { PNW_CATALOG } from "@/lib/species-catalog";
 
 export default function TreesPage() {
   const [q, setQ] = useState("");
@@ -40,12 +42,16 @@ export default function TreesPage() {
         Trees of the <em>understory.</em>
       </h1>
       <p
-        className="font-body italic mt-2"
+        className="font-body italic mt-2 mb-5"
         style={{ fontSize: 15, color: "var(--ink-soft)", maxWidth: 640 }}
       >
         Every host tree referenced across the mushroom catalog. Find what grows
         where, then trace which mushrooms it supports.
       </p>
+      <GuideSegmented
+        mushroomCount={PNW_CATALOG.length}
+        treeCount={TREE_CATALOG.length}
+      />
 
       <input
         value={q}
