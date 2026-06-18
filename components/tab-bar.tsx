@@ -7,6 +7,7 @@ const tabs = [
   { href: "/", label: "Today", icon: MushIcon },
   { href: "/map", label: "Map", icon: MapIcon },
   { href: "/catalog", label: "Guide", icon: BookIcon },
+  { href: "/trees", label: "Trees", icon: TreeIcon },
   { href: "/charts", label: "Charts", icon: ChartIcon },
   { href: "/journal", label: "Journal", icon: JournalIcon },
 ];
@@ -23,7 +24,7 @@ export default function TabBar() {
         paddingTop: "10px",
       }}
     >
-      <ul className="grid grid-cols-5 px-2">
+      <ul className="grid grid-cols-6 px-1">
         {tabs.map((t) => {
           const active =
             t.href === "/" ? pathname === "/" : pathname.startsWith(t.href);
@@ -32,15 +33,15 @@ export default function TabBar() {
             <li key={t.href} className="flex justify-center">
               <Link
                 href={t.href}
-                className="flex flex-col items-center gap-1.5 py-1 px-2"
+                className="flex flex-col items-center gap-1.5 py-1 px-1"
                 style={{ color: active ? "var(--rust)" : "var(--ink-soft)" }}
               >
                 <Icon active={active} />
                 <span
                   className="font-mono"
                   style={{
-                    fontSize: 9,
-                    letterSpacing: "0.18em",
+                    fontSize: 8.5,
+                    letterSpacing: "0.14em",
                     textTransform: "uppercase",
                     opacity: active ? 1 : 0.65,
                   }}
@@ -135,6 +136,29 @@ function BookIcon({ active }: { active: boolean }) {
     >
       <path d="M4 4 L11 4 Q12 4 12 5 L12 20 Q12 19 11 19 L4 19 Z" />
       <path d="M20 4 L13 4 Q12 4 12 5 L12 20 Q12 19 13 19 L20 19 Z" />
+    </svg>
+  );
+}
+
+function TreeIcon({ active }: { active: boolean }) {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill={active ? "currentColor" : "none"}
+      stroke="currentColor"
+      strokeWidth={active ? 1.6 : 1.5}
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      {/* Triangular conifer silhouette with a short trunk */}
+      <path d="M12 3 L7 10 L9 10 L5.5 15 L8 15 L4 21 L20 21 L16 15 L18.5 15 L15 10 L17 10 Z" />
+      <path
+        d="M11 21 L11 23 L13 23 L13 21"
+        fill={active ? "currentColor" : "none"}
+        stroke="currentColor"
+      />
     </svg>
   );
 }
