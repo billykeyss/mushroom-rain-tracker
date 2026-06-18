@@ -9,6 +9,7 @@ import {
   type TreeIdentification,
 } from "@/lib/tree-catalog";
 import { localImage } from "@/lib/image-src";
+import PhotoGallery from "@/components/photo-gallery";
 
 export function generateStaticParams() {
   return TREE_CATALOG.map((t) => ({ id: t.id }));
@@ -74,7 +75,7 @@ export default async function TreeDetail({
       </header>
 
       {tree.images && tree.images.length > 1 ? (
-        <PhotoGallery images={tree.images} scientific={tree.scientific} />
+        <PhotoGallery images={tree.images} scientific={tree.scientific} kindLabel={KIND_LABEL} />
       ) : (
         tree.image && (
           <figure className="mt-7" style={{ margin: 0 }}>
@@ -276,88 +277,6 @@ const KIND_LABEL: Record<TreeDetailImage["kind"], string> = {
   fruit: "Fruit",
   habitat: "Habitat",
 };
-
-function PhotoGallery({
-  images,
-  scientific,
-}: {
-  images: TreeDetailImage[];
-  scientific: string;
-}) {
-  return (
-    <section className="mt-7">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        {images.map((img) => (
-          <figure
-            key={img.url}
-            style={{ margin: 0, display: "flex", flexDirection: "column" }}
-          >
-            <a
-              href={img.sourceUrl ?? img.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: "block" }}
-            >
-              <img
-                src={localImage(img.thumb ?? img.url)}
-                alt={`${scientific} — ${KIND_LABEL[img.kind]}`}
-                loading="lazy"
-                style={{
-                  width: "100%",
-                  aspectRatio: "1 / 1",
-                  objectFit: "cover",
-                  borderRadius: 10,
-                  background: "rgba(26,20,16,0.06)",
-                  display: "block",
-                }}
-              />
-            </a>
-            <figcaption
-              className="font-mono"
-              style={{
-                fontSize: 8.5,
-                letterSpacing: "0.22em",
-                color: "var(--rust)",
-                textTransform: "uppercase",
-                marginTop: 6,
-                opacity: 0.8,
-              }}
-            >
-              {KIND_LABEL[img.kind]}
-            </figcaption>
-            <figcaption
-              className="font-body"
-              style={{
-                fontSize: 12,
-                color: "var(--ink)",
-                lineHeight: 1.35,
-                marginTop: 2,
-                fontStyle: "italic",
-                opacity: 0.85,
-              }}
-            >
-              {img.caption ?? ""}
-            </figcaption>
-            <figcaption
-              className="font-mono"
-              style={{
-                fontSize: 8,
-                letterSpacing: "0.06em",
-                color: "var(--ink-soft)",
-                opacity: 0.6,
-                marginTop: 3,
-                lineHeight: 1.35,
-              }}
-            >
-              {img.license ?? ""}
-              {img.artist ? ` · ${truncate(img.artist, 36)}` : ""}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 /* ════════ Identification block ════════ */
 
