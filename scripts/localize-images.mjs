@@ -11,6 +11,7 @@ const GCS_BASE = "https://storage.googleapis.com/foray-field-guide/img";
 const SOURCES = [
   path.join(ROOT, "lib/species-images.ts"),
   path.join(ROOT, "lib/tree-catalog.ts"),
+  path.join(ROOT, "lib/species-gallery.ts"), // multi-photo ID galleries (Commons + iNaturalist)
 ];
 // Staging lives OUTSIDE public/ so Next does not copy ~150MB into the export.
 // We rsync this dir up to the GCS bucket; it is gitignored.
@@ -18,13 +19,21 @@ const THUMB_DIR = path.join(ROOT, ".image-staging/thumb");
 const FULL_DIR = path.join(ROOT, ".image-staging/full");
 const FORCE = process.argv.includes("--force");
 
-const URL_RE = /"(url|thumb)":"(https:\/\/upload\.wikimedia\.org\/[^"]+)"/g;
+// Hosts we self-host into GCS. Wikimedia gets a resized rendition via its
+// thumbnailer; other hosts (e.g. iNaturalist) are downloaded as-is.
+const URL_RE =
+  /"(url|thumb)":"(https:\/\/(?:upload\.wikimedia\.org|inaturalist-open-data\.s3\.amazonaws\.com)\/[^"]+)"/g;
 
 async function collectUrls() {
   const full = new Set();
   const thumb = new Set();
   for (const file of SOURCES) {
-    const text = await readFile(file, "utf8");
+    let text;
+    try {
+      text = await readFile(file, "utf8");
+    } catch {
+      continue; // optional source (e.g. galleries not present yet)
+    }
     for (const m of text.matchAll(URL_RE)) {
       const [, field, url] = m;
       (field === "thumb" ? thumb : full).add(url);

@@ -19,11 +19,17 @@ test("OFFLINE_IMAGE_URLS covers every unique mapped URL", () => {
   for (const u of OFFLINE_IMAGE_URLS) assert.ok(unique.has(u));
 });
 
-test("at least 90% of catalog Wikimedia URLs are localized", async () => {
-  const re = /"(?:url|thumb)":"(https:\/\/upload\.wikimedia\.org\/[^"]+)"/g;
+test("at least 90% of catalog photo URLs are localized", async () => {
+  const re =
+    /"(?:url|thumb)":"(https:\/\/(?:upload\.wikimedia\.org|inaturalist-open-data\.s3\.amazonaws\.com)\/[^"]+)"/g;
   const urls = new Set();
-  for (const f of ["lib/species-images.ts", "lib/tree-catalog.ts"]) {
-    const text = await readFile(path.join(ROOT, f), "utf8");
+  for (const f of ["lib/species-images.ts", "lib/tree-catalog.ts", "lib/species-gallery.ts"]) {
+    let text;
+    try {
+      text = await readFile(path.join(ROOT, f), "utf8");
+    } catch {
+      continue;
+    }
     for (const m of text.matchAll(re)) urls.add(m[1]);
   }
   const mapped = [...urls].filter((u) => LOCAL_IMAGES[u]).length;
