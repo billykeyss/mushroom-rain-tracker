@@ -2,52 +2,51 @@
 
 import { useEffect, useState } from "react";
 
+export interface JournalWeatherSnapshot {
+  /** Current air temp in °C at time of entry */
+  tempC?: number;
+  /** Last-7-day cumulative precipitation in mm */
+  rain7d?: number;
+  /** Last-24h precipitation in mm */
+  rain24h?: number;
+  /** Days since last meaningful rain (>=1mm) */
+  daysSinceRain?: number;
+  /** Relative humidity % */
+  humidityPct?: number;
+  /** Spore score 0-100 at time of entry */
+  score?: number;
+  /** Short label ("Prime", "Fertile", etc.) */
+  label?: string;
+}
+
 export interface JournalEntry {
   id: string;
-  date: string; // ISO date
+  date: string; // ISO date (YYYY-MM-DD)
+  /** ISO datetime captured at save (used for finer-grained ordering) */
+  capturedAt?: string;
   species: string;
   location: string;
   notes: string;
   lat?: number;
   lon?: number;
+  /** Base64 data URL (JPEG, compressed to ~1024px on save) */
+  photoDataUrl?: string;
+  /** Snapshot of conditions at time of entry */
+  weather?: JournalWeatherSnapshot;
+  // Legacy top-level fields kept for back-compat with the original schema
   score?: number;
   rain7d?: number;
 }
 
 const KEY = "mycelium.journal.v1";
 
-const SEED: JournalEntry[] = [
-  {
-    id: "seed-1",
-    date: "2026-05-14",
-    species: "Golden chanterelle",
-    location: "East Peak · 37.95°N",
-    notes:
-      "Cluster of seven below the live oak. 4 days after 18mm rainfall. Soil felt warm.",
-    score: 76,
-    rain7d: 18,
-  },
-  {
-    id: "seed-2",
-    date: "2026-04-29",
-    species: "Black trumpet",
-    location: "Bolinas Ridge · 38.04°N",
-    notes:
-      "Heavy duff under bay laurel. Three days after a soaking storm. Almost missed them.",
-    score: 84,
-    rain7d: 32,
-  },
-  {
-    id: "seed-3",
-    date: "2026-04-22",
-    species: "Hedgehog (spiny milkcap?)",
-    location: "Mt. Tam South · 37.91°N",
-    notes:
-      "Small flush along the fire road. Needed ID help. Posting to iNat.",
-    score: 62,
-    rain7d: 14,
-  },
-];
+/** New installs start empty — no more dummy seed entries. */
+const SEED: JournalEntry[] = [];
+
+/** Strip the old hard-coded demo entries from a previously-seeded install. */
+function isSeed(e: JournalEntry): boolean {
+  return e.id?.startsWith("seed-") ?? false;
+}
 
 export function useJournal() {
   const [entries, setEntries] = useState<JournalEntry[]>([]);
@@ -57,7 +56,12 @@ export function useJournal() {
     try {
       const raw = localStorage.getItem(KEY);
       if (raw) {
-        setEntries(JSON.parse(raw));
+        const parsed: JournalEntry[] = JSON.parse(raw);
+        const cleaned = parsed.filter((e) => !isSeed(e));
+        if (cleaned.length !== parsed.length) {
+          localStorage.setItem(KEY, JSON.stringify(cleaned));
+        }
+        setEntries(cleaned);
       } else {
         setEntries(SEED);
         localStorage.setItem(KEY, JSON.stringify(SEED));
@@ -70,7 +74,14 @@ export function useJournal() {
 
   const persist = (next: JournalEntry[]) => {
     setEntries(next);
-    localStorage.setItem(KEY, JSON.stringify(next));
+    try {
+      localStorage.setItem(KEY, JSON.stringify(next));
+    } catch (err) {
+      // Most common cause: localStorage quota exceeded from large photo blobs.
+      // Surface a console message so the user can see why the save failed.
+      console.error("journal save failed", err);
+      throw err;
+    }
   };
 
   const add = (e: Omit<JournalEntry, "id">) => {
