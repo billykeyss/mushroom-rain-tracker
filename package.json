@@ -9,6 +9,7 @@
     "lint": "next lint",
     "test": "node --test --experimental-strip-types",
     "localize:images": "node scripts/localize-images.mjs",
+    "data:burns": "node scripts/fetch-burns.mjs",
     "sync:images": "gcloud storage rsync -r .image-staging gs://foray-field-guide/img --account=yichenhuangwork@gmail.com",
     "check:images": "node --experimental-strip-types scripts/find-dead-images.mjs"
   },

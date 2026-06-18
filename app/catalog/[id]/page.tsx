@@ -167,6 +167,7 @@ export default async function SpeciesDetail({
             >
               {s.habitat}
             </p>
+            {s.id.startsWith("morchella-") && <BurnCallout />}
             <KVRow label="Substrate" value={s.substrate} />
             {s.elevationM && (
               <div
@@ -450,6 +451,46 @@ function Section({
       </div>
       {children}
     </section>
+  );
+}
+
+function BurnCallout() {
+  return (
+    <Link
+      href="/map"
+      className="block mt-4 mb-2"
+      style={{
+        padding: "12px 14px",
+        border: "1px solid var(--rust)",
+        borderLeft: "3px solid var(--rust)",
+        borderRadius: 10,
+        background: "rgba(189,122,18,0.06)",
+        textDecoration: "none",
+        color: "inherit",
+      }}
+    >
+      <div
+        className="font-mono"
+        style={{
+          fontSize: 9,
+          letterSpacing: "0.22em",
+          textTransform: "uppercase",
+          color: "var(--rust)",
+          marginBottom: 4,
+        }}
+      >
+        ★ Burn-following
+      </div>
+      <div
+        className="font-body"
+        style={{ fontSize: 14, lineHeight: 1.5, color: "var(--ink)" }}
+      >
+        Morels fruit prolifically in conifer burns 1–2 years after the fire.
+        Toggle the <strong>Burns</strong> layer on the Map screen to see
+        2024 &amp; 2025 perimeters in the Western US — those are your
+        2026 morel windows.
+      </div>
+    </Link>
   );
 }
 
