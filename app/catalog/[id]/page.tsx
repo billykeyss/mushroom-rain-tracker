@@ -11,6 +11,17 @@ import ElevationCell from "@/components/elevation-cell";
 import TasteSmellCallout from "@/components/taste-smell-callout";
 import ClipboardTouch from "@/components/clipboard-touch";
 import { TREES_BY_SCIENTIFIC } from "@/lib/tree-catalog";
+import PhotoGallery from "@/components/photo-gallery";
+import { SPECIES_GALLERY } from "@/lib/species-gallery";
+
+const SPECIES_KIND_LABEL: Record<string, string> = {
+  whole: "Whole",
+  cap: "Cap",
+  gills: "Gills",
+  stem: "Stem & base",
+  "spore-print": "Spore print",
+  "in-situ": "In situ",
+};
 
 /** Roman numeral for plate-of-the-day style numbering, indexed off catalog order. */
 function plateNumeral(id: string): string {
@@ -120,6 +131,14 @@ export default async function SpeciesDetail({
           variant="hero"
         />
       </div>
+
+      {(SPECIES_GALLERY[s.id]?.length ?? 0) > 0 && (
+        <PhotoGallery
+          images={SPECIES_GALLERY[s.id]}
+          scientific={s.scientific}
+          kindLabel={SPECIES_KIND_LABEL}
+        />
+      )}
 
       {/* Season strip */}
       <SeasonStrip
