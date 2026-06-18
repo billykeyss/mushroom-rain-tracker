@@ -92,9 +92,13 @@ export function useJournal() {
     persist([entry, ...entries]);
   };
 
+  const update = (id: string, patch: Partial<Omit<JournalEntry, "id">>) => {
+    persist(entries.map((e) => (e.id === id ? { ...e, ...patch } : e)));
+  };
+
   const remove = (id: string) => {
     persist(entries.filter((e) => e.id !== id));
   };
 
-  return { entries, loaded, add, remove };
+  return { entries, loaded, add, update, remove };
 }

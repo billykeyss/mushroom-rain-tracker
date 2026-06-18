@@ -9,7 +9,7 @@ import { compressPhoto, dataUrlSize } from "@/lib/photo";
 import { getCurrentGps, formatLatLon } from "@/lib/geo";
 
 export default function JournalPage() {
-  const { entries, loaded, add, remove } = useJournal();
+  const { entries, loaded, add, update, remove } = useJournal();
   const { lat, lon, label, weather } = useLocation();
   const reading = useMemo(
     () => (weather.length ? computeSporeScore(weather) : null),
@@ -24,7 +24,18 @@ export default function JournalPage() {
   }, [weather, todayStr]);
 
   // ─── Form state ───
-  const [open, setOpen] = useState(false);
+  /** null = closed.  "new" = creating.  string = editing entry by id. */
+  const [editing, setEditing] = useState<null | "new" | string>(null);
+  const open = editing !== null;
+  const mode: "new" | "edit" = editing === "new" || editing === null ? "new" : "edit";
+  const editingEntry = useMemo(
+    () =>
+      mode === "edit" && typeof editing === "string"
+        ? entries.find((e) => e.id === editing)
+        : null,
+    [mode, editing, entries],
+  );
+
   const [species, setSpecies] = useState("");
   const [notes, setNotes] = useState("");
   const [photo, setPhoto] = useState<string | null>(null);
@@ -37,18 +48,26 @@ export default function JournalPage() {
   const [saveError, setSaveError] = useState<string | null>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  // Seed form lat/lon from context when opened
+  // Seed form values when opened
   useEffect(() => {
     if (!open) return;
-    if (lat != null && lon != null) {
-      setFormLat(lat.toFixed(5));
-      setFormLon(lon.toFixed(5));
+    if (mode === "edit" && editingEntry) {
+      setSpecies(editingEntry.species);
+      setNotes(editingEntry.notes ?? "");
+      setPhoto(editingEntry.photoDataUrl ?? null);
+      setFormLat(editingEntry.lat != null ? editingEntry.lat.toFixed(5) : "");
+      setFormLon(editingEntry.lon != null ? editingEntry.lon.toFixed(5) : "");
+    } else {
+      if (lat != null && lon != null) {
+        setFormLat(lat.toFixed(5));
+        setFormLon(lon.toFixed(5));
+      }
     }
     setGpsError(null);
     setSaveError(null);
     setGpsAccuracy(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open]);
+  }, [open, editingEntry?.id]);
 
   const resetForm = () => {
     setSpecies("");
@@ -120,22 +139,35 @@ export default function JournalPage() {
       : undefined;
 
     try {
-      add({
-        date: dayjs().format("YYYY-MM-DD"),
-        capturedAt: dayjs().toISOString(),
-        species: species.trim(),
-        location: label || "Unnamed spot",
-        notes: notes.trim(),
-        lat: cleanLat,
-        lon: cleanLon,
-        photoDataUrl: photo ?? undefined,
-        weather: snapshot,
-        // back-compat top-level fields
-        score: snapshot?.score,
-        rain7d: snapshot?.rain7d,
-      });
+      if (mode === "edit" && editingEntry) {
+        // Edits preserve the original date / capturedAt / weather snapshot —
+        // only the user-edited fields change. (Conditions were the conditions
+        // at find-time; we shouldn't rewrite them after the fact.)
+        update(editingEntry.id, {
+          species: species.trim(),
+          notes: notes.trim(),
+          lat: cleanLat,
+          lon: cleanLon,
+          photoDataUrl: photo ?? undefined,
+        });
+      } else {
+        add({
+          date: dayjs().format("YYYY-MM-DD"),
+          capturedAt: dayjs().toISOString(),
+          species: species.trim(),
+          location: label || "Unnamed spot",
+          notes: notes.trim(),
+          lat: cleanLat,
+          lon: cleanLon,
+          photoDataUrl: photo ?? undefined,
+          weather: snapshot,
+          // back-compat top-level fields
+          score: snapshot?.score,
+          rain7d: snapshot?.rain7d,
+        });
+      }
       resetForm();
-      setOpen(false);
+      setEditing(null);
     } catch (err) {
       // Most likely localStorage quota exceeded (photos too large)
       setSaveError(
@@ -321,23 +353,44 @@ export default function JournalPage() {
                 )}
               </div>
 
-              <button
-                onClick={() => remove(e.id)}
-                aria-label="Delete entry"
-                className="absolute top-0 right-0"
-                style={{
-                  background: "transparent",
-                  border: 0,
-                  color: "var(--ink-soft)",
-                  opacity: 0.4,
-                  cursor: "pointer",
-                  fontSize: 18,
-                  lineHeight: 1,
-                  padding: 0,
-                }}
+              <div
+                className="absolute top-0 right-0 flex items-center gap-1"
               >
-                ×
-              </button>
+                <button
+                  onClick={() => setEditing(e.id)}
+                  aria-label="Edit entry"
+                  className="font-mono"
+                  style={{
+                    background: "transparent",
+                    border: "1px solid var(--line)",
+                    borderRadius: 999,
+                    color: "var(--ink-soft)",
+                    cursor: "pointer",
+                    fontSize: 9,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    padding: "3px 9px",
+                  }}
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => remove(e.id)}
+                  aria-label="Delete entry"
+                  style={{
+                    background: "transparent",
+                    border: 0,
+                    color: "var(--ink-soft)",
+                    opacity: 0.4,
+                    cursor: "pointer",
+                    fontSize: 18,
+                    lineHeight: 1,
+                    padding: "0 2px",
+                  }}
+                >
+                  ×
+                </button>
+              </div>
             </div>
           </li>
         ))}
@@ -345,7 +398,7 @@ export default function JournalPage() {
 
       {/* FAB */}
       <button
-        onClick={() => setOpen(true)}
+        onClick={() => setEditing("new")}
         aria-label="New entry"
         className="fixed z-[60] grid place-items-center fab-position"
         style={{
@@ -376,7 +429,7 @@ export default function JournalPage() {
           style={{ background: "rgba(26, 20, 16, 0.45)" }}
           onClick={() => {
             resetForm();
-            setOpen(false);
+            setEditing(null);
           }}
         >
           <form
@@ -403,7 +456,15 @@ export default function JournalPage() {
               }}
             />
             <h2 className="title-hero" style={{ fontSize: 28, marginBottom: 4 }}>
-              New <em>finding</em>.
+              {mode === "edit" ? (
+                <>
+                  Edit <em>finding</em>.
+                </>
+              ) : (
+                <>
+                  New <em>finding</em>.
+                </>
+              )}
             </h2>
             <p
               className="font-mono mb-5"
@@ -414,8 +475,14 @@ export default function JournalPage() {
                 textTransform: "uppercase",
               }}
             >
-              {label || "Set location first"}
-              {reading && ` · Score ${reading.score}`}
+              {mode === "edit" && editingEntry
+                ? `Logged ${dayjs(editingEntry.date).format("MMM D")} · ${editingEntry.location}`
+                : (
+                  <>
+                    {label || "Set location first"}
+                    {reading && ` · Score ${reading.score}`}
+                  </>
+                )}
             </p>
 
             <FieldLabel>Species</FieldLabel>
@@ -513,48 +580,55 @@ export default function JournalPage() {
               )}
             </div>
 
-            <FieldLabel>Coordinates</FieldLabel>
-            <div className="grid grid-cols-[1fr_1fr_auto] gap-2 mb-1">
-              <input
-                value={formLat}
-                onChange={(e) => setFormLat(e.target.value)}
-                inputMode="decimal"
-                placeholder="lat"
-                className="field-input"
-                style={{ marginBottom: 0 }}
-                aria-label="Latitude"
-              />
-              <input
-                value={formLon}
-                onChange={(e) => setFormLon(e.target.value)}
-                inputMode="decimal"
-                placeholder="lon"
-                className="field-input"
-                style={{ marginBottom: 0 }}
-                aria-label="Longitude"
-              />
-              <button
-                type="button"
-                onClick={onUseCurrentGps}
-                disabled={gpsBusy}
-                className="font-mono"
-                style={{
-                  padding: "0 14px",
-                  borderRadius: 12,
-                  border: "1px solid var(--moss)",
-                  background: gpsBusy ? "var(--moss-soft)" : "var(--moss)",
-                  color: "var(--parchment)",
-                  fontSize: 10,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  cursor: gpsBusy ? "wait" : "pointer",
-                  whiteSpace: "nowrap",
-                }}
-                aria-label="Use current GPS location"
-              >
-                {gpsBusy ? "…" : "📍 GPS"}
-              </button>
+            <FieldLabel>Coordinates · tap to edit</FieldLabel>
+            <div className="grid grid-cols-2 gap-3 mb-2">
+              <div>
+                <SubLabel>Latitude</SubLabel>
+                <input
+                  value={formLat}
+                  onChange={(e) => setFormLat(e.target.value)}
+                  inputMode="decimal"
+                  placeholder="39.31200"
+                  className="field-input"
+                  style={{ marginBottom: 0 }}
+                  aria-label="Latitude"
+                />
+              </div>
+              <div>
+                <SubLabel>Longitude</SubLabel>
+                <input
+                  value={formLon}
+                  onChange={(e) => setFormLon(e.target.value)}
+                  inputMode="decimal"
+                  placeholder="-119.89600"
+                  className="field-input"
+                  style={{ marginBottom: 0 }}
+                  aria-label="Longitude"
+                />
+              </div>
             </div>
+            <button
+              type="button"
+              onClick={onUseCurrentGps}
+              disabled={gpsBusy}
+              className="font-mono"
+              style={{
+                width: "100%",
+                padding: "12px 14px",
+                borderRadius: 12,
+                border: "1px solid var(--moss)",
+                background: gpsBusy ? "var(--moss-soft)" : "var(--moss)",
+                color: "var(--parchment)",
+                fontSize: 10,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                cursor: gpsBusy ? "wait" : "pointer",
+                marginBottom: 6,
+              }}
+              aria-label="Use current GPS location"
+            >
+              {gpsBusy ? "Getting GPS fix…" : "📍 Use my current location"}
+            </button>
             <div
               className="font-mono mb-4"
               style={{
@@ -567,89 +641,19 @@ export default function JournalPage() {
             >
               {gpsError ??
                 (gpsAccuracy != null
-                  ? `±${gpsAccuracy.toFixed(0)} m accuracy`
-                  : "Pre-filled from current location · edit or tap GPS to refine")}
+                  ? `±${gpsAccuracy.toFixed(0)} m accuracy · edit the fields above to adjust`
+                  : "Edit the fields above, or tap the button for a fresh GPS fix")}
             </div>
 
-            <FieldLabel>Conditions</FieldLabel>
-            <div
-              className="mb-4 p-3 font-mono"
-              style={{
-                border: "1px solid var(--line-soft)",
-                borderRadius: 10,
-                background: "rgba(255,255,255,0.35)",
-                fontSize: 10.5,
-                letterSpacing: "0.06em",
-                color: "var(--ink)",
-                lineHeight: 1.65,
-              }}
-            >
-              {!reading && (
-                <span style={{ opacity: 0.6 }}>
-                  Weather unavailable — set a location first
-                </span>
-              )}
-              {reading && (
-                <>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "baseline",
-                      marginBottom: 4,
-                    }}
-                  >
-                    <span
-                      style={{
-                        textTransform: "uppercase",
-                        letterSpacing: "0.22em",
-                        fontSize: 9,
-                        opacity: 0.65,
-                      }}
-                    >
-                      Spore score
-                    </span>
-                    <span
-                      className="font-display"
-                      style={{
-                        fontSize: 22,
-                        color: "var(--moss)",
-                        fontWeight: 350,
-                      }}
-                    >
-                      {reading.score}
-                    </span>
-                  </div>
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns: "1fr 1fr",
-                      columnGap: 12,
-                      rowGap: 2,
-                      opacity: 0.85,
-                    }}
-                  >
-                    {rain24h != null && (
-                      <span>☂ 24h {rain24h.toFixed(0)}mm</span>
-                    )}
-                    <span>☂ 7d {reading.rain7d.toFixed(0)}mm</span>
-                    <span>+{reading.daysSinceRain}d since rain</span>
-                    <span>{reading.tempToday.toFixed(0)}°C</span>
-                    <span>{reading.humidityToday.toFixed(0)}% humidity</span>
-                  </div>
-                  <div
-                    style={{
-                      fontSize: 9,
-                      letterSpacing: "0.14em",
-                      opacity: 0.55,
-                      marginTop: 6,
-                    }}
-                  >
-                    Snapshotted at save
-                  </div>
-                </>
-              )}
-            </div>
+            <FieldLabel>
+              {mode === "edit" ? "Conditions at find-time" : "Conditions"}
+            </FieldLabel>
+            <ConditionsCard
+              mode={mode}
+              reading={reading}
+              rain24h={rain24h}
+              snapshot={editingEntry?.weather}
+            />
 
             <FieldLabel>Notes</FieldLabel>
             <textarea
@@ -683,14 +687,14 @@ export default function JournalPage() {
                 type="button"
                 onClick={() => {
                   resetForm();
-                  setOpen(false);
+                  setEditing(null);
                 }}
                 className="btn-ghost"
               >
                 Cancel
               </button>
               <button type="submit" className="btn-primary">
-                Save entry
+                {mode === "edit" ? "Save changes" : "Save entry"}
               </button>
             </div>
           </form>
@@ -713,5 +717,159 @@ function FieldLabel({ children }: { children: React.ReactNode }) {
     >
       {children}
     </label>
+  );
+}
+
+type ReadingLike = {
+  score: number;
+  rain7d: number;
+  daysSinceRain: number;
+  tempToday: number;
+  humidityToday: number;
+};
+
+function ConditionsCard({
+  mode,
+  reading,
+  rain24h,
+  snapshot,
+}: {
+  mode: "new" | "edit";
+  reading: ReadingLike | null;
+  rain24h?: number;
+  snapshot?: JournalWeatherSnapshot;
+}) {
+  // In edit-mode we show the saved snapshot (read-only history). In new-mode
+  // we show the current live reading, which is what'll be frozen on save.
+  const show =
+    mode === "edit" && snapshot
+      ? {
+          score: snapshot.score,
+          rain24h: snapshot.rain24h,
+          rain7d: snapshot.rain7d,
+          daysSinceRain: snapshot.daysSinceRain,
+          tempC: snapshot.tempC,
+          humidityPct: snapshot.humidityPct,
+        }
+      : reading
+        ? {
+            score: reading.score,
+            rain24h,
+            rain7d: reading.rain7d,
+            daysSinceRain: reading.daysSinceRain,
+            tempC: reading.tempToday,
+            humidityPct: reading.humidityToday,
+          }
+        : null;
+
+  return (
+    <div
+      className="mb-4 p-3 font-mono"
+      style={{
+        border: "1px solid var(--line-soft)",
+        borderRadius: 10,
+        background: "rgba(255,255,255,0.35)",
+        fontSize: 10.5,
+        letterSpacing: "0.06em",
+        color: "var(--ink)",
+        lineHeight: 1.65,
+      }}
+    >
+      {!show && (
+        <span style={{ opacity: 0.6 }}>
+          {mode === "edit"
+            ? "No weather snapshot was saved with this entry."
+            : "Weather unavailable — set a location first"}
+        </span>
+      )}
+      {show && (
+        <>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "baseline",
+              marginBottom: 4,
+            }}
+          >
+            <span
+              style={{
+                textTransform: "uppercase",
+                letterSpacing: "0.22em",
+                fontSize: 9,
+                opacity: 0.65,
+              }}
+            >
+              Spore score
+            </span>
+            {show.score != null && (
+              <span
+                className="font-display"
+                style={{
+                  fontSize: 22,
+                  color: "var(--moss)",
+                  fontWeight: 350,
+                }}
+              >
+                {show.score}
+              </span>
+            )}
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              columnGap: 12,
+              rowGap: 2,
+              opacity: 0.85,
+            }}
+          >
+            {show.rain24h != null && (
+              <span>☂ 24h {show.rain24h.toFixed(0)}mm</span>
+            )}
+            {show.rain7d != null && (
+              <span>☂ 7d {show.rain7d.toFixed(0)}mm</span>
+            )}
+            {show.daysSinceRain != null && (
+              <span>+{show.daysSinceRain}d since rain</span>
+            )}
+            {show.tempC != null && <span>{show.tempC.toFixed(0)}°C</span>}
+            {show.humidityPct != null && (
+              <span>{show.humidityPct.toFixed(0)}% humidity</span>
+            )}
+          </div>
+          <div
+            style={{
+              fontSize: 9,
+              letterSpacing: "0.14em",
+              opacity: 0.55,
+              marginTop: 6,
+            }}
+          >
+            {mode === "edit"
+              ? "Locked at the moment of the find"
+              : "Snapshotted at save"}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+function SubLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      className="font-mono"
+      style={{
+        fontSize: 8.5,
+        letterSpacing: "0.2em",
+        color: "var(--ink-soft)",
+        textTransform: "uppercase",
+        opacity: 0.7,
+        marginBottom: 4,
+      }}
+    >
+      {children}
+    </div>
   );
 }
