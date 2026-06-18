@@ -11,7 +11,9 @@ const OUT = path.join(ROOT, "out");
 const INCLUDE = [
   /\.html$/i,
   /^_next\/static\/.+\.(js|css)$/i,
+  /^_next\/static\/media\/.+\.(woff2?|ttf|otf)$/i, // self-hosted fonts (next/font)
   /^icons\/.+\.png$/i,
+  /^foray-icon\.png$/i, // in-app logo
   /^manifest\.webmanifest$/i,
 ];
 const EXCLUDE = [/^sw\.js$/i, /\.map$/i, /^img\//i];
@@ -35,7 +37,10 @@ async function precacheEntries() {
   for (const rel of picked) {
     const buf = await readFile(path.join(OUT, rel));
     const revision = createHash("md5").update(buf).digest("hex");
-    entries.push({ url: `/${rel}`, revision });
+    // URL-encode each path segment so entries for dynamic-route chunks
+    // (…/catalog/[id]/page.js) match the browser's encoded request (%5Bid%5D).
+    const url = "/" + rel.split("/").map(encodeURIComponent).join("/");
+    entries.push({ url, revision });
   }
   return entries.sort((a, b) => a.url.localeCompare(b.url));
 }
