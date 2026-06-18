@@ -9,7 +9,8 @@
     "lint": "next lint",
     "test": "node --test --experimental-strip-types",
     "localize:images": "node scripts/localize-images.mjs",
-    "sync:images": "gcloud storage rsync -r .image-staging gs://foray-field-guide/img --account=yichenhuangwork@gmail.com"
+    "sync:images": "gcloud storage rsync -r .image-staging gs://foray-field-guide/img --account=yichenhuangwork@gmail.com",
+    "check:images": "node --experimental-strip-types scripts/find-dead-images.mjs"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.1",
