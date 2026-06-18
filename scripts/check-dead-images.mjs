@@ -10,6 +10,7 @@
 
 import { SPECIES_IMAGES } from "../lib/species-images.ts";
 import { SPECIES_GALLERY } from "../lib/species-gallery.ts";
+import { TREE_CATALOG } from "../lib/tree-catalog.ts";
 import { LOCAL_IMAGES } from "../lib/local-images.ts";
 
 const UA =
@@ -37,6 +38,10 @@ function addImage(id, role, kind, img) {
 for (const [id, img] of Object.entries(SPECIES_IMAGES)) addImage(id, "lead", "whole", img);
 for (const [id, arr] of Object.entries(SPECIES_GALLERY))
   for (const img of arr) addImage(id, "gallery", img.kind, img);
+for (const t of TREE_CATALOG) {
+  if (t.image) addImage(t.id, "tree-lead", "whole", t.image);
+  for (const img of t.images ?? []) addImage(t.id, "tree-gallery", img.kind ?? "whole", img);
+}
 
 const urls = [...owners.keys()];
 
@@ -66,10 +71,14 @@ async function check(u, attempt = 0) {
 }
 
 async function main() {
+  const treeCount = TREE_CATALOG.reduce(
+    (n, t) => n + (t.image ? 1 : 0) + (t.images?.length ?? 0), 0,
+  );
   console.log(
     `Checking ${urls.length} unique image URLs ` +
-      `(${Object.keys(SPECIES_IMAGES).length} leads + ` +
-      `${Object.values(SPECIES_GALLERY).reduce((n, a) => n + a.length, 0)} gallery photos)\n`,
+      `(${Object.keys(SPECIES_IMAGES).length} species leads + ` +
+      `${Object.values(SPECIES_GALLERY).reduce((n, a) => n + a.length, 0)} species gallery + ` +
+      `${treeCount} tree photos)\n`,
   );
   const hosts = {};
   for (const u of urls) hosts[hostOf(u)] = (hosts[hostOf(u)] || 0) + 1;
