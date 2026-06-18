@@ -12,7 +12,6 @@ import TopBar from "@/components/top-bar";
 import FieldClipboard from "@/components/field-clipboard";
 import KeyboardShortcuts from "@/components/keyboard-shortcuts";
 import SwRegister from "@/components/sw-register";
-import OfflineWarmer from "@/components/offline-warmer";
 import OfflineBanner from "@/components/offline-banner";
 
 // Display: Fraunces — organic high-contrast serif, variable optical size + italic.
@@ -72,7 +71,6 @@ export default function RootLayout({
     >
       <body>
         <SwRegister />
-        <OfflineWarmer />
         <OfflineBanner />
         <UnitsProvider>
           <RegionProvider>

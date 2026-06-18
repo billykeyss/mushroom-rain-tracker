@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useApiKey } from "@/lib/api-key-context";
-import OfflineStatus from "@/components/offline-status";
+import OfflineDownload from "@/components/offline-download";
 
 interface Props {
   open: boolean;
@@ -155,7 +155,7 @@ export default function ApiKeyDialog({ open, onClose }: Props) {
           </button>
         </div>
 
-        <OfflineStatus />
+        <OfflineDownload />
       </form>
     </div>
   );
