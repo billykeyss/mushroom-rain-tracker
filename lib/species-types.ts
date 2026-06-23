@@ -40,6 +40,19 @@ export interface Lookalike {
   scientific: string;
   danger: Danger;
   distinguishingFeature: string;
+  /**
+   * Explicit pointer to the catalog species this lookalike *is*, so its card can
+   * show a photo and deep-link to `/catalog/[catalogId]`. Populated by
+   * scripts/match-lookalikes.mjs. Absent = not yet catalogued or genus-only
+   * (e.g. "Russula spp.") → the card renders text-only.
+   */
+  catalogId?: string;
+  /**
+   * The 2–4 most important diagnostic cues to look out for, distilled from
+   * `distinguishingFeature` for at-a-glance scanning. Rendered as chips on the
+   * card. Populated by scripts/lookalikes/inject-features.mjs.
+   */
+  keyFeatures?: string[];
 }
 
 export interface Source {
@@ -174,6 +187,13 @@ export interface MushroomSpecies {
   culinary: Culinary;
   conservationNotes: string | null;
   sources: Source[];
+
+  /**
+   * True for entries produced by the lookalike research pipeline (vs. the
+   * hand-curated original catalog). Drives the "auto-compiled — verify before
+   * foraging" note on the detail page.
+   */
+  autoCompiled?: boolean;
 
   /* Enrichment fields — all optional so old entries remain valid */
   spores?: SporeMicroscopy;

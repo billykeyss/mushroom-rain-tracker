@@ -1,18 +1,15 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 import { SPECIES_GALLERY } from "../lib/species-gallery.ts";
 import { SPECIES_IMAGES } from "../lib/species-images.ts";
+import { PNW_CATALOG } from "../lib/species-catalog.ts";
 import { licenseAllowed } from "./lib/gallery.mjs";
 
-const ROOT = path.resolve(import.meta.dirname, "..");
 const KINDS = new Set(["whole", "cap", "gills", "stem", "spore-print", "in-situ"]);
+const CATALOG_IDS = new Set(PNW_CATALOG.map((s) => s.id));
 
-test("every gallery key is a real catalog species id", async () => {
-  const cat = await readFile(path.join(ROOT, "lib/species-catalog.ts"), "utf8");
-  const ids = new Set([...cat.matchAll(/id:\s*"([^"]+)"/g)].map((m) => m[1]));
-  for (const id of Object.keys(SPECIES_GALLERY)) assert.ok(ids.has(id), `unknown id ${id}`);
+test("every gallery key is a real catalog species id", () => {
+  for (const id of Object.keys(SPECIES_GALLERY)) assert.ok(CATALOG_IDS.has(id), `unknown id ${id}`);
 });
 
 test("each image is well-formed, licensed, <=6/species and <=2/kind", () => {
@@ -29,10 +26,8 @@ test("each image is well-formed, licensed, <=6/species and <=2/kind", () => {
   }
 });
 
-test("every catalog species resolves to a photo (lead image or gallery)", async () => {
-  const cat = await readFile(path.join(ROOT, "lib/species-catalog.ts"), "utf8");
-  const ids = [...cat.matchAll(/id:\s*"([^"]+)"/g)].map((m) => m[1]);
-  for (const id of ids) {
+test("every catalog species resolves to a photo (lead image or gallery)", () => {
+  for (const id of CATALOG_IDS) {
     const hasLead = Boolean(SPECIES_IMAGES[id]);
     const hasGallery = (SPECIES_GALLERY[id]?.length ?? 0) > 0;
     assert.ok(hasLead || hasGallery, `${id} has no photo (no lead and empty gallery)`);

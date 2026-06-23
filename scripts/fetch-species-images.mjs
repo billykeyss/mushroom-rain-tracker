@@ -1,6 +1,8 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import { licenseAllowed, classifyKind, selectImages } from "./lib/gallery.mjs";
+import { PNW_CATALOG } from "../lib/species-catalog.ts";
+import { SPECIES_GALLERY as EXISTING_GALLERY } from "../lib/species-gallery.ts";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const UA = "MushroomRainTracker/1.0 (personal field guide; contact info@gocapsule.ai)";
@@ -165,13 +167,13 @@ async function loadLeads() {
 
 // ---- Driver ------------------------------------------------------------
 async function main() {
-  const catalog = await readFile(path.join(ROOT, "lib/species-catalog.ts"), "utf8");
   const LEADS = await loadLeads();
-  const species = [...catalog.matchAll(/id:\s*"([^"]+)"[\s\S]{0,400}?scientific:\s*"([^"]+)"/g)]
-    .map((m) => ({ id: m[1], scientific: cleanName(m[2]) }));
+  const species = PNW_CATALOG.map((s) => ({ id: s.id, scientific: cleanName(s.scientific) }));
   const only = process.env.ONLY ? new Set(process.env.ONLY.split(",")) : null;
 
-  const gallery = {};
+  // Seed with existing galleries so an ONLY= run updates just those ids and
+  // preserves every other species' photos (incremental, non-destructive).
+  const gallery = { ...EXISTING_GALLERY };
   for (const { id, scientific } of species) {
     if (only && !only.has(id)) continue;
     // The lead (SPECIES_IMAGES) is shown by the hero <SpeciesPhoto>; keep it OUT of the

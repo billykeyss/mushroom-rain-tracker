@@ -1,17 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PNW_CATALOG } from "@/lib/species-catalog";
-import type {
-  Danger,
-  Edibility,
-  MushroomSpecies,
-} from "@/lib/species-types";
+import type { Edibility } from "@/lib/species-types";
 import SpeciesPhoto from "@/components/species-photo";
 import ElevationCell from "@/components/elevation-cell";
 import TasteSmellCallout from "@/components/taste-smell-callout";
 import ClipboardTouch from "@/components/clipboard-touch";
 import { TREES_BY_SCIENTIFIC } from "@/lib/tree-catalog";
 import PhotoGallery from "@/components/photo-gallery";
+import LookalikeCard from "@/components/lookalike-card";
 import { SPECIES_GALLERY } from "@/lib/species-gallery";
 
 const SPECIES_KIND_LABEL: Record<string, string> = {
@@ -123,6 +120,26 @@ export default async function SpeciesDetail({
           </div>
         )}
       </header>
+
+      {s.autoCompiled && (
+        <div
+          className="font-mono mt-5"
+          style={{
+            fontSize: 11,
+            lineHeight: 1.5,
+            letterSpacing: "0.02em",
+            color: "var(--rust)",
+            background: "rgba(189,122,18,0.07)",
+            border: "1px solid rgba(189,122,18,0.3)",
+            borderLeft: "3px solid var(--rust)",
+            borderRadius: 8,
+            padding: "10px 12px",
+          }}
+        >
+          Auto-compiled from public sources (Wikipedia · iNaturalist · GBIF).
+          Cross-check against a regional guide before foraging.
+        </div>
+      )}
 
       <div className="mt-7 lg:mt-8">
         <SpeciesPhoto
@@ -327,50 +344,8 @@ export default async function SpeciesDetail({
             <Section title={`Lookalikes (${s.lookalikes.length})`}>
               <ul className="space-y-3 mt-2">
                 {s.lookalikes.map((l) => (
-                  <li
-                    key={l.scientific}
-                    style={{
-                      padding: 14,
-                      borderRadius: 12,
-                      background: dangerBg(l.danger),
-                      border: `1px solid ${dangerBorder(l.danger)}`,
-                    }}
-                  >
-                    <div className="flex justify-between items-start gap-3">
-                      <div>
-                        <div
-                          className="font-display italic"
-                          style={{
-                            fontSize: 17,
-                            color: "var(--moss)",
-                            lineHeight: 1.1,
-                          }}
-                        >
-                          {l.name}
-                        </div>
-                        <div
-                          className="font-display italic mt-0.5"
-                          style={{
-                            fontSize: 13,
-                            color: "var(--rust)",
-                            opacity: 0.85,
-                          }}
-                        >
-                          {l.scientific}
-                        </div>
-                      </div>
-                      <DangerBadge danger={l.danger} />
-                    </div>
-                    <p
-                      className="font-body mt-2"
-                      style={{
-                        fontSize: 13.5,
-                        lineHeight: 1.5,
-                        color: "var(--ink)",
-                      }}
-                    >
-                      {l.distinguishingFeature}
-                    </p>
+                  <li key={`${l.scientific}·${l.name}`}>
+                    <LookalikeCard lookalike={l} />
                   </li>
                 ))}
               </ul>
@@ -402,8 +377,8 @@ export default async function SpeciesDetail({
 
           <Section title={`Sources (${s.sources.length})`}>
             <ul className="space-y-1.5 mt-1">
-              {s.sources.map((src) => (
-                <li key={src.url}>
+              {s.sources.map((src, i) => (
+                <li key={`${src.url}·${i}`}>
                   <a
                     href={src.url}
                     target="_blank"
@@ -745,57 +720,3 @@ function EdibilityBlock({
   );
 }
 
-function DangerBadge({ danger }: { danger: Danger }) {
-  const colors: Record<Danger, string> = {
-    deadly: "#a02828",
-    toxic: "#c05420",
-    "GI-upset": "#a8742c",
-    inedible: "#6b6b6b",
-    edible: "var(--moss-mid)",
-    "edible-when-cooked": "var(--rain-deep)",
-    "edible-with-caution": "#a8742c",
-  };
-  return (
-    <span
-      className="font-mono"
-      style={{
-        flex: "none",
-        fontSize: 9,
-        letterSpacing: "0.2em",
-        color: "var(--parchment)",
-        background: colors[danger],
-        padding: "4px 9px",
-        borderRadius: 100,
-        textTransform: "uppercase",
-        whiteSpace: "nowrap",
-      }}
-    >
-      {danger}
-    </span>
-  );
-}
-
-function dangerBg(d: Danger): string {
-  switch (d) {
-    case "deadly":
-      return "rgba(160, 40, 40, 0.08)";
-    case "toxic":
-      return "rgba(192, 84, 32, 0.07)";
-    case "GI-upset":
-      return "rgba(168, 116, 44, 0.07)";
-    default:
-      return "rgba(255, 255, 255, 0.22)";
-  }
-}
-function dangerBorder(d: Danger): string {
-  switch (d) {
-    case "deadly":
-      return "rgba(160, 40, 40, 0.4)";
-    case "toxic":
-      return "rgba(192, 84, 32, 0.32)";
-    case "GI-upset":
-      return "rgba(168, 116, 44, 0.32)";
-    default:
-      return "var(--line)";
-  }
-}

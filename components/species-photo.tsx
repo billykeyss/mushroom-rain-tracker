@@ -5,8 +5,10 @@ import { localImage } from "@/lib/image-src";
 interface Props {
   speciesId: string;
   scientific: string;
-  /** "thumb" = small list-card thumbnail; "hero" = detail page; "tiny" = inline 40px */
+  /** "thumb" = small list-card thumbnail; "hero" = detail page; "tiny" = inline square */
   variant: "thumb" | "hero" | "tiny";
+  /** edge length in px for the "tiny" square variant (default 40) */
+  size?: number;
   className?: string;
 }
 
@@ -14,6 +16,7 @@ export default function SpeciesPhoto({
   speciesId,
   scientific,
   variant,
+  size = 40,
   className,
 }: Props) {
   const img: SpeciesImage | undefined =
@@ -21,7 +24,7 @@ export default function SpeciesPhoto({
 
   if (!img) {
     return (
-      <PlaceholderTile variant={variant} className={className} />
+      <PlaceholderTile variant={variant} size={size} className={className} />
     );
   }
 
@@ -32,12 +35,12 @@ export default function SpeciesPhoto({
       <img
         src={src}
         alt={scientific}
-        width={40}
-        height={40}
+        width={size}
+        height={size}
         loading="lazy"
         style={{
-          width: 40,
-          height: 40,
+          width: size,
+          height: size,
           objectFit: "cover",
           borderRadius: 8,
           background: "rgba(26,20,16,0.06)",
@@ -136,14 +139,16 @@ function truncate(s: string, max: number) {
 
 function PlaceholderTile({
   variant,
+  size: tinySize = 40,
   className,
 }: {
   variant: "thumb" | "hero" | "tiny";
+  size?: number;
   className?: string;
 }) {
   const size =
     variant === "tiny"
-      ? { width: 40, height: 40, borderRadius: 8 }
+      ? { width: tinySize, height: tinySize, borderRadius: 8 }
       : variant === "thumb"
         ? { width: "100%", aspectRatio: "4 / 3" as const, borderRadius: 14 }
         : { width: "100%", aspectRatio: "16 / 10" as const, borderRadius: 16 };
