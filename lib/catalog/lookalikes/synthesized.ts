@@ -2082,6 +2082,147 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
     }
   },
   {
+    id: "amanita-velatipes",
+    commonNames: [
+      "Veiled-bulb Amanita",
+      "Great Funnel-Veil Amanita"
+    ],
+    scientific: "Amanita velatipes",
+    family: "Amanitaceae",
+    order: "Agaricales",
+    trophicMode: "mycorrhizal",
+    mycorrhizalPartners: [
+      "Quercus",
+      "Pinus",
+      "Fagaceae",
+      "Pinaceae"
+    ],
+    hostTrees: [
+      {
+        common: "Oak",
+        scientific: "Quercus"
+      },
+      {
+        common: "Pine",
+        scientific: "Pinus"
+      }
+    ],
+    substrate: "Soil in deciduous, coniferous, and mixed woodland; ectomycorrhizal, forming associations with hardwoods (especially oaks) and conifers (pines). Fruit bodies arise solitary, scattered, or gregariously.",
+    habitat: "A robust pantherinoid Amanita of section Amanita (the muscaria/pantherina/gemmata group), mycorrhizal with hardwoods (especially oaks) and conifers in deciduous, coniferous, and mixed forests. It is an eastern North American species, ranging from Maine and Nova Scotia/Ontario south to northern Florida and west to eastern Minnesota and northeastern Arkansas, fruiting in summer and fall (occasionally late spring). It is NOT recorded from the Pacific Northwest; the ecologically similar western pantherinoids there are A. pantherina (A. ameripanthera/A. pantherinoides complex) and A. gemmata.",
+    elevationM: null,
+    regionsPNW: [],
+    fruitingMonths: [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    peakMonths: [
+      7,
+      8,
+      9
+    ],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        12,
+        24
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "5-18 cm wide; brownish when very young, becoming dull tan to creamy yellow (yellowish or brownish-cream) with a slightly darker center; oval to egg-shaped expanding to convex then flat; surface sticky/viscid when wet, adorned with numerous whitish, often concentrically arranged warts (universal-veil remnants) that may wash off in wet weather.",
+      underside: "Gills (not pores): white; crowded; free from the stem or narrowly attached; short-gills (lamellulae) frequent.",
+      stem: "8-20 cm long and 0.5-2 cm thick; more or less equal, whitish; bald to finely silky above the ring and finely hairy to shaggy below; bears a sturdy, persistent white ring (skirt-like, often funnel-shaped and pulled upward at the edges by the expanding cap); terminates in a basal bulb with a distinctive folded-over collar-like rim of universal veil material plus concentric bands/rings of veil tissue.",
+      fleshColor: "White throughout; unchanging when sliced or bruised.",
+      sporePrintColor: "White.",
+      odor: "Not distinctive (mildly mushroomy).",
+      sizeCm: "Cap 5-18 cm; stem 8-20 x 0.5-2 cm. Spores 8-13 x 6-8 microns, ellipsoid, smooth, inamyloid."
+    },
+    edibility: "toxic",
+    toxicityNotes: "Poisonous; do not eat. Amanita velatipes is a member of Amanita section Amanita (the pantherinoid 'booted amanitas'; it was historically treated as Amanita pantherina var. velatipes), the group whose members produce the isoxazole neurotoxins ibotenic acid and muscimol (with muscazone and trace muscarine). Ingestion of section-Amanita pantherinoids typically causes the muscarinic/anticholinergic-pantherina syndrome 30 minutes to 2-3 hours after eating: dizziness, ataxia, nausea, agitation or drowsiness, confusion, delirium, hallucinations, muscle twitching/spasms, and in serious cases seizures and coma; ibotenic acid acts at NMDA/glutamate receptors and muscimol as a GABA-A agonist. Species-specific quantitative toxin assays for A. velatipes are not separately published, so the assessment is inferred from its confirmed placement in section Amanita alongside A. pantherina, A. gemmata, and A. muscaria; treat as toxic.",
+    lookalikes: [
+      {
+        name: "American Panther Cap",
+        scientific: "Amanita multisquamosa",
+        danger: "toxic",
+        keyFeatures: ["smaller","brown-shaded cap center","thin fragile ring"],
+        distinguishingFeature: "Closely related eastern pantherinoid but smaller, with a more sharply brown-shaded cap center and a thinner, less durable (often fragile or evanescent) ring; A. velatipes is markedly larger and stouter with a sturdy persistent ring."
+      },
+      {
+        name: "Russula-like Amanita",
+        scientific: "Amanita russuloides",
+        danger: "toxic",
+        keyFeatures: ["much smaller cap","lacks durable ring"],
+        distinguishingFeature: "Much smaller (cap often only a few cm) and lacks a durable ring; A. velatipes is large with a conspicuous, persistent skirt-like ring and a collared bulb."
+      },
+      {
+        name: "American Yellow Fly Agaric",
+        scientific: "Amanita muscaria var. guessowii",
+        catalogId: "amanita-muscaria",
+        danger: "toxic",
+        keyFeatures: ["yellow-to-orange cap","concentric rings of warts","equally toxic"],
+        distinguishingFeature: "Eastern yellow-capped fly agaric in the same section and equally toxic; distinguished by a yellow-to-orange cap and a basal bulb girdled by concentric rings/zones of warts rather than a single folded-over collar rim, and gills that are not as pure white-cream-warted as in A. velatipes."
+      },
+      {
+        name: "Panther Cap",
+        scientific: "Amanita pantherina",
+        catalogId: "amanita-pantherina",
+        danger: "toxic",
+        keyFeatures: ["dark solid brown cap","western/European range"],
+        distinguishingFeature: "The classic poisonous pantherinoid A. velatipes most resembles; A. pantherina (and the PNW A. pantherina/pantherinoides complex) has a darker, more solid brown cap and is a western/European taxon, so range and the darker cap separate them from eastern A. velatipes."
+      },
+      {
+        name: "Gemmed Amanita",
+        scientific: "Amanita gemmata",
+        catalogId: "amanita-gemmata",
+        danger: "toxic",
+        keyFeatures: ["pale yellow cap","substantial ring","smaller and slender"],
+        distinguishingFeature: "Same-section toxic species with a pale yellow cap and a substantial ring; primarily a western/west-coast taxon, smaller and more slender, with a less pronounced collared bulb than the large A. velatipes."
+      }
+    ],
+    culinary: {
+      flavor: "Not applicable; the mushroom is poisonous and must not be eaten.",
+      preparation: "None. Do not consume; this is a toxic pantherinoid Amanita.",
+      preservation: null
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "MushroomExpert.com (Michael Kuo) — Amanita velatipes",
+        url: "https://www.mushroomexpert.com/amanita_velatipes.html"
+      },
+      {
+        name: "Amanitaceae.org (R. E. Tulloss) — Amanita velatipes",
+        url: "http://www.amanitaceae.org/?Amanita+velatipes="
+      },
+      {
+        name: "Minnesota Seasons — Great Funnel-Veil Amanita (Amanita velatipes)",
+        url: "https://www.minnesotaseasons.com/Fungi/Great_Funnel-Veil_Amanita.html"
+      },
+      {
+        name: "Mushroom the Journal — Booted Amanitas: Subsections Gemmatae and Pantherinae",
+        url: "https://www.mushroomthejournal.com/booted-amanitas/"
+      },
+      {
+        name: "GBIF — Amanita velatipes G.F.Atk.",
+        url: "https://www.gbif.org/species/5451757"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 5,
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Re-researched 2026-06-25 from MushroomExpert.com (Kuo), Amanitaceae.org (Tulloss), Minnesota Seasons, Mushroom the Journal (Booted Amanitas), and GBIF, cross-checked against toxicology literature for Amanita section Amanita. Macro/micro morphology, ecology, and eastern-NA range are well-corroborated. Toxicity is inferred from confirmed placement in section Amanita (historically A. pantherina var. velatipes) rather than from a species-specific toxin assay; multiple sources state the mushroom is poisonous. Conditions (rain/temp/humidity) are habitat-typical estimates, not field-measured."
+    }
+  },
+  {
     id: "amanita-velosa",
     commonNames: [
       "Springtime Amanita",
@@ -10605,6 +10746,151 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
     }
   },
   {
+    id: "gyromitra-ancilis",
+    commonNames: [
+      "Pig's ears",
+      "Pig's ear",
+      "Disc fungus"
+    ],
+    scientific: "Gyromitra ancilis",
+    family: "Discinaceae",
+    order: "Pezizales",
+    trophicMode: "saprotrophic",
+    mycorrhizalPartners: null,
+    hostTrees: [
+      {
+        common: "Conifers (general)",
+        scientific: "Pinaceae"
+      },
+      {
+        common: "Spruce",
+        scientific: "Picea"
+      },
+      {
+        common: "Fir",
+        scientific: "Abies"
+      }
+    ],
+    substrate: "Humus, conifer needle duff, and well-rotted coniferous wood (logs, stumps, buried wood) in montane conifer forest. A wood- and litter-rotting saprotroph; not mycorrhizal.",
+    habitat: "A spring-fruiting cup/disc fungus of montane and northern coniferous forests. Fruit bodies arise singly, scattered, gregariously, or in small clusters on humus, needle duff, and rotting conifer wood, often near melting snowbanks in western mountains. Widely distributed across temperate and boreal North America (and Eurasia), including the western mountains and the Pacific Northwest (British Columbia, Washington, Oregon) and California's Sierra Nevada.",
+    elevationM: null,
+    regionsPNW: [
+      "Cascades",
+      "Coast Range",
+      "Olympics",
+      "Eastern Cascades",
+      "British Columbia"
+    ],
+    fruitingMonths: [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    peakMonths: [
+      4,
+      5
+    ],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        3,
+        16
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "No true cap — the fruit body is a cup- to saucer- or ear-shaped apothecium 2-10 cm (commonly 4-10 cm) wide, shallowly cup-shaped at first, in age becoming centrally depressed to flattened with an arched, conspicuously wavy margin whose edges curl downward. The fertile inner (upper) surface is tan to yellowish-brown or dark reddish-brown and characteristically wrinkled, furrowed, to convoluted (brain-like in part), unlike the smooth disc of true cup fungi.",
+      underside: "Sterile outer (lower) surface pallid: whitish to pinkish-brown or buff, minutely hairy/downy, finely wrinkled and furrowed like the fertile face, sometimes pitted (lacunose); lacks any waxy sheen.",
+      stem: "Absent to a very short, stout rudimentary stipe up to about 1 cm long and 1-3 cm thick, whitish to brownish, often ribbed/lacunose; the fruit body is essentially sessile and seated on the substrate.",
+      fleshColor: "Firm, brittle, white, unchanging when cut; thin, up to about 3 mm thick.",
+      sporePrintColor: "Whitish to pale cream (spore deposit).",
+      odor: "Not distinctive; taste mild.",
+      sizeCm: "Apothecium 2-10 cm (commonly 4-10 cm) wide; stem when present up to ~1 cm tall. Spores fusoid/spindle-shaped, 25-35 x 11-16 um (excluding apiculi), minutely roughened/warted, with one large central oil drop and smaller droplets near each end, and short apiculate projections 1-3.5 um long at each pole — a key microscopic feature for separating it from look-alikes."
+    },
+    edibility: "edible-when-cooked",
+    toxicityNotes: "Deemed edible after thorough cooking but should be approached with caution because of its close relationship to the toxic false morels (genus Gyromitra). Unlike the deadly Gyromitra esculenta, pig's ears contains only trace amounts of hydrazine-type compounds; a 2023 UHPLC chemical analysis reported the absence of detectable gyromitrin in tested Discina/ancilis material. Even so, the gyromitrin/monomethylhydrazine group is the relevant caution for the genus, raw or undercooked specimens can cause gastrointestinal upset (nausea, vomiting), and several authors consider it edible while others advise against it. Cook thoroughly (some recommend parboiling and discarding the water), eat only modest amounts, avoid the cooking steam, and never eat it raw. Confident identification often requires microscopy (spore size, ornamentation, apiculi) to rule out toxic Gyromitra relatives.",
+    lookalikes: [
+      {
+        name: "False morel / Brain mushroom",
+        scientific: "Gyromitra esculenta",
+        catalogId: "gyromitra-esculenta",
+        danger: "deadly",
+        keyFeatures: ["brain-like cap","reddish-brown lobed head","gyromitrin","deadly"],
+        distinguishingFeature: "A genuinely dangerous relative: G. esculenta forms a reddish-brown, lobed, brain-like / saddle-shaped fertile head on a distinct stalk and contains gyromitrin (metabolized to monomethylhydrazine), whereas G. ancilis is a flat-to-cupped, wrinkled disc/ear that is essentially sessile. Implicated in serious and fatal poisonings — confirm before eating."
+      },
+      {
+        name: "Hooded / elfin saddle false morel",
+        scientific: "Gyromitra infula",
+        catalogId: "gyromitra-infula",
+        danger: "toxic",
+        keyFeatures: ["saddle-shaped cap","2-3 lobed mitre","gyromitrin"],
+        distinguishingFeature: "Has a saddle-shaped to two- or three-lobed mitre-like cap on an obvious stem and fruits in late summer to autumn, versus the spring-fruiting, cup/disc-shaped, near-stemless G. ancilis. Contains gyromitrin-type toxins."
+      },
+      {
+        name: "Olympic pig's ears",
+        scientific: "Gyromitra olympiana",
+        danger: "edible-when-cooked",
+        keyFeatures: ["disc/cup shape","conifer substrate","needs microscope"],
+        distinguishingFeature: "Macroscopically very similar disc/cup fungus on conifer substrates; reliable separation from G. ancilis generally requires examining spore size and ornamentation under a microscope."
+      },
+      {
+        name: "Pale disc fungus",
+        scientific: "Gyromitra leucoxantha",
+        danger: "edible-when-cooked",
+        keyFeatures: ["disc-shaped","paler coloration","false-morel caution"],
+        distinguishingFeature: "Another closely allied disc-shaped Gyromitra (sect. Discina) separated chiefly by paler coloration and microscopic spore characters; treat all such discs with the same false-morel caution."
+      },
+      {
+        name: "Brown cup fungus",
+        scientific: "Peziza spp.",
+        danger: "inedible",
+        keyFeatures: ["smoother cup","fragile","grows on soil/dung","inedible"],
+        distinguishingFeature: "True Peziza cups are typically smoother (not deeply wrinkled/convoluted), often more fragile, may grow on soil, dung, or burnt ground rather than conifer wood, and have smooth or differently ornamented spores in inamyloid-to-amyloid asci; many are inedible or of unknown edibility."
+      }
+    ],
+    culinary: {
+      flavor: "Mild; firm, brittle flesh. Regarded as edible and 'good' by some authors when properly cooked, while others view it with suspicion owing to the false-morel connection.",
+      preparation: "Eat only well-cooked, never raw. A conservative approach is to parboil, discard the water, and then saute; cook in a well-ventilated area and avoid inhaling the steam. Consume modest amounts and only with confident microscopy-backed identification.",
+      preservation: null
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "Wikipedia — Discina ancilis",
+        url: "https://en.wikipedia.org/wiki/Discina_ancilis"
+      },
+      {
+        name: "MykoWeb California Fungi — Gyromitra perlata",
+        url: "https://www.mykoweb.com/CAF/species/Gyromitra_perlata.html"
+      },
+      {
+        name: "SVIMS / PNW Key Council — Helvellaceae key (Gyromitra ancilis)",
+        url: "https://www.svims.ca/council/Helvel.htm"
+      },
+      {
+        name: "iNaturalist — Gyromitra ancilis",
+        url: "https://www.inaturalist.org/taxa/950530-Gyromitra-ancilis"
+      },
+      {
+        name: "GBIF — Gyromitra ancilis",
+        url: "https://www.gbif.org/species/8933807"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 4,
+      lastVerified: "2026-06-25",
+      consensus: "moderate",
+      disputeNotes: "Re-researched 2026-06-25 via live web (Wikipedia Discina ancilis, MykoWeb California Fungi 'Gyromitra perlata', PNW Key Council/SVIMS Helvellaceae key, iNaturalist, GBIF) after the cached record had null Wikipedia and undocumented fields. Description/ecology are source-derived and consistent across references; conifer-wood/humus substrate, spring season, and western/PNW + Sierra range are well supported. Edibility classified conservatively as 'edible-when-cooked': sources broadly call pig's ears edible after thorough cooking, and a 2023 UHPLC analysis found no detectable gyromitrin in Discina/ancilis material, but the false-morel relationship and variable authorial opinion warrant the gyromitrin-group caution and a never-raw recommendation. Conditions are genus/habitat-typical estimates, not field-measured. Genus placement (Gyromitra vs Discina) remains debated in the literature."
+    }
+  },
+  {
     id: "gyromitra-gigas",
     commonNames: [
       "Snow mushroom",
@@ -10888,6 +11174,304 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
       lastVerified: "2026-06-25",
       consensus: "strong",
       disputeNotes: "Human safety-reviewed 2026-06-25 with web research; edibility level verified against authoritative mycology/medical sources. Auto-compiled from Wikipedia/iNaturalist/GBIF; PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates."
+    }
+  },
+  {
+    id: "gyromitra-korfii",
+    commonNames: [
+      "Snow Morel",
+      "Snow False Morel",
+      "Bull-nose False Morel",
+      "Calf Brain",
+      "Giant's False Morel"
+    ],
+    scientific: "Gyromitra korfii",
+    family: "Discinaceae",
+    order: "Pezizales",
+    trophicMode: "saprotrophic",
+    mycorrhizalPartners: null,
+    hostTrees: [
+      {
+        common: "Hardwoods (deciduous trees)",
+        scientific: "various angiosperms"
+      },
+      {
+        common: "Conifers",
+        scientific: "Pinaceae"
+      }
+    ],
+    substrate: "Grows on the ground from soil and leaf/needle litter (occasionally near dead or dying trees) in spring forests; primarily saprobic, though Gyromitra may also form mycorrhizal associations (importance and frequency not yet established).",
+    habitat: "A spring-fruiting false morel of eastern and midwestern North America (east of the Rocky Mountains), growing on the ground under both hardwoods and conifers, often appearing as snow melts. It belongs to the 'snow morel' / snowbank false morel (Gyromitra gigas) complex; its western North American counterpart under conifers is the closely related G. montana, and the European member is true G. gigas. Single, scattered, or in dense groups. NOT recorded from the Pacific Northwest — the PNW snowbank-snow-morel role is filled by G. montana, not G. korfii.",
+    elevationM: null,
+    regionsPNW: [],
+    fruitingMonths: [
+      4,
+      5,
+      6
+    ],
+    peakMonths: [
+      5
+    ],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        2,
+        16
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "Tan to brown (rarely cinnamon or tawny), 3-10 cm high and 4-10 cm across; broadly wrinkled and convoluted but blocky and squarish overall (sometimes vaguely lobed), with relatively loose, undefined folds rather than the tight brain-like convolutions of G. esculenta; the thin-fleshed cap drapes over and is tightly affixed to the stem like a tablecloth, often hiding much of it; undersurface whitish to pale brownish.",
+      underside: "No gills or pores; the convoluted outer cap surface is the smooth fertile (spore-bearing) hymenium. Underside of the cap margin is whitish to pale brownish.",
+      stem: "Stout and massive: 3-8 cm high and 2-6 cm wide, often nearly as wide as the cap; pale tan to whitish, bald (no surface decorations), developing broad vertical ribs, folds, or waves.",
+      fleshColor: "Whitish; brittle; the interior is chambered/tunnel-like (not a single hollow chamber as in true morels), sometimes partly stuffed with cottony mycelium.",
+      sporePrintColor: "Yellow to buff.",
+      odor: "Not distinctive.",
+      sizeCm: "Cap 3-10 cm high x 4-10 cm across; stem 3-8 cm high x 2-6 cm wide."
+    },
+    edibility: "edible-when-cooked",
+    toxicityNotes: "Poisonous when eaten raw but considered safe when properly cooked, similar to true morels (Morchella). Unlike the dangerous G. esculenta, the snow morel / G. gigas complex (including G. korfii, the western G. montana, and European G. gigas) contains only trace gyromitrin — on the order of ~1 mg/kg fresh weight, roughly 1,500-fold less than G. esculenta. There are no convincing reports of toxicity from well-cooked snow morels in North America, and no confirmed human poisonings have been attributed to G. korfii. Michael Beug (NAMA toxicology committee chair, 2014 review) concluded that well-cooked G. montana showed an absence of convincing toxicity and suggested G. korfii is similarly safe if appropriately prepared — assigning the snow morel group 'the same toxic status as morels: poisonous when eaten raw but safe when properly cooked' — while cautioning that there may be unreported cases of toxicity since no North American collection has been formally tested for gyromitrin. Gyromitrin is metabolized to monomethylhydrazine (MMH); severe poisonings (from high-gyromitrin species like G. esculenta) can cause GI upset, hemolysis with possible kidney failure, methemoglobinemia, liver damage, and GABA-related neurological effects (treated with pyridoxal/vitamin B6). Recommended caution: cook thoroughly in a well-ventilated area, never eat raw, and be certain of identification to avoid confusion with the deadly G. esculenta.",
+    lookalikes: [
+      {
+        name: "Beefy / Brain False Morel",
+        scientific: "Gyromitra esculenta",
+        catalogId: "gyromitra-esculenta",
+        danger: "toxic",
+        keyFeatures: ["brain-like wrinkled cap","narrow stem","gyromitrin-rich","fatalities documented"],
+        distinguishingFeature: "The dangerous, gyromitrin-rich false morel and the most important species to rule out. It is usually more erect with a reddish-brown, tightly and densely wrinkled, brain-like cap and a relatively narrow stem (1-3 cm thick), whereas G. korfii has a blocky tan-to-brown cap with looser folds and a very stout stem (2-6 cm thick); G. korfii flesh is dense and chambered while G. esculenta is less densely tunneled. Fatalities are documented from G. esculenta."
+      },
+      {
+        name: "Snowbank / Western Snow Morel",
+        scientific: "Gyromitra montana",
+        catalogId: "gyromitra-montana",
+        danger: "edible-when-cooked",
+        keyFeatures: ["near snowbanks","with conifers","paler tan"],
+        distinguishingFeature: "The closely related western North American (west-of-Rockies) member of the same snow morel complex, growing with dead/dying conifers near snowbanks; nearly identical and separated mainly by geography and spore morphology. G. korfii is the eastern/midwestern member under both hardwoods and conifers, often paler tan with fewer folds."
+      },
+      {
+        name: "True Morels",
+        scientific: "Morchella spp.",
+        danger: "edible-when-cooked",
+        keyFeatures: ["pitted honeycombed cap","completely hollow inside"],
+        distinguishingFeature: "The prized edible true morels have a pitted, honeycombed cap and are completely hollow inside (cap and stem form one continuous hollow chamber). G. korfii has a convoluted, wrinkled, brain-like cap and a solid, chambered interior, not a single hollow cavity."
+      },
+      {
+        name: "Carolina False Morel / Big Red",
+        scientific: "Gyromitra caroliniana",
+        danger: "toxic",
+        keyFeatures: ["deeply convoluted cap","reddish-brown","ribbed whitish stem","toxic"],
+        distinguishingFeature: "A large eastern/midwestern false morel with a deeply convoluted reddish-brown cap and prominent whitish ribbed stem; richer red-brown coloration and far more deeply folded cap than the blocky tan G. korfii. Gyromitrin status uncertain and not recommended."
+      },
+      {
+        name: "Hooded / Saddle-shaped False Morel",
+        scientific: "Gyromitra infula",
+        catalogId: "gyromitra-infula",
+        danger: "toxic",
+        keyFeatures: ["saddle-shaped cap","2-3 lobed","fruits late summer-autumn","gyromitrin"],
+        distinguishingFeature: "Has a saddle-shaped to lobed, often 2-3 lobed brown cap rather than a blocky wrinkled brain-like cap, and fruits mainly in late summer to autumn on wood, not in spring. Contains gyromitrin; not recommended."
+      }
+    ],
+    culinary: {
+      flavor: "Reported as good to excellent by those who eat the snow morel group — many regard properly cooked snow morels among their favorite mushrooms; texture of the dense, fleshy cap and stout stem is meaty.",
+      preparation: "Never eat raw. Considered safe by experienced foragers when thoroughly cooked, prepared much like true morels (a simple pan-fry is the common method). The cautious approach is to parboil first: cook cleaned mushrooms covered for ~10-15 minutes in a well-ventilated space, discard the water, dry, then fry. Because no North American collection has been formally tested for gyromitrin and individual sensitivity varies, eat only modest amounts at first and only with confident identification (ruling out the deadly G. esculenta).",
+      preservation: null
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "MushroomExpert.com — Gyromitra korfii (Michael Kuo)",
+        url: "https://www.mushroomexpert.com/gyromitra_korfii.html"
+      },
+      {
+        name: "Mushroom Appreciation — Snow False Morels (incl. G. korfii)",
+        url: "https://www.mushroom-appreciation.com/snow-false-morels.html"
+      },
+      {
+        name: "Benjamin, D.R. (2020) 'Gyromitrin Poisoning: More Questions Than Answers', FUNGI Magazine 13:1 — citing Beug (2014) NAMA review",
+        url: "https://www.fungimag.com/spring-2020-articles/Poisons.pdf"
+      },
+      {
+        name: "Salish Mushrooms — Gyromitra (False Morels) of the PNW (G. montana is the western snow morel)",
+        url: "https://salishmushrooms.com/mushrooms/gyromitra/"
+      },
+      {
+        name: "Wikipedia — Discina gigas (snow morel / Gyromitra gigas complex)",
+        url: "https://en.wikipedia.org/wiki/Discina_gigas"
+      },
+      {
+        name: "MN Forager — False Morels Demystified",
+        url: "https://www.mnforager.com/post/false-morels-demystified"
+      },
+      {
+        name: "GBIF — Gyromitra korfii (Raitv.) Harmaja",
+        url: "https://www.gbif.org/species/5497497"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 7,
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Re-researched 2026-06-25 via live web sources (MushroomExpert.com/Kuo, Mushroom Appreciation, Benjamin 2020 FUNGI citing Beug 2014 NAMA toxicology review, Salish Mushrooms PNW guide, Wikipedia Discina gigas, MN Forager, GBIF) after the prior record was only a genus-level Gyromitra page. Corrections vs prior thin record: edibility upgraded from 'toxic' to 'edible-when-cooked' (poisonous raw but safe when properly cooked) — the snow morel / G. gigas complex (G. korfii, G. montana, European G. gigas) carries only trace gyromitrin (~1 mg/kg, ~1,500x less than G. esculenta) with no confirmed NA poisonings; Beug assigns it the same status as true morels. Range corrected to eastern/midwestern North America (east of the Rockies); G. korfii does NOT occur in the PNW (regionsPNW empty) — the western snowbank counterpart is G. montana. Taxonomic note: Abbott & Currah (1997) synonymized G. korfii under G. gigas, and some treatments now place it in Maublancomyces (M. korfii); authority (Raitv.) Harmaja 1973. Residual caution: no North American collection has been formally lab-tested for gyromitrin and individual sensitivity varies, so unreported toxicity cannot be fully excluded — never eat raw, cook thoroughly, and rule out the deadly G. esculenta."
+    }
+  },
+  {
+    id: "gyromitra-montana",
+    commonNames: [
+      "Snow Morel",
+      "Snowbank False Morel",
+      "Mountain Lorchel",
+      "Snow Mushroom",
+      "Bull Nose",
+      "Calf Brain"
+    ],
+    scientific: "Gyromitra montana",
+    family: "Discinaceae",
+    order: "Pezizales",
+    trophicMode: "saprotrophic",
+    mycorrhizalPartners: null,
+    hostTrees: [
+      {
+        common: "True firs",
+        scientific: "Abies"
+      },
+      {
+        common: "Spruce",
+        scientific: "Picea"
+      },
+      {
+        common: "Pine",
+        scientific: "Pinus"
+      }
+    ],
+    substrate: "Soil, humus, and forest duff in montane coniferous forest, often emerging at the edges of receding snowbanks; occasionally associated with rotting conifer wood. Ecology is saprobic (some sources suggest it may also be facultatively mycorrhizal).",
+    habitat: "A spring, snowmelt-associated false morel of high-country conifer forests in western North America. Fruits solitary, scattered, or gregarious in soil, humus, and duff under conifers (firs, spruce, pines), characteristically within a few meters of melting snowbanks. Common in mountainous areas from the Rocky Mountains westward, including the Sierra Nevada, the Cascades, and other Pacific Northwest mountain ranges. In western North America it is the false morel most frequently confused with the toxic Gyromitra esculenta (per reports to the North American Mycological Association).",
+    elevationM: {
+      min: 900,
+      max: 3400
+    },
+    regionsPNW: [
+      "Washington Cascades",
+      "Oregon Cascades",
+      "Olympic Peninsula",
+      "Mountains of British Columbia",
+      "Sierra Nevada / Northern California"
+    ],
+    fruitingMonths: [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    peakMonths: [
+      4,
+      5,
+      6
+    ],
+    conditions: {
+      minRain7d: 10,
+      idealDaysSinceRain: [
+        3,
+        14
+      ],
+      tempRangeC: [
+        2,
+        15
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "Massive, compact and tightly affixed, loosely wrinkled to convoluted or somewhat lobed, bald, often looking blocky or squarish; 3-14 cm high and 2-9 cm wide. Color yellowish-brown, hazel-brown, tan, to ocher, dull reddish-brown in age; the margin is irregular, incurved, and closely pressed or fused to the stem. Distinctly less brain-like and more compact than Gyromitra esculenta.",
+      underside: "Not gills: the wrinkled/convoluted upper surface of the cap is the fertile spore-bearing layer (an ascomycete). The undersurface of the cap is whitish to tan and sterile.",
+      stem: "Short, stout, and massive — pale tan to whitish, 2-10 cm high and 2-7 cm wide, often nearly as wide as the cap; bald, grooved to folded with broad ribs, the folds forming longitudinal internal passages. The disproportionately thick stem (vs. the relatively narrow, tapering stem of G. esculenta) is the key field separator.",
+      fleshColor: "White, brittle, with a chambered or tunneled interior (chambers sometimes filled with stem tissue or cottony white mycelium); flesh thin in the cap (about 1-2 mm).",
+      sporePrintColor: "Whitish, yellow to buff.",
+      odor: "Not distinctive; taste not distinctive.",
+      sizeCm: "Cap 3-14 cm wide x 4-7 cm tall; stem 2-10 cm tall x 2-7 cm thick. Spores 25-40 x 11.5-16 microns, ellipsoid, smooth, usually with short blunt apiculi (1-3 microns) at the ends and a large central oil droplet."
+    },
+    edibility: "edible-when-cooked",
+    toxicityNotes: "POISONOUS RAW; reportedly safe and widely eaten only after thorough cooking. The western snow morel is low in gyromitrin: chemical assay of the related Gyromitra gigas found roughly 1 mg/kg fresh weight, about 1,500x less than the deadly Gyromitra esculenta (which carries ~50-300 mg/kg). North American snow-morel populations tested have shown little to no gyromitrin, and there are no documented confirmed poisonings attributed to G. montana in North America. Gyromitrin metabolizes to monomethylhydrazine, a volatile, water-soluble hepatotoxin/neurotoxin; for safety the mushroom should be very thoroughly cooked (a hard pan-fry, or parboiling 10-15 minutes in an open, well-ventilated area and discarding the water before final cooking is commonly recommended). DO NOT eat raw or undercooked, do not inhale cooking vapors, and never rely on this species being confused with the genuinely deadly G. esculenta — see lookalikes. Sensitivity varies between individuals; eat only modest amounts when trying it for the first time.",
+    lookalikes: [
+      {
+        name: "Beefy / false morel (deadly lookalike)",
+        scientific: "Gyromitra esculenta",
+        catalogId: "gyromitra-esculenta",
+        danger: "deadly",
+        keyFeatures: ["brain-like cap","narrow tapering stem","reddish-brown convolutions","deadly"],
+        distinguishingFeature: "The dangerous confusion. G. esculenta is more erect and far more brain-like, with tight, dense reddish-brown to dark-brown convolutions and a relatively NARROW stem (about 1-3 cm thick) that tapers and is much thinner than the cap. G. montana is squatter, more blocky/convoluted (less brain-like), ocher to tan to reddish-brown, with a massively THICK whitish stem nearly as wide as the cap. Rule: if the stem looks narrow relative to a brain-like cap, treat it as G. esculenta until proven otherwise."
+      },
+      {
+        name: "Hooded / saddle false morel",
+        scientific: "Gyromitra infula",
+        catalogId: "gyromitra-infula",
+        danger: "toxic",
+        keyFeatures: ["saddle/miter-shaped cap","slender stem","late summer-fall"],
+        distinguishingFeature: "More erect with a lobed, wavy, saddle- or miter-shaped cap and a slender stem; typically a late-summer to fall species rather than a spring snowmelt mushroom, and lacks the massive squat stem of G. montana."
+      },
+      {
+        name: "Snow morel (European sibling species)",
+        scientific: "Gyromitra gigas",
+        catalogId: "gyromitra-gigas",
+        danger: "edible-when-cooked",
+        keyFeatures: ["European species","not in North America","edible only cooked"],
+        distinguishingFeature: "Nearly indistinguishable in the field; molecular work (Miller et al. 2020) shows G. gigas is a separate, European species that does not occur in North America, while the eastern North American conifer counterpart is G. americanigigas and the hardwood-associated eastern sibling is G. korfii. All are treated the same culinarily (edible only after thorough cooking)."
+      },
+      {
+        name: "True morels",
+        scientific: "Morchella spp.",
+        danger: "edible-when-cooked",
+        keyFeatures: ["pitted honeycombed cap","completely hollow interior","slice longitudinally"],
+        distinguishingFeature: "True morels have a pitted, honeycombed (not wrinkled/convoluted) cap and a completely hollow interior from cap tip through the stem. Snow morels are wrinkled/brain-like or blocky with a dense, chambered (tunneled), NOT hollow, interior. Always slice longitudinally to check."
+      }
+    ],
+    culinary: {
+      flavor: "Mild; reported as a good edible by foragers in western North America when properly prepared. Flavor and texture firm and meaty; not distinctive in odor or raw taste.",
+      preparation: "Must be cooked thoroughly before eating; never consume raw. Clean well, then either hard pan-fry until fully cooked or parboil 10-15 minutes in plenty of water in a well-ventilated space, discard the cooking water, and finish by sauteing. Avoid inhaling the steam. Try only a small amount the first time, as individual sensitivity varies.",
+      preservation: "Like true morels, can be dried; however, because gyromitrin/MMH is volatile and water-soluble, parboiling and discarding the water before final cooking is the recommended risk-reduction step rather than relying on drying alone."
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "MushroomExpert.com — Gyromitra montana",
+        url: "https://www.mushroomexpert.com/gyromitra_montana.html"
+      },
+      {
+        name: "MykoWeb California Fungi — Gyromitra montana",
+        url: "https://www.mykoweb.com/CAF/species/Gyromitra_montana.html"
+      },
+      {
+        name: "Mushroom Appreciation — Snow False Morels (Identification and Foraging Guide)",
+        url: "https://www.mushroom-appreciation.com/snow-false-morels.html"
+      },
+      {
+        name: "Salish Mushrooms — Gyromitra (False Morels): PNW ID Guide & Safety",
+        url: "https://salishmushrooms.com/mushrooms/gyromitra/"
+      },
+      {
+        name: "Burke Herbarium Image Collection (Univ. of Washington) — Gyromitra montana",
+        url: "https://burkeherbarium.org/imagecollection/taxon.php?Taxon=Gyromitra+montana"
+      },
+      {
+        name: "Wikipedia — Gyromitra gigas (Discina gigas) toxin assay",
+        url: "https://en.wikipedia.org/wiki/Gyromitra_gigas"
+      },
+      {
+        name: "GBIF — Gyromitra montana",
+        url: "https://www.gbif.org/species/5497502"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 6,
+      lastVerified: "2026-06-25",
+      consensus: "moderate",
+      disputeNotes: "Re-researched 2026-06-25 via live web sources (MushroomExpert, MykoWeb/California Fungi, Mushroom Appreciation, Salish Mushrooms PNW guide, Burke Herbarium, Wikipedia/GBIF) after the cached record was only a genus-level page. Identification, habitat, range, season, and elevation are well supported across sources. Edibility set to edible-when-cooked: the western snow morel is widely eaten after thorough cooking and is very low in gyromitrin (assay of sibling G. gigas ~1 mg/kg, ~1,500x below deadly G. esculenta), with no confirmed North American poisonings; it remains POISONOUS RAW and carries a serious lookalike risk with the deadly G. esculenta, so cooking and confident ID are mandatory. Taxonomy is in flux: G. montana (Harmaja) has been proposed as Maublancomyces montanus (Dirks et al.), and the snow-morel complex includes the European G. gigas, eastern G. americanigigas (conifer) and G. korfii (hardwood); these are not field-separable. Conditions (rain/temp/humidity) are snowmelt-habitat-typical estimates, not field-measured."
     }
   },
   {
@@ -15893,6 +16477,159 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
       lastVerified: "2026-06-23",
       consensus: "moderate",
       disputeNotes: "Auto-compiled from Wikipedia/iNaturalist/GBIF; PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates."
+    }
+  },
+  {
+    id: "lactarius-xanthogalactus",
+    commonNames: [
+      "Yellow-staining Milkcap",
+      "Yellow-staining Milk Cap",
+      "Yellow-latex Milky"
+    ],
+    scientific: "Lactarius xanthogalactus",
+    family: "Russulaceae",
+    order: "Russulales",
+    trophicMode: "mycorrhizal",
+    mycorrhizalPartners: [
+      "Quercus",
+      "Pinus",
+      "Pseudotsuga",
+      "Notholithocarpus"
+    ],
+    hostTrees: [
+      {
+        common: "Oak",
+        scientific: "Quercus"
+      },
+      {
+        common: "Pine",
+        scientific: "Pinus"
+      },
+      {
+        common: "Douglas-fir",
+        scientific: "Pseudotsuga menziesii"
+      },
+      {
+        common: "Tanoak",
+        scientific: "Notholithocarpus densiflorus"
+      }
+    ],
+    substrate: "On the ground in mixed hardwood and conifer woodland; ectomycorrhizal, forming root associations with oaks, tanoak, pines and other conifers. Fruit bodies appear scattered or in groups on soil and duff.",
+    habitat: "A common ectomycorrhizal milkcap of the West Coast of North America, fruiting on the ground under both hardwoods (notably oaks and tanoak) and conifers (pines, Douglas-fir). It is abundant in California's oak and mixed-evergreen woodlands and extends at least into southern Oregon and the Oregon Coast Range; it is the most frequently encountered yellow-latex Lactarius in the region. Fruiting is tied to the cool, wet season, typically early-to-mid winter (peaking November-January), with some records as early as autumn and as late as February.",
+    elevationM: null,
+    regionsPNW: [
+      "Western Oregon",
+      "Oregon Coast Range",
+      "Southern Oregon"
+    ],
+    fruitingMonths: [
+      10,
+      11,
+      12,
+      1,
+      2
+    ],
+    peakMonths: [
+      11,
+      12,
+      1
+    ],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        4,
+        16
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "4-11 cm broad, convex then flattening to plane and often shallowly depressed with age; surface subviscid when moist, glabrous (bald), and faintly zonate with alternating concentric bands of pinkish-brown, reddish-brown, and orange-brown (overall pinkish-cinnamon), frequently dotted with darker spots.",
+      underside: "Gills adnate to subdecurrent, moderately broad, close, brittle; pale peach-buff at first then aging orange-buff. They bleed a white latex that rapidly turns bright sulfur-yellow within seconds of being cut or bruised.",
+      stem: "3-6 cm tall, 1-2 cm thick, more or less equal, solid near the base but becoming hollow toward the apex; peach-buff to pale pinkish-brown (paler, pinkish-white in young material) with pallid hairs at the base; brittle.",
+      fleshColor: "Cream-colored, brittle; quickly yellows where damaged, matching the latex reaction. The white latex stains exposed flesh and gills bright sulfur-yellow on exposure to air.",
+      sporePrintColor: "Pale yellow. Spores 7-8 x 6-6.5 um, subglobose to broadly ellipsoid, ornamented (amyloid warts) with partial reticulation.",
+      odor: "Mild, not distinctive.",
+      sizeCm: "Cap 4-11 cm wide; stem 3-6 x 1-2 cm."
+    },
+    edibility: "toxic",
+    toxicityNotes: "Poisonous. Documented to cause gastrointestinal poisoning - nausea, vomiting, diarrhea, abdominal pain, and sweating - consistent with the acrid (peppery) latex shared by toxic milkcaps in this group. The yellow-staining latex doubles as a strong field warning: avoid any milkcap whose white latex turns bright sulfur-yellow. Specific isolated toxins have not been characterized, but multiple regional sources agree it is GI-toxic rather than merely unpalatable, so it should never be eaten.",
+    lookalikes: [
+      {
+        name: "Lactarius vinaceorufescens",
+        scientific: "Lactarius vinaceorufescens",
+        danger: "toxic",
+        keyFeatures: ["white latex turns yellow","reddish-vinaceous stains","toxic"],
+        distinguishingFeature: "Nearly identical microscopically and also has white latex that quickly turns yellow, but macroscopically develops reddish-vinaceous stains on the cap, gills, and stem; an eastern/widespread species. PNW key authors note regional records of this name may actually be L. xanthogalactus."
+      },
+      {
+        name: "Lactarius chrysorrheus",
+        scientific: "Lactarius chrysorrheus",
+        danger: "toxic",
+        keyFeatures: ["latex turns sulfur-yellow","pale yellowish cap","under oak"],
+        distinguishingFeature: "Also bleeds white latex that turns sulfur-yellow, but has a whitish to pale yellowish-cinnamon cap with slightly darker spots, grows under hardwoods (especially oak) on well-drained sandy soil, and its gills do not discolor or spot vinaceous/brown."
+      },
+      {
+        name: "Lactarius colorascens",
+        scientific: "Lactarius colorascens",
+        danger: "inedible",
+        keyFeatures: ["smaller fruit body","cap browns with age","bitter latex"],
+        distinguishingFeature: "Smaller fruit body; a whitish cap that becomes brownish-red with age and does not spot vinaceous or brown; bitter to faintly acrid latex; and slightly smaller spores."
+      },
+      {
+        name: "Lactarius rubidus (Candy Cap)",
+        scientific: "Lactarius rubidus",
+        catalogId: "lactarius-rubidus",
+        danger: "edible",
+        keyFeatures: ["red evenly-colored cap","latex stays watery","maple/curry odor","edible"],
+        distinguishingFeature: "The prized edible candy cap: redder and evenly colored (not zonate) cap, watery/whey-like latex that does NOT turn yellow, and a sweet maple/curry odor (especially when dried). The lack of the bright yellow staining reaction is the decisive separator."
+      },
+      {
+        name: "Lactarius rufus",
+        scientific: "Lactarius rufus",
+        catalogId: "lactarius-rufus",
+        danger: "toxic",
+        keyFeatures: ["brick-red dry cap","white unchanging latex","very acrid","under conifers"],
+        distinguishingFeature: "Dark brick-red, dry, often umbonate cap with white latex that remains unchanging (does not turn yellow); very acrid; under conifers."
+      }
+    ],
+    culinary: {
+      flavor: "Acrid and peppery to unpleasant; not palatable.",
+      preparation: "Poisonous - not for consumption under any preparation.",
+      preservation: null
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "MykoWeb — California Fungi: Lactarius xanthogalactus",
+        url: "https://www.mykoweb.com/CAF/species/Lactarius_xanthogalactus.html"
+      },
+      {
+        name: "Wikipedia — Lactarius xanthogalactus",
+        url: "https://en.wikipedia.org/wiki/Lactarius_xanthogalactus"
+      },
+      {
+        name: "SVIMS — Lactarius in the Pacific Northwest (key/notes)",
+        url: "https://www.svims.ca/council/Lactar.htm"
+      },
+      {
+        name: "iNaturalist — Yellow-staining Milk Cap (Lactarius xanthogalactus)",
+        url: "https://www.inaturalist.org/taxa/118224"
+      },
+      {
+        name: "GBIF — Lactarius xanthogalactus Peck",
+        url: "https://www.gbif.org/species/5463015"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 5,
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Re-researched 2026-06-25 via web (MykoWeb California Fungi, Wikipedia, SVIMS PNW Lactarius key, iNaturalist, GBIF) after cached Wikipedia toxicity was only 'It is poisonous.' Sources converge on: white latex rapidly turning bright sulfur-yellow (diagnostic), faintly zonate pinkish/reddish/orange-brown subviscid cap, pale yellow spore print, acrid/peppery taste, and GI-toxicity (nausea, vomiting, diarrhea, abdominal pain, sweating) - hence edibility 'toxic' rather than merely 'inedible'. Range: common in California, extends at least into southern Oregon and the Oregon Coast Range; one secondary source extends fruiting records into Washington, but primary keys (MykoWeb/SVIMS) treat Washington occurrence as unconfirmed, so PNW regions are limited to Oregon. PNW key authors caution that regional records of the eastern L. vinaceorufescens may in fact be this species. Microscopy and conditions are source-/genus-derived estimates, not field-measured."
     }
   },
   {
@@ -21742,6 +22479,148 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
     }
   },
   {
+    id: "ramaria-pallida",
+    commonNames: [
+      "Pale Coral",
+      "Bellyache Coral"
+    ],
+    scientific: "Ramaria pallida",
+    family: "Gomphaceae",
+    order: "Gomphales",
+    trophicMode: "mycorrhizal",
+    mycorrhizalPartners: [
+      "Fagus",
+      "Quercus",
+      "Picea"
+    ],
+    hostTrees: [
+      {
+        common: "Beech",
+        scientific: "Fagus"
+      },
+      {
+        common: "Oak",
+        scientific: "Quercus"
+      },
+      {
+        common: "Spruce",
+        scientific: "Picea"
+      }
+    ],
+    substrate: "Ectomycorrhizal, fruiting from the ground (terrestrial) on the forest floor, with a strong preference for calcareous (lime-rich) soils.",
+    habitat: "A mycorrhizal coral fungus of European broadleaf and mixed woodland, fruiting from the soil mostly under beech and oak (occasionally with spruce) and strongly favouring calcareous ground. Its documented range is Europe; it is treated as conspecific with, or a close synonym of, Ramaria mairei. It is NOT recorded from the Pacific Northwest — pale coral Ramaria of the PNW (e.g. R. rubricarnata var. pallida, R. magnipes var. albidior) are distinct taxa, so the name R. pallida should not be applied to North American collections without verification.",
+    elevationM: null,
+    regionsPNW: [],
+    fruitingMonths: [
+      8,
+      9,
+      10
+    ],
+    peakMonths: [
+      9,
+      10
+    ],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        8,
+        18
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "A coral fungus with no cap. The fruit body is an upright, densely branched coral 5-15 cm tall and wide (occasionally to 20 cm), arising from a thick whitish trunk/base that divides repeatedly into numerous, crowded, longitudinally wrinkled branches ending in blunt, toothed tips. Overall colour is pale: greyish-white to milk-coffee or pale ochre-buff, the young branch tips often with a faint lilac-grey to lilac-pink tint; the whole fungus ages ochre-yellow to brownish as the spores mature.",
+      underside: "Not applicable; no gills or pores. Spores are produced over the surface of the branches.",
+      stem: "A short, stout, whitish common trunk (base) from which the branches arise; not a true stem.",
+      fleshColor: "White, brittle, and unchanging (not bruising appreciably) when cut.",
+      sporePrintColor: "Pale yellow to ochre (yellowish-brown). Spores 9-12 x 4.5-6.5 micrometres, ellipsoid with distinct elongated warts, non-amyloid (no iodine reaction).",
+      odor: "Weak; described as soapy or slightly acidic, or faintly of beef broth. Taste mild to slightly bitter.",
+      sizeCm: "Whole fruit body 5-15 cm tall and wide (occasionally to 20 cm)."
+    },
+    edibility: "toxic",
+    toxicityNotes: "Poisonous. Reflected in its German name Bauchweh-Koralle ('bellyache coral'). Eating it causes acute gastrointestinal poisoning — abdominal/colicky pain, nausea, vomiting and diarrhoea — with symptoms typically appearing about 30 minutes to 3 hours after a meal; the diarrhoea is generally attributed to a laxative effect and the illness is usually self-limiting rather than life-threatening. The specific toxins remain largely unstudied. As with the related R. formosa, it is grouped among the mildly poisonous corals. It is dangerous mainly because, when young and pale, it can be mistaken for edible yellow corals.",
+    lookalikes: [
+      {
+        name: "Yellow Coral",
+        scientific: "Ramaria flava",
+        catalogId: "ramaria-flava",
+        danger: "edible",
+        keyFeatures: ["lemon to sulphur-yellow","no lilac tips","edible"],
+        distinguishingFeature: "The edible species most often confused with R. pallida in Europe. R. flava is uniformly lemon to sulphur-yellow when young (not greyish-white/milk-coffee) and lacks the lilac-tinted tips of pale corals; both age ochre, so identify on young, fresh material."
+      },
+      {
+        name: "Beautiful Coral / Salmon Coral",
+        scientific: "Ramaria formosa",
+        catalogId: "ramaria-formosa",
+        danger: "toxic",
+        keyFeatures: ["pink to salmon branches","yellow tips","bruises","toxic"],
+        distinguishingFeature: "Also poisonous (laxative gastrointestinal upset). Distinguished by pink to salmon/apricot branches with yellow tips and pale-pink flesh that often bruises, versus the overall pale greyish-white to ochre-buff of R. pallida."
+      },
+      {
+        name: "Upright Coral",
+        scientific: "Ramaria stricta",
+        catalogId: "ramaria-stricta",
+        danger: "inedible",
+        keyFeatures: ["grows on wood","upright ochre branches","bruises wine-brown","bitter taste"],
+        distinguishingFeature: "Grows on wood (buried or rotting logs) rather than mycorrhizally from soil, has strictly parallel, upright ochre-tan branches, bruises wine-brown, and has a bitter taste."
+      },
+      {
+        name: "PNW pale corals",
+        scientific: "Ramaria rubricarnata var. pallida / R. magnipes var. albidior",
+        danger: "inedible",
+        keyFeatures: ["pale branches","western North America","edibility unrecorded"],
+        distinguishingFeature: "Pale-branched Ramaria of western North America that superficially resemble R. pallida but are separate taxa; their edibility is largely unrecorded (treat as inedible), and the European name should not be applied to PNW collections."
+      }
+    ],
+    culinary: {
+      flavor: "Mild to slightly bitter; not used in cooking.",
+      preparation: "Do not eat. Poisonous, causing gastrointestinal upset. As a rule, pale and brightly coloured Ramaria with bitter taste or bruising flesh should be avoided by foragers.",
+      preservation: null
+    },
+    conservationNotes: "Reported as a rather uncommon to locally rare species in parts of its European range; not formally assessed as threatened in the available sources.",
+    sources: [
+      {
+        name: "Wikipedia — Ramaria pallida",
+        url: "https://en.wikipedia.org/wiki/Ramaria_pallida"
+      },
+      {
+        name: "Wikipedia (German) — Bauchweh-Koralle (Ramaria pallida / R. mairei)",
+        url: "https://de.wikipedia.org/wiki/Bauchweh-Koralle"
+      },
+      {
+        name: "Mushroom World — Ramaria pallida",
+        url: "https://www.mushroom.world/show?n=Ramaria-pallida"
+      },
+      {
+        name: "First Nature — Ramaria flava (lookalike, coral fungi overview)",
+        url: "https://www.first-nature.com/fungi/ramaria-flava.php"
+      },
+      {
+        name: "SVIMS — Ramaria in the Pacific Northwest",
+        url: "https://www.svims.ca/council/Ramar1.htm"
+      },
+      {
+        name: "GBIF — Ramaria pallida",
+        url: "https://www.gbif.org/species/5238518"
+      },
+      {
+        name: "iNaturalist — Ramaria pallida",
+        url: "https://www.inaturalist.org/taxa/847830-Ramaria-pallida"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 5,
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Re-researched 2026-06-25 from live web sources (English + German Wikipedia, Mushroom World, First Nature, SVIMS PNW Ramaria key, GBIF, iNaturalist) after the cached English Wikipedia stub was found to be a 2-sentence entry lacking morphology and toxicity. Sources agree R. pallida is a European, calcareous-woodland, mycorrhizal pale coral (treated as conspecific with R. mairei, 'Bauchweh-Koralle') that is poisonous, causing self-limiting gastrointestinal upset (abdominal pain, vomiting, diarrhoea) 30 min-3 h after ingestion; toxins unidentified. Edibility set to 'poisonous' (mild GI toxin, not deadly). Not recorded from the PNW; regionsPNW left empty and PNW pale-coral taxa noted as distinct. Fruiting conditions are genus/habitat-typical estimates, not field-measured for this species."
+    }
+  },
+  {
     id: "ramaria-rubrievanescens",
     commonNames: [
       "Fading pink coral"
@@ -23461,6 +24340,161 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
     }
   },
   {
+    id: "russula-nigricans",
+    commonNames: [
+      "Blackening Brittlegill",
+      "Blackening Russula",
+      "Bloody Blackening Russula"
+    ],
+    scientific: "Russula nigricans",
+    family: "Russulaceae",
+    order: "Russulales",
+    trophicMode: "mycorrhizal",
+    mycorrhizalPartners: [
+      "Pinus",
+      "Tsuga heterophylla",
+      "Pseudotsuga menziesii",
+      "Picea sitchensis",
+      "Quercus",
+      "Fagus"
+    ],
+    hostTrees: [
+      {
+        common: "Pine",
+        scientific: "Pinus"
+      },
+      {
+        common: "Western hemlock",
+        scientific: "Tsuga heterophylla"
+      },
+      {
+        common: "Douglas fir",
+        scientific: "Pseudotsuga menziesii"
+      },
+      {
+        common: "Sitka spruce",
+        scientific: "Picea sitchensis"
+      },
+      {
+        common: "Oak",
+        scientific: "Quercus"
+      },
+      {
+        common: "Beech",
+        scientific: "Fagus"
+      }
+    ],
+    substrate: "Soil and forest duff in coniferous, broadleaf, and mixed woodland; ectomycorrhizal. In the Pacific Northwest typically found on the ground in conifer forest, often partly buried in needle duff.",
+    habitat: "A large, robust ectomycorrhizal brittlegill of coniferous, broadleaf, and mixed woodland. In Europe it associates with oak, beech, and pine; in the Pacific Northwest it grows in conifer forest with pine, western hemlock, Douglas fir, and Sitka spruce, frequently emerging partly buried in duff. Its range spans Europe (Scandinavia to the Mediterranean), temperate Asia, and North America, including the Pacific Northwest.",
+    elevationM: null,
+    regionsPNW: [
+      "Coastal British Columbia",
+      "Western Washington",
+      "Western Oregon",
+      "Northern California"
+    ],
+    fruitingMonths: [
+      8,
+      9,
+      10,
+      11
+    ],
+    peakMonths: [
+      10,
+      11
+    ],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        5,
+        18
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "5-20 cm (occasionally to 25-30 cm) in diameter; dirty white when young, soon discolouring through grey-brown and finally to sooty black with age or handling; convex with an inrolled margin at first, becoming flat and then centrally depressed. The cuticle peels only partway.",
+      underside: "Gills are a defining feature: thick, very brittle, and notably distant (widely spaced), with shorter gills intermixed and some forking near the stem. Off-white to cream or straw-coloured when young, they slowly bruise rosy red and then darken to grey and black; they are decidedly far apart compared with most blackening russulas.",
+      stem: "White and firm, cylindrical, roughly 3-8 cm long and 1-4 cm thick; reddens then blackens where bruised and grows sooty with age, matching the cap.",
+      fleshColor: "Thick and white; the signature reaction is that cut or bruised flesh slowly turns reddish (pinkish-red), then reddish-brown to grey, and finally black, typically within about 20 minutes. This red-then-black sequence is the key field character of the species.",
+      sporePrintColor: "White.",
+      odor: "Slight, fruity odour; taste mild (sometimes slowly becoming faintly hot in the gills).",
+      sizeCm: "Cap 5-20 cm (to ~30 cm); stem 3-8 x 1-4 cm."
+    },
+    edibility: "inedible",
+    toxicityNotes: "Young white specimens are regarded by some authorities as edible when thoroughly cooked, but quality is at best mediocre/indifferent and the flesh quickly toughens and deteriorates as it blackens; some sources warn it may cause gastrointestinal upset if undercooked. More importantly, R. nigricans belongs to a complex of blackening russulas that is hard to tell apart, and PNW references list it as 'suspect, not recommended'; for safety it is treated here as inedible. CRITICAL: its East Asian relative Russula subnigricans is deadly, causing rhabdomyolysis (toxin cycloprop-2-ene carboxylic acid) with a mortality rate over 50%, so any blackening russula must be identified with extreme care. Old fruitbodies are commonly parasitised by Asterophora (Nyctalis) species (the silky/star piggyback), an indicator more than a hazard.",
+    lookalikes: [
+      {
+        name: "Russula subnigricans (false blackening russula)",
+        scientific: "Russula subnigricans",
+        catalogId: "russula-subnigricans",
+        danger: "deadly",
+        keyFeatures: ["flesh turns red not black","crowded gills",">50% mortality","deadly"],
+        distinguishingFeature: "DEADLY East Asian lookalike (rhabdomyolysis, >50% mortality; toxins cycloprop-2-ene carboxylic acid and russuphelin A). Its cut flesh turns pale RED but does NOT go on to blacken, unlike the diagnostic red-THEN-black reaction of R. nigricans; gills are also more crowded. Reported from East Asia; treat any blackening russula with extreme caution."
+      },
+      {
+        name: "Crowded Brittlegill",
+        scientific: "Russula densifolia",
+        danger: "inedible",
+        keyFeatures: ["crowded gills","reddens then blackens","GI upset"],
+        distinguishingFeature: "Has notably crowded (closely spaced) gills rather than the distant, thick gills of R. nigricans, and reddens then blackens without the orangey-brown handling stage; can cause gastrointestinal upset."
+      },
+      {
+        name: "Acrid Blackening Brittlegill",
+        scientific: "Russula acrifolia",
+        danger: "inedible",
+        keyFeatures: ["bruises red then black","closer gills","acrid taste","smaller"],
+        distinguishingFeature: "Also bruises red then black but has closer gills and an acrid (hot) taste; smaller and less robust than R. nigricans."
+      },
+      {
+        name: "Whiteblack Russula",
+        scientific: "Russula albonigra",
+        catalogId: "russula-albonigra",
+        danger: "inedible",
+        keyFeatures: ["closer gills","bruises directly to black","no red phase"],
+        distinguishingFeature: "Has much closer gills and is far less common; its flesh bruises directly to black, lacking the red intermediary phase that characterises R. nigricans."
+      }
+    ],
+    culinary: {
+      flavor: "Mild, with a slight fruity smell; flesh is firm when young but soon turns tough and unappetising as the mushroom blackens.",
+      preparation: "Not recommended in the Pacific Northwest because of confusion within the blackening-russula complex. Where eaten elsewhere, only young, firm, all-white specimens are used and only after thorough cooking; flavour is considered mediocre at best.",
+      preservation: null
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "First Nature — Russula nigricans, Blackening Brittlegill",
+        url: "https://www.first-nature.com/fungi/russula-nigricans.php"
+      },
+      {
+        name: "Mushrooms Up! (Beaty Biodiversity Museum, UBC) — Russula nigricans (coastal BC / PNW)",
+        url: "https://explore.beatymuseum.ubc.ca/mushroomsup/R_nigricans.html"
+      },
+      {
+        name: "TotallyWildUK — Blackening Brittlegill (Russula nigricans) Identification",
+        url: "https://totallywilduk.co.uk/2024/07/10/blackening-brittlegill/"
+      },
+      {
+        name: "Wikipedia — Russula subnigricans (deadly lookalike)",
+        url: "https://en.wikipedia.org/wiki/Russula_subnigricans"
+      },
+      {
+        name: "GBIF — Russula nigricans Fr.",
+        url: "https://www.gbif.org/species/7958113"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 4,
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Re-researched 2026-06-25; prior record was mis-sourced from R. adusta. Identification/ecology drawn from First Nature, UBC/Beaty Mushrooms Up! (PNW-specific), MushroomExpert, and TotallyWildUK, which agree on the diagnostic red-then-black flesh reaction, distant thick gills, white spore print, and conifer/broadleaf ectomycorrhizal habit. Edibility is contested (edible-when-young-and-cooked-but-mediocre per some European sources vs. 'suspect, not recommended' per PNW references); recorded conservatively as inedible. Deadly East Asian lookalike R. subnigricans confirmed via Wikipedia and toxicology literature (rhabdomyolysis). Conditions are genus/habitat-typical estimates, not field-measured."
+    }
+  },
+  {
     id: "russula-nobilis",
     commonNames: [
       "Beechwood Sickener"
@@ -24066,6 +25100,7 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
       {
         name: "Russula nigricans",
         scientific: "Russula nigricans",
+        catalogId: "russula-nigricans",
         danger: "inedible",
         keyFeatures: ["flesh turns pale red","does not blacken"],
         distinguishingFeature: "Unlike R. subnigricans, the flesh of R. nigricans turns black; R. subnigricans flesh turns pale red when cut but does not blacken."

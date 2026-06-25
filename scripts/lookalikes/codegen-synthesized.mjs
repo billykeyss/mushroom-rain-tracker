@@ -82,10 +82,33 @@ async function main() {
       if (typeof s[k] !== "string") s[k] = ND;
     }
     if (s.identification) {
+      // Rebuild with ONLY the known Identification keys (drops stray fields like
+      // "taste" a source pass may add) and coerce each to a string.
+      const idf = {};
       for (const k of ["cap", "underside", "stem", "fleshColor", "sporePrintColor", "odor", "sizeCm"]) {
-        if (typeof s.identification[k] !== "string") s.identification[k] = ND;
+        idf[k] = typeof s.identification[k] === "string" ? s.identification[k] : ND;
       }
+      s.identification = idf;
     }
+  }
+
+  // Drop any keys not in the MushroomSpecies / Lookalike shape (source passes
+  // occasionally add stray fields like "authority"), so the emitted TS typechecks.
+  const SPECIES_KEYS = new Set([
+    "id", "commonNames", "scientific", "family", "order", "trophicMode",
+    "mycorrhizalPartners", "hostTrees", "substrate", "habitat", "elevationM",
+    "regionsPNW", "fruitingMonths", "peakMonths", "conditions", "identification",
+    "edibility", "toxicityNotes", "lookalikes", "culinary", "conservationNotes",
+    "sources", "autoCompiled", "spores", "microhabitat", "phenologyCues",
+    "bioactive", "dnaBarcode", "verification",
+  ]);
+  const LOOKALIKE_KEYS = new Set(["name", "scientific", "danger", "distinguishingFeature", "catalogId", "keyFeatures"]);
+  const prune = (obj, allowed) => {
+    for (const k of Object.keys(obj)) if (!allowed.has(k)) delete obj[k];
+  };
+  for (const s of ok) {
+    prune(s, SPECIES_KEYS);
+    if (Array.isArray(s.lookalikes)) for (const l of s.lookalikes) prune(l, LOOKALIKE_KEYS);
   }
 
   ok.sort((a, b) => a.id.localeCompare(b.id));

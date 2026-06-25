@@ -1322,6 +1322,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Booted amanita / Yellow-veiled amanita",
       scientific: "Amanita velatipes",
+      catalogId: "amanita-velatipes",
       danger: "toxic",
       keyFeatures: ["yellow veil tissue on warts/ring","pale tan to yellow-brown cap","isoxazole toxins"],
       distinguishingFeature: "Eastern North American booted amanita with yellow universal-veil tissue tinging the warts, ring, and bulb collars; cap pale tan to yellow-brown. Sometimes listed as edible by older literature but contains the same isoxazole toxins - DO NOT eat. Not reliably distinguishable from pale PNW A. pantherinoides in the field."
@@ -4999,6 +5000,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Snowbank false morel",
       scientific: "Gyromitra montana (= 'G. gigas' western sense)",
+      catalogId: "gyromitra-montana",
       danger: "edible-with-caution",
       keyFeatures: ["squarish tan cap","near melting snowbanks","fat short white stem","anastomosing internal channels"],
       distinguishingFeature: "Western PNW montane species fruiting near melting snowbanks in spring/early summer. Cap squarish, yellowish-brown to tan (not deep reddish-brown), less deeply wrinkled; stem fat, short, white, with multiple anastomosing internal channels (vs G. esculenta's round/figure-eight stem with 1-2 channels). Spores ellipsoid 11.5-15 microns wide with inconspicuous apiculi. Considered edible by many PNW foragers and apparently lower in gyromitrin, but still in a gyromitrin-producing genus and EATEN AT THE FORAGER'S OWN RISK."
@@ -5014,6 +5016,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Bull-nose morel (eastern North America)",
       scientific: "Gyromitra korfii",
+      catalogId: "gyromitra-korfii",
       danger: "toxic",
       keyFeatures: ["squarish brown cap","fat ribbed stem","knob-like spore apiculi"],
       distinguishingFeature: "Eastern North American counterpart of G. montana with squarish brown cap and fat ribbed stem; spores fusoid 10-13 microns wide with conspicuous knob-like apiculi. Out of range in the PNW but mentioned for completeness; treat as toxic."
@@ -5029,6 +5032,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Carbon false morel",
       scientific: "Gyromitra ancilis (= Discina perlata)",
+      catalogId: "gyromitra-ancilis",
       danger: "inedible",
       keyFeatures: ["cup to wrinkled disc","essentially no stem","reddish-brown surface"],
       distinguishingFeature: "Cup- to saucer-shaped to wrinkled disc with essentially no stem; reddish-brown to dark brown upper (hymenial) surface. PNW spring fruiter. Contains lower gyromitrin levels but still in the toxic genus."
@@ -5153,7 +5157,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Fluted Brown Elfin Saddle", scientific: "Helvella maculata", catalogId: "helvella-maculata", danger: "edible-with-caution", keyFeatures: ["grayish-brown mottled cap","free margin","fuzzy whitish underside","deeply ribbed stem"], distinguishingFeature: "Cap grayish-brown to medium brown, sometimes mottled, with a margin that is NOT attached to the stipe (free margin); underside whitish and distinctly pubescent/fuzzy; deeply ribbed white to grayish-brown stem; same MMH concerns" },
     { name: "Compressed Elfin Saddle", scientific: "Helvella compressa", catalogId: "helvella-compressa", danger: "edible-with-caution", keyFeatures: ["small and slender","faintly grooved cylindrical stem","small smooth gray saddle"], distinguishingFeature: "Much smaller and slenderer; stem cylindrical and only faintly grooved (NOT deeply lacunose); cap small, smooth, gray to brown saddle; same MMH concerns" },
     { name: "False Morel / Brain Mushroom", scientific: "Gyromitra esculenta", catalogId: "gyromitra-esculenta", danger: "deadly", keyFeatures: ["reddish-brown brain-like cap","stout chambered stem","spring fruiting","high gyromitrin"], distinguishingFeature: "Cap reddish-brown to chestnut, brain-like with tightly convoluted lobes (NOT a clean saddle); stem stout, whitish, chambered internally with folds but NOT deeply fluted/lacunose on the outside; primarily a spring species (April-June) rather than fall/winter; contains higher concentrations of gyromitrin/MMH and is potentially lethal" },
-    { name: "Snowbank False Morel", scientific: "Gyromitra montana (= Gyromitra gigas)", danger: "toxic", keyFeatures: ["tan brain-like lobed cap","thick chambered stem","near melting snow","not saddle-shaped"], distinguishingFeature: "Robust, stocky; tan to reddish-brown brain-like lobed cap; thick whitish stem chambered internally; fruits near melting snow in spring at higher elevations; not saddle-shaped and not deeply lacunose-stemmed" },
+    { name: "Snowbank False Morel", scientific: "Gyromitra montana (= Gyromitra gigas)", catalogId: "gyromitra-montana", danger: "toxic", keyFeatures: ["tan brain-like lobed cap","thick chambered stem","near melting snow","not saddle-shaped"], distinguishingFeature: "Robust, stocky; tan to reddish-brown brain-like lobed cap; thick whitish stem chambered internally; fruits near melting snow in spring at higher elevations; not saddle-shaped and not deeply lacunose-stemmed" },
     { name: "Hooded False Morel", scientific: "Gyromitra infula", catalogId: "gyromitra-infula", danger: "toxic", keyFeatures: ["saddle-shaped reddish-brown cap","smooth/faintly grooved stem","fall on rotten wood"], distinguishingFeature: "Saddle-shaped cap somewhat similar in outline, but cap reddish-brown to chestnut (NOT black/gray) and smooth-to-folded rather than convoluted; stem smooth or only faintly grooved, NOT deeply fluted; fall fruiting on rotten wood and conifer debris; contains MMH" }
   ],
   culinary: {
@@ -6680,7 +6684,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   toxicityNotes: "No serious toxicity, but candy caps are easily confused with several inedible, acrid, or mildly poisonous orange-brown Lactarius species on the West Coast. Always verify with the watery-white latex (not yellow-staining, not acrid) and confirm the maple-syrup odor on dried specimens before eating. Some foragers report mild GI upset from large quantities. Like all wild mushrooms, eat a small portion first and cook thoroughly.",
   lookalikes: [
     { name: "Rufous Candy Cap", scientific: "Lactarius rufulus", catalogId: "lactarius-rufulus", danger: "edible", keyFeatures: ["larger redder cap","oak-associated","solid stem","faint maple aroma"], distinguishingFeature: "Larger and redder, oak-associated (often under coast live oak), less pronounced maple aroma, solid (not hollow) stem, slightly acrid taste possible; still edible and used similarly but less prized" },
-    { name: "Yellow-staining Milkcap", scientific: "Lactarius xanthogalactus", danger: "toxic", keyFeatures: ["latex turns bright yellow","grayish-orange faintly zonate cap","bitter to acrid taste"], distinguishingFeature: "Very common Northern California mis-collection; latex turns rapidly bright yellow on exposure (candy cap latex stays watery white), cap more grayish-orange and faintly zonate, taste bitter to acrid - considered poisonous (causes GI upset)" },
+    { name: "Yellow-staining Milkcap", scientific: "Lactarius xanthogalactus", catalogId: "lactarius-xanthogalactus", danger: "toxic", keyFeatures: ["latex turns bright yellow","grayish-orange faintly zonate cap","bitter to acrid taste"], distinguishingFeature: "Very common Northern California mis-collection; latex turns rapidly bright yellow on exposure (candy cap latex stays watery white), cap more grayish-orange and faintly zonate, taste bitter to acrid - considered poisonous (causes GI upset)" },
     { name: "Rufous Milkcap", scientific: "Lactarius rufus", catalogId: "lactarius-rufus", danger: "toxic", keyFeatures: ["dark brick-red cap","white latex staining paper yellow","intensely acrid taste"], distinguishingFeature: "Larger, darker brick-red cap, white unchanging latex that stains paper yellow, intensely acrid 'habanero' taste (wait a minute when chewing) - inedible/poisonous raw, causes GI upset" },
     { name: "Subviscid Milkcap", scientific: "Lactarius subviscidus", catalogId: "lactarius-subviscidus", danger: "inedible", keyFeatures: ["viscid orange cap","scanty white latex","slightly acrid"], distinguishingFeature: "Viscid/sticky cap when wet, deep orange, scanty white latex, slightly acrid taste after chewing; not a candy cap" },
     { name: "Orange Milkcap", scientific: "Lactarius substriatus", catalogId: "lactarius-substriatus", danger: "inedible", keyFeatures: ["viscid striate margin","scarlet-orange cap","latex slowly stains yellow"], distinguishingFeature: "Viscid cap with a striate margin, scarlet-orange to brownish-orange, latex slowly stains yellow, slightly peppery taste" },
@@ -6802,6 +6806,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Orange-latex Milky",
       scientific: "Lactarius xanthogalactus",
+      catalogId: "lactarius-xanthogalactus",
       danger: "GI-upset",
       keyFeatures: ["white latex turning sulfur-yellow","pinkish-orange unzoned cap","acrid taste"],
       distinguishingFeature:
@@ -8433,6 +8438,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Snowbank False Morel",
       scientific: "Gyromitra montana",
+      catalogId: "gyromitra-montana",
       danger: "toxic",
       keyFeatures: ["lobed saddle-shaped cap","chambered stem","fruits near snowmelt","gyromitrin"],
       distinguishingFeature: "Lobed saddle-shaped cap, not pitted; stout chambered (not fully hollow) stem; fruits near snowmelt in PNW conifer forests. Contains gyromitrin."
@@ -8440,6 +8446,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Bull-nose False Morel",
       scientific: "Gyromitra korfii",
+      catalogId: "gyromitra-korfii",
       danger: "toxic",
       keyFeatures: ["brain-like wrinkled cap","reddish-brown","chambered stem"],
       distinguishingFeature: "Brain-like wrinkled (not pitted) reddish-brown cap; chambered stem interior."
@@ -8627,7 +8634,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Wrinkled Thimble-cap / Early Morel", scientific: "Verpa bohemica", catalogId: "verpa-bohemica", danger: "GI-upset", keyFeatures: ["attached only at apex","wrinkled-brain cap","cottony pith stem","GI upset"], distinguishingFeature: "Cap attached to stem ONLY at the very apex (hangs like a thimble/skirt); cap surface is wrinkled-brain-like with longitudinal folds rather than true pits-and-ridges; stem stuffed with cottony pith, NOT a single hollow chamber; causes GI upset and incoordination in many people" },
     { name: "Smooth Thimble-cap", scientific: "Verpa conica", catalogId: "verpa-conica", danger: "GI-upset", keyFeatures: ["smooth thimble cap","attached only at apex","cottony stuffed stem"], distinguishingFeature: "Cap smooth or only faintly wrinkled, attached only at apex; stem stuffed with cottony fibers, not hollow" },
     { name: "False Morel / Brain Mushroom", scientific: "Gyromitra esculenta", catalogId: "gyromitra-esculenta", danger: "deadly", keyFeatures: ["reddish-brown brain-like cap","chambered cottony interior","gyromitrin","deadly"], distinguishingFeature: "Cap reddish-brown, irregularly wrinkled and brain-like or saddle-shaped (NOT pitted with discrete pits/ridges); interior of cap and stem chambered/stuffed with cottony tissue rather than a single hollow chamber; contains gyromitrin (MMH) which is potentially lethal and a carcinogen" },
-    { name: "Snowbank False Morel", scientific: "Gyromitra montana / Gyromitra gigas", danger: "toxic", keyFeatures: ["tan to reddish-brown lobed cap","chambered stem","fruits near melting snow"], distinguishingFeature: "Cap tan to reddish-brown, irregularly lobed/brain-like and saddle-shaped, not regularly pitted; stem stout, chambered/stuffed with internal folds; fruits near melting snow at higher elevations" },
+    { name: "Snowbank False Morel", scientific: "Gyromitra montana / Gyromitra gigas", catalogId: "gyromitra-montana", danger: "toxic", keyFeatures: ["tan to reddish-brown lobed cap","chambered stem","fruits near melting snow"], distinguishingFeature: "Cap tan to reddish-brown, irregularly lobed/brain-like and saddle-shaped, not regularly pitted; stem stout, chambered/stuffed with internal folds; fruits near melting snow at higher elevations" },
     { name: "Elfin Saddle", scientific: "Helvella lacunosa", catalogId: "helvella-lacunosa", danger: "inedible", keyFeatures: ["saddle-shaped lobed cap","gray to black","deeply fluted stem"], distinguishingFeature: "Cap saddle-shaped or irregularly lobed (not pitted), gray to black; stem deeply fluted/ribbed with longitudinal channels" },
     { name: "Blonde Morel", scientific: "Morchella rufobrunnea", catalogId: "morchella-rufobrunnea", danger: "edible-when-cooked", keyFeatures: ["pale cream to gray-brown","pits bruise orange-red","ridges paler than pits"], distinguishingFeature: "Similar urban/landscape habitat but pallid cream to pale gray-brown when young (not blackening), pits often slowly bruising orange-red; ridges paler than pits (opposite of importuna in age)" },
     { name: "Western Black Morel", scientific: "Morchella snyderi / Morchella brunnea", catalogId: "morchella-snyderi", danger: "edible-when-cooked", keyFeatures: ["black morel on conifers","irregular pit arrangement","not in landscape habitats"], distinguishingFeature: "Forest-dwelling natural black morels associated with conifers; irregular (non-laddered) pit arrangement; not found in landscape/woodchip habitats" }
@@ -8711,7 +8718,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Half-free Morel", scientific: "Morchella populiphila", catalogId: "morchella-populiphila", danger: "edible", keyFeatures: ["cap attached at midpoint","skirt-like free lower half","cottonwood riparian","small and delicate"], distinguishingFeature: "Cap attached to stem only at the midpoint, leaving a skirt-like lower half of the cap hanging free; associated with cottonwoods (Populus) in riparian areas; smaller and more delicate" },
     { name: "Wrinkled Thimble-cap / False Morel", scientific: "Verpa bohemica", catalogId: "verpa-bohemica", danger: "GI-upset", keyFeatures: ["attached only at apex","hangs free like thimble","GI upset and incoordination"], distinguishingFeature: "Cap is attached only at the very TOP of the stem and hangs free like a thimble (sliced longitudinally, the cap is clearly skirt-like, not fused to the stem); causes muscular incoordination and GI upset in many people" },
     { name: "Brain-shaped False Morel", scientific: "Gyromitra esculenta", catalogId: "gyromitra-esculenta", danger: "deadly", keyFeatures: ["brain-like wrinkled cap","chambered cottony interior","gyromitrin","deadly"], distinguishingFeature: "Cap is BRAIN-LIKE / convoluted / wrinkled (NOT pitted with ridges and pits like a true morel); cap and stem are chambered with cottony tissue (NOT a single hollow cavity) in cross-section; cap reddish-brown to dark brown; contains gyromitrin (a hydrazine) - has caused fatalities; never eat any 'morel' whose cap is wrinkled rather than pitted" },
-    { name: "Snow False Morel", scientific: "Gyromitra montana (G. gigas)", danger: "toxic", keyFeatures: ["brain-like saddle-shaped cap","thick chambered white stem","near melting snowbanks","gyromitrin"], distinguishingFeature: "Large brain-like / saddle-shaped wrinkled cap (not pitted); thick chambered white stem; fruits near melting snowbanks in spring montane conifer forest - same timing/elevation as M. snyderi; contains gyromitrin" },
+    { name: "Snow False Morel", scientific: "Gyromitra montana (G. gigas)", catalogId: "gyromitra-montana", danger: "toxic", keyFeatures: ["brain-like saddle-shaped cap","thick chambered white stem","near melting snowbanks","gyromitrin"], distinguishingFeature: "Large brain-like / saddle-shaped wrinkled cap (not pitted); thick chambered white stem; fruits near melting snowbanks in spring montane conifer forest - same timing/elevation as M. snyderi; contains gyromitrin" },
     { name: "Elfin Saddle", scientific: "Helvella lacunosa", catalogId: "helvella-lacunosa", danger: "edible-when-cooked", keyFeatures: ["saddle-shaped gray-black cap","deeply ribbed fluted stem","not pitted"], distinguishingFeature: "Saddle-shaped or lobed (NOT conical-pitted) gray-to-black cap on a deeply ribbed/fluted (not pitted) stem; same forests but different silhouette" }
   ],
   culinary: {
@@ -8793,7 +8800,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Landscape Morel", scientific: "Morchella importuna", catalogId: "morchella-importuna", danger: "edible", keyFeatures: ["ladder-like rectangular pits","wood-chip and mulch beds","smooth non-fuzzy surface"], distinguishingFeature: "Strongly ladder-like (regularly rectangular) pit arrangement; fruits in wood-chip beds, gardens, and landscape mulch in urban/disturbed lowland sites - not in mountain burns; smooth (non-fuzzy) surface" },
     { name: "Wrinkled Thimble-cap / False Morel", scientific: "Verpa bohemica", catalogId: "verpa-bohemica", danger: "GI-upset", keyFeatures: ["attached only at top","wrinkled-ribbed cap","GI upset and incoordination"], distinguishingFeature: "Cap attached only at the very top of the stem and hangs free like a thimble/skirt; cap is wrinkled-ribbed rather than truly pitted; causes muscular incoordination and GI upset in many people; not fire-associated" },
     { name: "Brain-shaped False Morel", scientific: "Gyromitra esculenta", catalogId: "gyromitra-esculenta", danger: "deadly", keyFeatures: ["brain-like wrinkled cap","chambered cottony interior","gyromitrin","deadly"], distinguishingFeature: "Cap is BRAIN-LIKE / convoluted / wrinkled (NOT pitted with ridges and pits); cap and stem chambered with cottony tissue (NOT a single hollow cavity) in cross-section; reddish-brown to dark brown; contains gyromitrin (a hydrazine) - has caused fatalities; can occur in conifer burns and recently disturbed ground" },
-    { name: "Snow False Morel", scientific: "Gyromitra montana (G. gigas)", danger: "toxic", keyFeatures: ["brain-like saddle-shaped cap","thick chambered white stem","near melting snowbanks","gyromitrin"], distinguishingFeature: "Large brain-like / saddle-shaped wrinkled cap (not pitted); thick chambered white stem; fruits near melting snowbanks in montane conifer forest at the same time/elevation as burn morels; contains gyromitrin" },
+    { name: "Snow False Morel", scientific: "Gyromitra montana (G. gigas)", catalogId: "gyromitra-montana", danger: "toxic", keyFeatures: ["brain-like saddle-shaped cap","thick chambered white stem","near melting snowbanks","gyromitrin"], distinguishingFeature: "Large brain-like / saddle-shaped wrinkled cap (not pitted); thick chambered white stem; fruits near melting snowbanks in montane conifer forest at the same time/elevation as burn morels; contains gyromitrin" },
     { name: "Elfin Saddle", scientific: "Helvella lacunosa", catalogId: "helvella-lacunosa", danger: "edible-when-cooked", keyFeatures: ["saddle-shaped gray-black cap","deeply ribbed fluted stem","can appear in burn sites"], distinguishingFeature: "Saddle-shaped or lobed (NOT conical-pitted) gray-to-black cap on a deeply ribbed/fluted (not pitted) stem; can appear in burn sites but unmistakably different silhouette" }
   ],
   culinary: {
@@ -9939,7 +9946,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Coral-pink Coral", scientific: "Ramaria subbotrytis", catalogId: "ramaria-subbotrytis", danger: "edible-with-caution", keyFeatures: ["uniformly coral-pink to reddish","smaller spores"], distinguishingFeature: "Branches uniformly bright coral-pink to reddish throughout (not white base + pink tips); smaller spores (7-9 x 3-3.5 microns)" },
     { name: "Salmon Coral", scientific: "Ramaria araiospora", catalogId: "ramaria-araiospora", danger: "edible", keyFeatures: ["reddish to magenta branches","orange/yellow tips","no odor","under western hemlock"], distinguishingFeature: "Grows under western hemlock in PNW; reddish to magenta branches with orange or yellowish tips; lacks any discernible odor; warted cylindrical spores" },
     { name: "Strict-branch Coral", scientific: "Ramaria stricta", catalogId: "ramaria-stricta", danger: "inedible", keyFeatures: ["slender parallel branches","pale tan to vinaceous-brown","on dead wood","bitter taste"], distinguishingFeature: "Slender, parallel vertical branches (not cauliflower-clustered); pale tan to vinaceous-brown without bright pink tips; grows on dead wood/buried wood; bitter taste, unpleasant odor" },
-    { name: "Bitter-tasting Coral", scientific: "Ramaria pallida", danger: "toxic", keyFeatures: ["grey-lilac branch tips","pale overall","no pink-red tips"], distinguishingFeature: "Branch tips grey-lilac at maturity; pale overall coloration without pink-red tips; reported to cause significant GI distress and laxative effects" },
+    { name: "Bitter-tasting Coral", scientific: "Ramaria pallida", catalogId: "ramaria-pallida", danger: "toxic", keyFeatures: ["grey-lilac branch tips","pale overall","no pink-red tips"], distinguishingFeature: "Branch tips grey-lilac at maturity; pale overall coloration without pink-red tips; reported to cause significant GI distress and laxative effects" },
     { name: "Violet-branched Coral", scientific: "Ramaria fennica", catalogId: "ramaria-fennica", danger: "GI-upset", keyFeatures: ["violet to lilac/olive tones","long branches","with oak/chestnut"], distinguishingFeature: "Longer branches with violet, brown-violet, or lilac/olivaceous tones; typically with oak/chestnut; causes GI upset" }
   ],
   culinary: {
@@ -10132,6 +10139,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Blackening Russula",
       scientific: "Russula nigricans / R. dissimulans",
+      catalogId: "russula-nigricans",
       danger: "inedible",
       keyFeatures: ["reddens then blackens when cut","widely-spaced thick gills"],
       distinguishingFeature: "Flesh first reddens then blackens dramatically when cut; widely-spaced thick gills."
@@ -12246,7 +12254,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Yellow Morel", scientific: "Morchella esculentoides / Morchella americana", catalogId: "morchella-esculentoides", danger: "edible-when-cooked", keyFeatures: ["cap fully attached to stem","honeycomb pitted-and-ridged","continuous hollow chamber"], distinguishingFeature: "Cap fully attached to stem along its entire length; cap surface truly pitted-and-ridged in a honeycomb pattern (not wrinkled-brain-like); stem and cap form a single continuous hollow chamber" },
     { name: "Smooth Thimble-cap", scientific: "Verpa conica", catalogId: "verpa-conica", danger: "edible-with-caution", keyFeatures: ["cap attached only at apex (skirt)","smooth to faintly wrinkled cap","cottony-pithed stem"], distinguishingFeature: "Same skirt-like cap attachment (only at apex) and similar stem with cottony pith, but cap surface is smooth or only faintly wrinkled, never with deep brain-like folds; rarer in the PNW, generally in conifer or mixed habitats; shares the same neurological toxicity concerns" },
     { name: "False Morel / Brain Mushroom", scientific: "Gyromitra esculenta", catalogId: "gyromitra-esculenta", danger: "deadly", keyFeatures: ["reddish-brown brain-like lobed cap","chambered/stuffed stem","contains gyromitrin","potentially lethal"], distinguishingFeature: "Cap reddish-brown to chestnut, irregularly lobed/saddle-shaped and brain-like (no thimble-with-skirt geometry); cap surface convolutions are coarser and more lobed than the longitudinal folds of V. bohemica; stem stout and chambered/stuffed with internal folds, NOT a clean thimble-on-a-stick; contains gyromitrin (MMH), potentially lethal, and a carcinogen" },
-    { name: "Snowbank False Morel", scientific: "Gyromitra montana (= Gyromitra gigas)", danger: "toxic", keyFeatures: ["tan to reddish-brown brain-like lobed cap","stout chambered stem","near melting snow at elevation"], distinguishingFeature: "Robust, stocky mushroom with tan to reddish-brown brain-like lobed cap; stem stout, chambered/folded internally; fruits near melting snow at higher elevations; not a thimble-and-skirt shape" },
+    { name: "Snowbank False Morel", scientific: "Gyromitra montana (= Gyromitra gigas)", catalogId: "gyromitra-montana", danger: "toxic", keyFeatures: ["tan to reddish-brown brain-like lobed cap","stout chambered stem","near melting snow at elevation"], distinguishingFeature: "Robust, stocky mushroom with tan to reddish-brown brain-like lobed cap; stem stout, chambered/folded internally; fruits near melting snow at higher elevations; not a thimble-and-skirt shape" },
     { name: "Elfin Saddle", scientific: "Helvella lacunosa", catalogId: "helvella-lacunosa", danger: "inedible", keyFeatures: ["saddle-shaped lobed cap","gray to black","deeply fluted stem"], distinguishingFeature: "Cap saddle-shaped or irregularly two-to-three-lobed (not a tidy thimble), gray to black; stem deeply fluted with longitudinal channels rather than smooth and cottony-pithed" }
   ],
   culinary: {
