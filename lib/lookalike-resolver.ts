@@ -45,6 +45,7 @@ const SYNONYMS: Record<string, string> = {
   "boletus rubripes": "caloboletus rubripes",
   "fomitopsis officinalis": "laricifomes officinalis",
   "chlorophyllum rachodes": "chlorophyllum rhacodes", // orthographic variant
+  "boletus pulcherrimus": "rubroboletus pulcherrimus", // current accepted genus
 };
 
 export interface ResolvableSpecies {

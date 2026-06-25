@@ -7199,6 +7199,7 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
       {
         name: "Cortinarius gentilis",
         scientific: "Cortinarius gentilis",
+        catalogId: "cortinarius-gentilis",
         danger: "toxic",
         keyFeatures: ["resembles deadly webcaps","similar species"],
         distinguishingFeature: "Listed as a similar species; C. cinnamomeus resembles some deadly poisonous webcaps."
@@ -7230,6 +7231,102 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
       lastVerified: "2026-06-23",
       consensus: "moderate",
       disputeNotes: "Auto-compiled from Wikipedia/iNaturalist/GBIF; PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates."
+    }
+  },
+  {
+    id: "cortinarius-gentilis",
+    commonNames: [
+      "Goldband Webcap",
+      "Conifer Webcap"
+    ],
+    scientific: "Cortinarius gentilis",
+    family: "Cortinariaceae",
+    order: "Agaricales",
+    trophicMode: "mycorrhizal",
+    mycorrhizalPartners: [
+      "Conifers"
+    ],
+    hostTrees: [
+      {
+        common: "Conifer",
+        scientific: "Pinophyta"
+      }
+    ],
+    substrate: "Growing in moss under conifer trees, separately or in groups. Ectomycorrhizal.",
+    habitat: "A fungus of the subgenus Telamonia found growing separate or in groups in moss under conifer trees. Normally found in North America and Europe, including North America's Pacific Northwest and Rocky Mountains.",
+    elevationM: null,
+    regionsPNW: [
+      "Washington Cascades",
+      "Western Washington",
+      "Western Oregon"
+    ],
+    fruitingMonths: [
+      9,
+      10,
+      11
+    ],
+    peakMonths: [
+      9,
+      10
+    ],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        5,
+        18
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "Bright tan, umbonate, 1-5 cm wide.",
+      underside: "Gills distant, similarly coloured to the cap but sometimes reddish with age.",
+      stem: "Up to 10 cm long, resembling a root, with yellow veil remnants near the bottom.",
+      fleshColor: "Tan.",
+      sporePrintColor: "Rusty-brown.",
+      odor: "Of raw potatoes.",
+      sizeCm: "Cap 1-5 cm wide; stem up to 10 cm long."
+    },
+    edibility: "toxic",
+    toxicityNotes: "Toxicity is genuinely disputed: a 2003 Finnish study (Hintikka & Korhonen) found no toxicity, and the historical orellanine/deadly claim traced to a specimen later identified as the deadly C. speciosissimus. It remains an unconfirmed-orellanine webcap easily confused with deadly orellanine relatives, so treat as toxic and never eat.",
+    lookalikes: [
+      {
+        name: "Cortinarius speciosissimus",
+        scientific: "Cortinarius speciosissimus",
+        danger: "deadly",
+        keyFeatures: ["highly toxic webcap","deadly orellanine relative"],
+        distinguishingFeature: "A highly toxic webcap; a specimen labelled C. gentilis in an early toxicity study was reexamined and found to actually be this species, underscoring the risk of confusion within the genus."
+      }
+    ],
+    culinary: {
+      flavor: "Not documented.",
+      preparation: "Not recommended; treated as inedible owing to disputed toxicity and confusion with deadly relatives.",
+      preservation: null
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "Wikipedia — Cortinarius gentilis",
+        url: "https://en.wikipedia.org/wiki/Cortinarius_gentilis"
+      },
+      {
+        name: "iNaturalist — Cortinarius gentilis",
+        url: "https://www.inaturalist.org/taxa/335624"
+      },
+      {
+        name: "GBIF — Cortinarius gentilis",
+        url: "https://www.gbif.org/species/2529240"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 3,
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Human safety-reviewed 2026-06-25 with web research; edibility level verified against authoritative mycology/medical sources. Auto-compiled from Wikipedia/iNaturalist/GBIF; PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates. Historical toxicity claims (orellanine) disputed; a 2003 study found no toxicity, but treated as inedible due to genus confusion."
     }
   },
   {
@@ -10505,6 +10602,292 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
       lastVerified: "2026-06-22",
       consensus: "moderate",
       disputeNotes: "Auto-compiled from Wikipedia/iNaturalist/GBIF; identification/ecology source-derived; conditions are genus/habitat-typical estimates, not field-measured."
+    }
+  },
+  {
+    id: "gyromitra-gigas",
+    commonNames: [
+      "Snow mushroom",
+      "Snowbank false morel",
+      "Snow morel",
+      "Snow false morel",
+      "Giant's false morel",
+      "Calf brain",
+      "Bull nose",
+      "Walnut"
+    ],
+    scientific: "Gyromitra gigas",
+    family: "Discinaceae",
+    order: "Pezizales",
+    trophicMode: "saprotrophic",
+    mycorrhizalPartners: null,
+    hostTrees: [],
+    substrate: "Not documented in detail; a false morel that fruits in spring and early summer in habitats similar to true morels (Morchella ssp.).",
+    habitat: "A false morel found in Europe, so named for its resemblance to and shared spring/early-summer occurrence with true morels (Morchella ssp.) in similar habitats. NOT recorded from the Pacific Northwest (documented from Europe; a very similar, directly related North American species is D. montana).",
+    elevationM: null,
+    regionsPNW: [],
+    fruitingMonths: [
+      4,
+      5,
+      6,
+      7
+    ],
+    peakMonths: [
+      5
+    ],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        5,
+        18
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "Tannish, wrinkled, brain-like (convoluted/saddle-like) cap growing up to 10 cm (4 in) broad and 6 cm tall; characteristic of the false morels in resembling true morels.",
+      underside: "Not documented; the wrinkled, convoluted cap is the fertile (spore-bearing) surface rather than gills or pores.",
+      stem: "Whitish stalk, typically almost as thick as the cap, up to 10 cm long and broad.",
+      fleshColor: "Not documented.",
+      sporePrintColor: "Not documented; D. montana reportedly has larger spores than D. gigas.",
+      odor: "Not documented.",
+      sizeCm: "Cap up to 10 cm broad and 6 cm tall; stalk up to 10 cm long and broad."
+    },
+    edibility: "edible-when-cooked",
+    toxicityNotes: "Contains only trace gyromitrin (~1 mg/kg fresh, ~1,500x less than G. esculenta) and no human poisonings have been attributed to it; widely eaten in its range after thorough cooking/parboiling. Never eat raw or undercooked, and beware confusion with the deadly G. esculenta; regional toxin variability, a French sales ban, and an unproven hypothesized ALS link warrant caution.",
+    lookalikes: [
+      {
+        name: "Snow morel (North American)",
+        scientific: "Discina montana",
+        danger: "toxic",
+        keyFeatures: ["larger spores than D. gigas","edible only when cooked"],
+        distinguishingFeature: "A very similar and directly related species occurring in North America; it apparently has larger spores than D. gigas. Both are reportedly edible in small amounts if thoroughly cooked, but eating is not recommended due to similarity to more toxic mushroom species."
+      },
+      {
+        name: "True morels",
+        scientific: "Morchella ssp.",
+        danger: "edible",
+        keyFeatures: ["pitted honeycomb cap","hollow throughout"],
+        distinguishingFeature: "D. gigas is one of the false morels, resembling true morels and occurring in the spring and early summer in similar habitats; its cap is wrinkled/convoluted (brain-like) rather than the pitted, honeycombed cap of true Morchella."
+      }
+    ],
+    culinary: {
+      flavor: "Not documented.",
+      preparation: "Reportedly edible in small amounts only if thoroughly cooked; parboiling is highly recommended. Consumption is not recommended due to variability in toxin content and similarity to more toxic Gyromitra species.",
+      preservation: null
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "Wikipedia — Discina gigas",
+        url: "https://en.wikipedia.org/wiki/Discina_gigas"
+      },
+      {
+        name: "iNaturalist — Giant's False Morel (Maublancomyces gigas)",
+        url: "https://www.inaturalist.org/taxa/1613049"
+      },
+      {
+        name: "GBIF — Gyromitra gigas",
+        url: "https://www.gbif.org/species/12197740"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 3,
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Human safety-reviewed 2026-06-25 with web research; edibility level verified against authoritative mycology/medical sources. Auto-compiled from Wikipedia/iNaturalist/GBIF; PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates."
+    }
+  },
+  {
+    id: "gyromitra-infula",
+    commonNames: [
+      "Hooded false morel",
+      "Elfin saddle",
+      "Saddle-shaped false morel"
+    ],
+    scientific: "Gyromitra infula",
+    family: "Discinaceae",
+    order: "Pezizales",
+    trophicMode: "saprotrophic",
+    mycorrhizalPartners: null,
+    hostTrees: [
+      {
+        common: "White spruce",
+        scientific: "Picea glauca"
+      },
+      {
+        common: "Black spruce",
+        scientific: "Picea mariana"
+      },
+      {
+        common: "Sitka spruce",
+        scientific: "Picea sitchensis"
+      },
+      {
+        common: "Lodgepole pine",
+        scientific: "Pinus contorta"
+      },
+      {
+        common: "Jack pine",
+        scientific: "Pinus banksiana"
+      },
+      {
+        common: "Western white pine",
+        scientific: "Pinus monticola"
+      },
+      {
+        common: "Balsam fir",
+        scientific: "Abies balsamea"
+      },
+      {
+        common: "Grand fir",
+        scientific: "Abies grandis"
+      },
+      {
+        common: "Douglas-fir",
+        scientific: "Pseudotsuga menziesii"
+      },
+      {
+        common: "Western hemlock",
+        scientific: "Tsuga heterophylla"
+      },
+      {
+        common: "Western larch",
+        scientific: "Larix occidentalis"
+      },
+      {
+        common: "Western red cedar",
+        scientific: "Thuja plicata"
+      },
+      {
+        common: "Balsam poplar",
+        scientific: "Populus balsamifera"
+      },
+      {
+        common: "Quaking aspen",
+        scientific: "Populus tremuloides"
+      },
+      {
+        common: "Bigleaf maple",
+        scientific: "Acer macrophyllum"
+      },
+      {
+        common: "Alder",
+        scientific: "Alnus species"
+      },
+      {
+        common: "Paper birch",
+        scientific: "Betula papyrifera"
+      }
+    ],
+    substrate: "Rotting wood or hard-packed ground; commonly found on packed ground such as beside country roads or in campgrounds. Grows in or near coniferous woodland, often on rotten wood.",
+    habitat: "Widely distributed throughout boreal, montane and coastal forests in North America; the North American range extends north to Canada and south to Mexico, and it has also been reported from South America, Europe and Asia. Found growing singly to scattered in or near coniferous woodland in autumn, often on rotten wood or on packed ground. Associated conifers include Sitka spruce, Douglas-fir, western hemlock and western red cedar, placing it within Pacific Northwest forests.",
+    elevationM: null,
+    regionsPNW: [
+      "Puget Sound lowlands",
+      "Vancouver Island",
+      "Oregon Coast Range",
+      "Olympic Peninsula",
+      "Washington Cascades",
+      "Coastal British Columbia",
+      "Western Washington",
+      "Western Oregon"
+    ],
+    fruitingMonths: [
+      8,
+      9,
+      10,
+      11
+    ],
+    peakMonths: [
+      9,
+      10,
+      11
+    ],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        5,
+        18
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "Apothecium about 2.5-9 cm (1-3.5 in) wide and tall, dark reddish to orangish brown, saddle-shaped with 2-4 lobes; the ends of the saddle lobes are drawn out to sharp tips that project above the fruit body. Wavy or bumpy rather than brain-like; chambered or hollow within and frequently develops blackish-brown spots. (As a false morel in the Gyromitra group, note the saddle/brain-like cap and the gyromitrin association of the group.)",
+      underside: "Not gills: the fertile spore-bearing surface (hymenium) is on the outside of the cap; as the cap periphery joins the stipe it forms a hollow, roughly bell-shaped structure with the hymenium arching into folds and pads.",
+      stem: "Mostly hollow stipe, 2-8 cm high and 1-2.5 cm thick, reddish brown to whitish or even bluish but typically lighter than the cap; smooth on the outside, minutely tomentose (covered with very fine hairs), hollow with some chambers inside.",
+      fleshColor: "Context (flesh) 1-2 mm thick, brittle, whitish to brownish.",
+      sporePrintColor: "Ascospores hyaline (colorless); ellipsoidal, smooth, thin-walled, 17-22 by 7-9 μm, biguttulate with two large oil droplets.",
+      odor: "Lacks a notable odor or taste.",
+      sizeCm: "Cap 2.5-9 cm wide and tall; stipe 2-8 cm high by 1-2.5 cm thick."
+    },
+    edibility: "toxic",
+    toxicityNotes: "Long regarded as poisonous for suspected gyromitrin, but Dirks et al. 2023 (Mycologia) detected no gyromitrin in G. infula (now Paragyromitra infula) and listed it nontoxic. It remains classified toxic for safety: essentially indistinguishable without microscopy from gyromitrin-containing false morels in a genus that includes the potentially fatal G. esculenta, and no authority recommends eating it.",
+    lookalikes: [
+      {
+        name: "Brain mushroom (false morel)",
+        scientific: "Gyromitra esculenta",
+        catalogId: "gyromitra-esculenta",
+        danger: "toxic",
+        keyFeatures: ["brain-like convoluted cap","reddish-brown"],
+        distinguishingFeature: "Has a wrinkled surface with brain-like convolutions, not wavy or bumpy like P. infula."
+      },
+      {
+        name: "Paragyromitra ambigua",
+        scientific: "Paragyromitra ambigua",
+        danger: "toxic",
+        keyFeatures: ["purple-tinted stipe","needs microscopy"],
+        distinguishingFeature: "Very similar in appearance and usually not distinguishable without microscopy; said to have more pronounced purple tints in the stipe and larger spores (about 22-30 μm long)."
+      },
+      {
+        name: "Discina brunnea",
+        scientific: "Discina brunnea",
+        danger: "edible-with-caution",
+        keyFeatures: ["white stout stem","wrinkled cap, no points"],
+        distinguishingFeature: "More stout with a white stem and a wrinkled cap that usually lacks points."
+      },
+      {
+        name: "Elfin saddles",
+        scientific: "Helvella species",
+        danger: "inedible",
+        keyFeatures: ["grayer colors","thin fluted stipe"],
+        distinguishingFeature: "The saddle-shaped cap can cause confusion, but Helvella species typically have grayer colors and thinner, fluted stipes (e.g. H. maculata, which has distinctly white flesh)."
+      }
+    ],
+    culinary: {
+      flavor: "Lacks a notable taste.",
+      preparation: "Not recommended for consumption; historically regarded as poisonous owing to suspected gyromitrin content, although a 2023 study found no gyromitrin.",
+      preservation: null
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "Wikipedia — Paragyromitra infula",
+        url: "https://en.wikipedia.org/wiki/Paragyromitra_infula"
+      },
+      {
+        name: "iNaturalist — Saddle-shaped False Morel (Paragyromitra infula)",
+        url: "https://www.inaturalist.org/taxa/1613028"
+      },
+      {
+        name: "GBIF — Gyromitra infula",
+        url: "https://www.gbif.org/species/5258509"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 3,
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Human safety-reviewed 2026-06-25 with web research; edibility level verified against authoritative mycology/medical sources. Auto-compiled from Wikipedia/iNaturalist/GBIF; PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates."
     }
   },
   {
@@ -16422,6 +16805,124 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
     }
   },
   {
+    id: "lepiota-cristata",
+    commonNames: [
+      "Stinking Dapperling",
+      "Brown-eyed Parasol",
+      "Stinking Parasol",
+      "Malodorous Lepiota",
+      "Burnt-rubber Lepiota"
+    ],
+    scientific: "Lepiota cristata",
+    family: "Agaricaceae",
+    order: "Agaricales",
+    trophicMode: "saprotrophic",
+    mycorrhizalPartners: null,
+    hostTrees: [],
+    substrate: "Saprobic, deriving nutrients by decomposing dead or decayed organic material; observed on the soil of broadleaved and conifer (Pinopsida) trees, garden waste, leaf litter, and disturbed ground.",
+    habitat: "Fruits on the ground in disturbed areas, such as lawns, path and road edges, parks, and gardens; also woodlands, shady and damp gardens, short grass, leaf litter, paths, and ditches. Grows singly or in small groups. One of the most widely distributed Lepiota species, found in North America (north of Mexico), throughout Europe, northern Asia, and New Zealand.",
+    elevationM: null,
+    regionsPNW: [
+      "Puget Sound lowlands",
+      "Willamette Valley",
+      "Western Washington",
+      "Western Oregon"
+    ],
+    fruitingMonths: [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    peakMonths: [
+      9,
+      10
+    ],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        5,
+        18
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "White to cream base colour covered with concentrically arranged reddish-brown scales, the center darker reddish-brown; 1-5 cm (0.4-2.0 in) across at maturity. Initially bell-shaped to convex, later flattening and developing an umbo.",
+      underside: "Crowded gills, white to cream, free from the stipe, darkening and becoming brownish as the mushroom ages and spores mature.",
+      stem: "2-6 cm (0.8-2.4 in) long and 0.2-0.7 cm (0.1-0.3 in) thick, nearly smooth, pale white-tinged, with a transient membranous and deciduous ring.",
+      fleshColor: "Thin and white.",
+      sporePrintColor: "White (greyish green in the variety L. cristata var. viridispora).",
+      odor: "Strong, distinctive and unpleasant; described as rubbery (resembling burnt rubber), fishy, pungent, foul, fungusy, fruity, mealy and sweet.",
+      sizeCm: "Cap 1-5 cm across; stem 2-6 x 0.2-0.7 cm."
+    },
+    edibility: "toxic",
+    toxicityNotes: "Toxic/suspect; not for consumption. Associated with gastrointestinal poisoning. Although many small Lepiota are deadly amatoxin producers, direct chemical analysis (Sgambelluri et al. 2014) found NO amatoxins or phallotoxins in L. cristata, so it is GI-toxic rather than deadly. Historic poisonings also stem from confusion with edible Macrolepiota parasols.",
+    lookalikes: [
+      {
+        name: "Lepiota ignivolvata",
+        scientific: "Lepiota ignivolvata",
+        danger: "inedible",
+        keyFeatures: ["orange-red ring low on stem"],
+        distinguishingFeature: "Has a bright orange or red-brown ring low down on the stipe."
+      },
+      {
+        name: "Lepiota lilacea",
+        scientific: "Lepiota lilacea",
+        danger: "toxic",
+        keyFeatures: ["purple-brown colors","toxic"],
+        distinguishingFeature: "Rare, toxic species with a morphology similar to L. cristata but with purple to purple-brown colours."
+      },
+      {
+        name: "Lepiota saponella",
+        scientific: "Lepiota saponella",
+        danger: "inedible",
+        keyFeatures: ["soapy smell","dingy buff gills"],
+        distinguishingFeature: "Found on the west coast of France; distinguished by a soapy smell, dingy buff-coloured gills, smaller cap scales, and more triangular spores."
+      },
+      {
+        name: "False parasol",
+        scientific: "Chlorophyllum molybdites",
+        catalogId: "chlorophyllum-molybdites",
+        danger: "toxic",
+        keyFeatures: ["greyish-green spore print"],
+        distinguishingFeature: "Has a greyish-green spore print, similar to L. cristata var. viridispora; ordinary L. cristata has a white spore print."
+      }
+    ],
+    culinary: {
+      flavor: "Described as having a mild and pleasant taste despite its strong unpleasant odour.",
+      preparation: "Suspect/possibly poisonous; not for consumption.",
+      preservation: null
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "Wikipedia — Lepiota cristata",
+        url: "https://en.wikipedia.org/wiki/Lepiota_cristata"
+      },
+      {
+        name: "iNaturalist — Lepiota cristata",
+        url: "https://www.inaturalist.org/taxa/58694"
+      },
+      {
+        name: "GBIF — Lepiota cristata",
+        url: "https://www.gbif.org/species/2535471"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 3,
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Human safety-reviewed 2026-06-25 with web research; edibility level verified against authoritative mycology/medical sources. Auto-compiled from Wikipedia/iNaturalist/GBIF; PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates."
+    }
+  },
+  {
     id: "lepista-saeva",
     commonNames: [
       "Field Blewit",
@@ -18087,6 +18588,7 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
       {
         name: "Bell morel",
         scientific: "Gyromitra gigas",
+        catalogId: "gyromitra-gigas",
         danger: "edible-with-caution",
         keyFeatures: ["cap not free attached"],
         distinguishingFeature: "Similar in appearance, but unlike M. punctipes its cap is not freely (half-free) attached to the stipe."
@@ -18732,6 +19234,168 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
       lastVerified: "2026-06-23",
       consensus: "moderate",
       disputeNotes: "Auto-compiled from Wikipedia/iNaturalist/GBIF; PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates."
+    }
+  },
+  {
+    id: "paxillus-rubicundulus",
+    commonNames: [
+      "Alder Rollrim"
+    ],
+    scientific: "Paxillus rubicundulus",
+    family: "Paxillaceae",
+    order: "Boletales",
+    trophicMode: "mycorrhizal",
+    mycorrhizalPartners: [
+      "Alnus"
+    ],
+    hostTrees: [
+      {
+        common: "Alder",
+        scientific: "Alnus"
+      }
+    ],
+    substrate: "Not documented.",
+    habitat: "Mycorrhizal strictly with alder (Alnus) in damp ground along stream and riverbanks and pond edges; late summer to autumn.",
+    elevationM: null,
+    regionsPNW: [],
+    fruitingMonths: [
+      9,
+      10,
+      11
+    ],
+    peakMonths: [
+      9,
+      10
+    ],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        5,
+        18
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "Up to ~10 cm, depressed to funnel-shaped with an inrolled margin, velvety to distinctly scaly, ochraceous-yellow to reddish or rusty brown.",
+      underside: "Decurrent, forking/anastomosing gills, pale ochraceous becoming browner, bruising reddish-brown.",
+      stem: "Cylindrical, often paler than the cap; no ring.",
+      fleshColor: "Pale yellowish, browning when cut.",
+      sporePrintColor: "Pale rusty/ochraceous-brown.",
+      odor: "Not distinctive.",
+      sizeCm: "Cap 4-10 cm."
+    },
+    edibility: "toxic",
+    toxicityNotes: "Poisonous; do not eat. As a Paxillus it is presumed to share the genus risk of the potentially fatal immune-mediated hemolytic Paxillus syndrome documented in P. involutus, though no toxin has been isolated and the syndrome is not specifically confirmed in P. rubicundulus.",
+    lookalikes: [],
+    culinary: {
+      flavor: "Not documented.",
+      preparation: "Toxic; not for consumption.",
+      preservation: null
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "Discover the Wild - Alder Rollrim (Paxillus rubicundulus)",
+        url: "https://www.discoverthewild.co.uk/MushroomGuide/alder-rollrim"
+      },
+      {
+        name: "Boletales.com - Paxillus rubicundulus",
+        url: "https://boletales.com/genera/paxillus/p-rubicundulus/"
+      },
+      {
+        name: "Diagnostics (MDPI) - Fatal Immunohaemolysis / Paxillus Syndrome (2019)",
+        url: "https://www.mdpi.com/2075-4418/9/4/130"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 2,
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Human safety-reviewed 2026-06-25 with web research; edibility level verified against authoritative mycology/medical sources. Auto-compiled from iNaturalist/GBIF (Wikipedia source unavailable); PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates."
+    }
+  },
+  {
+    id: "paxillus-vernalis",
+    commonNames: [],
+    scientific: "Paxillus vernalis",
+    family: "Paxillaceae",
+    order: "Boletales",
+    trophicMode: "mycorrhizal",
+    mycorrhizalPartners: null,
+    hostTrees: [],
+    substrate: "Not documented; found in montane forests.",
+    habitat: "Mycorrhizal, fruiting in spring and early summer in montane and northern forests with quaking aspen (Populus tremuloides) and birch (Betula).",
+    elevationM: null,
+    regionsPNW: [
+      "Washington Cascades",
+      "Western Oregon"
+    ],
+    fruitingMonths: [],
+    peakMonths: [],
+    conditions: {
+      minRain7d: 20,
+      idealDaysSinceRain: [
+        5,
+        14
+      ],
+      tempRangeC: [
+        5,
+        18
+      ],
+      humidityMinPct: 80
+    },
+    identification: {
+      cap: "Depressed to funnel-shaped with a long-inrolled margin, velvety becoming smooth, paler yellowish-brown than P. involutus.",
+      underside: "Decurrent, forking gills, bruising brown.",
+      stem: "Cylindrical, bare (no ring).",
+      fleshColor: "Yellowish, browning when cut.",
+      sporePrintColor: "Dark vinaceous-brown.",
+      odor: "Not distinctive.",
+      sizeCm: "Cap to ~12 cm."
+    },
+    edibility: "deadly",
+    toxicityNotes: "Do not eat. Paxillus vernalis belongs to a genus in which all species are considered toxic and capable of causing Paxillus syndrome - a potentially fatal immune-mediated hemolytic anemia with kidney failure. It closely resembles the poisonous P. involutus and is presumed to share its danger; there is no safe preparation, no antidote, and reactions can occur unpredictably even after prior uneventful meals.",
+    lookalikes: [
+      {
+        name: "Brown roll-rim",
+        scientific: "Paxillus involutus",
+        catalogId: "paxillus-involutus",
+        danger: "toxic",
+        keyFeatures: ["inrolled brown cap","bruises brown","likely poisonous"],
+        distinguishingFeature: "Paxillus vernalis closely resembles the poisonous Paxillus involutus and is considered likely to also be poisonous."
+      }
+    ],
+    culinary: {
+      flavor: "Not documented.",
+      preparation: "Considered likely poisonous; not for consumption.",
+      preservation: null
+    },
+    conservationNotes: null,
+    sources: [
+      {
+        name: "UBC Beaty Museum - Mushrooms Up! (all Paxillus considered toxic)",
+        url: "https://explore.beatymuseum.ubc.ca/mushroomsup/P_involutus.html"
+      },
+      {
+        name: "Wikipedia - Paxillus vernalis",
+        url: "https://en.wikipedia.org/wiki/Paxillus_vernalis"
+      },
+      {
+        name: "Diagnostics (MDPI) - Paxillus Syndrome",
+        url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6963215/"
+      }
+    ],
+    autoCompiled: true,
+    verification: {
+      sourcesAgreeing: 3,
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Human safety-reviewed 2026-06-25 with web research; edibility level verified against authoritative mycology/medical sources. Auto-compiled from Wikipedia/iNaturalist/GBIF; PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates."
     }
   },
   {
@@ -21574,8 +22238,8 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
       odor: "Indistinct, or slightly fragrant; taste reportedly mild.",
       sizeCm: "Cap to 25 cm; stem 7-20 cm long, up to 10 cm thick at base."
     },
-    edibility: "toxic",
-    toxicityNotes: "Poisonous and potentially fatal, implicated in at least one death (a 1994 case where a man died of an infarction of the midgut after consuming it). Causes severe gastrointestinal symptoms. Known to contain low levels of muscarine, a peripheral nervous system toxin. In general, blue-staining red-pored boletes should be avoided for consumption.",
+    edibility: "deadly",
+    toxicityNotes: "Poisonous and potentially deadly: the only North American bolete implicated in a human death (a 1994 Oregon man died of midgut/small-bowel infarction after eating it; his wife survived). Contains low levels of muscarine and causes severe gastrointestinal illness; like all blue-staining red-pored boletes it must never be eaten.",
     lookalikes: [
       {
         name: "Rubroboletus eastwoodiae",
@@ -21630,9 +22294,9 @@ export const SYNTHESIZED_SPECIES: MushroomSpecies[] = [
     autoCompiled: true,
     verification: {
       sourcesAgreeing: 3,
-      lastVerified: "2026-06-23",
-      consensus: "moderate",
-      disputeNotes: "Auto-compiled from Wikipedia/iNaturalist/GBIF; PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates."
+      lastVerified: "2026-06-25",
+      consensus: "strong",
+      disputeNotes: "Human safety-reviewed 2026-06-25; reclassified deadly per documented 1994 fatality. Auto-compiled from Wikipedia/iNaturalist/GBIF; PENDING HUMAN REVIEW (deadly/toxic); identification/toxicity source-derived; conditions are genus/habitat-typical estimates."
     }
   },
   {

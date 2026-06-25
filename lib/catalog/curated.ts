@@ -2217,6 +2217,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Red-pored Bolete",
       scientific: "Boletus pulcherrimus",
+      catalogId: "rubroboletus-pulcherrimus",
       danger: "toxic",
       keyFeatures: ["red to orange pores","flesh stains blue instantly","implicated in fatality"],
       distinguishingFeature: "Red to orange pores, instantly and strongly blue-staining flesh; can cause severe GI distress and has been implicated in a fatality."
@@ -3107,6 +3108,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Stinking dapperling / Toxic small Lepiotas",
       scientific: "Lepiota cristata complex",
+      catalogId: "lepiota-cristata",
       danger: "toxic",
       keyFeatures: ["small cap 2-5 cm","pinkish-brown scales","rubbery chemical odor","flesh does not redden"],
       distinguishingFeature: "Much smaller (cap 2-5 cm); pinkish to reddish-brown scales on a white background; unpleasant rubbery or chemical odor; flesh does not redden. Some members of the small-Lepiota group (e.g., L. brunneoincarnata, L. subincarnata) contain lethal amatoxins. Size alone distinguishes them from the large C. brunneum."
@@ -3789,6 +3791,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Gentle webcap",
       scientific: "Cortinarius gentilis",
+      catalogId: "cortinarius-gentilis",
       danger: "toxic",
       keyFeatures: ["small cap under 4 cm","smooth hygrophanous cap","yellow veil","conifer forests"],
       distinguishingFeature: "Small (cap <3-4 cm), smooth and hygrophanous (not scaly) cap, yellow to orange-brown, with a longer stem and yellow veil. Formerly thought to be deadly (orellanine-positive in older literature) but now placed in Telamonia rather than Orellani; still considered suspect and should be avoided. PNW conifer forests."
@@ -4988,6 +4991,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Hooded false morel",
       scientific: "Gyromitra infula (and G. ambigua)",
+      catalogId: "gyromitra-infula",
       danger: "toxic",
       keyFeatures: ["saddle/mitre-shaped lobed cap","fall fruiting","on wood"],
       distinguishingFeature: "Cap 2-4 lobed and distinctly saddle-shaped or mitre-shaped (not deeply brain-like); fruits in late summer through fall (not spring); typically on wood or very rotten wood. Also contains gyromitrin/MMH and is toxic."
@@ -5002,6 +5006,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Bull-nose false morel / Snow morel (European sense)",
       scientific: "Gyromitra gigas",
+      catalogId: "gyromitra-gigas",
       danger: "toxic",
       keyFeatures: ["squarish lobed yellow-brown cap","fat short stem","snowbank complex"],
       distinguishingFeature: "European species in the same 'snowbank' complex as G. montana and G. korfii; squarish, lobed yellow-brown cap, fat short stem. Contains gyromitrin (per StatPearls) although documented human poisonings are rare. Treat as toxic."
@@ -5149,7 +5154,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Compressed Elfin Saddle", scientific: "Helvella compressa", catalogId: "helvella-compressa", danger: "edible-with-caution", keyFeatures: ["small and slender","faintly grooved cylindrical stem","small smooth gray saddle"], distinguishingFeature: "Much smaller and slenderer; stem cylindrical and only faintly grooved (NOT deeply lacunose); cap small, smooth, gray to brown saddle; same MMH concerns" },
     { name: "False Morel / Brain Mushroom", scientific: "Gyromitra esculenta", catalogId: "gyromitra-esculenta", danger: "deadly", keyFeatures: ["reddish-brown brain-like cap","stout chambered stem","spring fruiting","high gyromitrin"], distinguishingFeature: "Cap reddish-brown to chestnut, brain-like with tightly convoluted lobes (NOT a clean saddle); stem stout, whitish, chambered internally with folds but NOT deeply fluted/lacunose on the outside; primarily a spring species (April-June) rather than fall/winter; contains higher concentrations of gyromitrin/MMH and is potentially lethal" },
     { name: "Snowbank False Morel", scientific: "Gyromitra montana (= Gyromitra gigas)", danger: "toxic", keyFeatures: ["tan brain-like lobed cap","thick chambered stem","near melting snow","not saddle-shaped"], distinguishingFeature: "Robust, stocky; tan to reddish-brown brain-like lobed cap; thick whitish stem chambered internally; fruits near melting snow in spring at higher elevations; not saddle-shaped and not deeply lacunose-stemmed" },
-    { name: "Hooded False Morel", scientific: "Gyromitra infula", danger: "toxic", keyFeatures: ["saddle-shaped reddish-brown cap","smooth/faintly grooved stem","fall on rotten wood"], distinguishingFeature: "Saddle-shaped cap somewhat similar in outline, but cap reddish-brown to chestnut (NOT black/gray) and smooth-to-folded rather than convoluted; stem smooth or only faintly grooved, NOT deeply fluted; fall fruiting on rotten wood and conifer debris; contains MMH" }
+    { name: "Hooded False Morel", scientific: "Gyromitra infula", catalogId: "gyromitra-infula", danger: "toxic", keyFeatures: ["saddle-shaped reddish-brown cap","smooth/faintly grooved stem","fall on rotten wood"], distinguishingFeature: "Saddle-shaped cap somewhat similar in outline, but cap reddish-brown to chestnut (NOT black/gray) and smooth-to-folded rather than convoluted; stem smooth or only faintly grooved, NOT deeply fluted; fall fruiting on rotten wood and conifer debris; contains MMH" }
   ],
   culinary: {
     flavor: "Mild, chewy, and bland according to Arora and other PNW authors; flavor is not a compelling reason to risk the toxicity. Texture is described as rubbery to slightly crisp after thorough cooking",
@@ -8138,6 +8143,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Stinking dapperling (and small toxic Lepiota spp.)",
       scientific: "Lepiota cristata",
+      catalogId: "lepiota-cristata",
       danger: "deadly",
       keyFeatures: ["small cap 2-5 cm","rust-brown scales on white","foul rubbery odor","lethal amatoxins"],
       distinguishingFeature: "Much smaller (cap 2-5 cm) with rust-brown scales on white; foul rubbery odor. Several small Lepiota species (L. brunneoincarnata, L. subincarnata, L. josserandii) contain LETHAL amatoxins. Never eat any small parasol-like mushroom; the size rule (only mature caps >10 cm) is a critical safety filter."
@@ -9050,6 +9056,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Aspen / vernal roll-rim",
       scientific: "Paxillus vernalis",
+      catalogId: "paxillus-vernalis",
       danger: "deadly",
       keyFeatures: ["stouter stem 2-4 cm","darker spore print","under aspen and birch","Paxillus syndrome deadly"],
       distinguishingFeature: "Nearly identical macroscopically; slightly stouter stem (2-4 cm thick), darker spore print, grows specifically under quaking aspen and paper birch in northern and montane areas; same Paxillus syndrome toxicity."
@@ -9057,6 +9064,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Alder roll-rim",
       scientific: "Paxillus rubicundulus",
+      catalogId: "paxillus-rubicundulus",
       danger: "deadly",
       keyFeatures: ["only with alders","reddish-brown finer-scaled cap","deadly"],
       distinguishingFeature: "Mycorrhizal exclusively with alders (Alnus spp.); smaller spores (5.5-8.5 x 4-5 microns); cap often more reddish-brown with finer scales. Same toxicity profile - treat as deadly."
