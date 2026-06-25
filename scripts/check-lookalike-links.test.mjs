@@ -1,9 +1,12 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import { PNW_CATALOG } from "../lib/species-catalog.ts";
 import { SPECIES_IMAGES } from "../lib/species-images.ts";
 import { SPECIES_GALLERY } from "../lib/species-gallery.ts";
 
+const ROOT = path.resolve(import.meta.dirname, "..");
 const ID_TO_SPECIES = new Map(PNW_CATALOG.map((s) => [s.id, s]));
 const hasImage = (id) =>
   Boolean(SPECIES_IMAGES[id] || (SPECIES_GALLERY[id]?.length ?? 0) > 0);
@@ -49,11 +52,17 @@ test("keyFeatures, when present, are 1-4 non-empty short cues", () => {
   assert.deepEqual(bad, [], `malformed keyFeatures:\n${bad.join("\n")}`);
 });
 
-test("no auto-compiled species is published with toxic/deadly/psychoactive edibility", () => {
-  // Review gate: pipeline-generated dangerous species must stay in pending-review.
+test("no UNREVIEWED auto-compiled dangerous species is published", () => {
+  // Review gate: pipeline-generated dangerous species stay in pending-review until
+  // they pass safety review (their id is recorded in approved.json).
   const GATED = new Set(["toxic", "deadly", "psychoactive"]);
-  const leaked = PNW_CATALOG.filter((s) => s.autoCompiled && GATED.has(s.edibility)).map((s) => s.id);
-  assert.deepEqual(leaked, [], `auto-compiled dangerous species leaked into catalog: ${leaked.join(", ")}`);
+  const approved = new Set(
+    JSON.parse(readFileSync(path.join(ROOT, "lib/catalog/pending-review/approved.json"), "utf8")),
+  );
+  const leaked = PNW_CATALOG
+    .filter((s) => s.autoCompiled && GATED.has(s.edibility) && !approved.has(s.id))
+    .map((s) => s.id);
+  assert.deepEqual(leaked, [], `unreviewed dangerous species leaked into catalog: ${leaked.join(", ")}`);
 });
 
 test("no two catalog species share the same binomial", () => {

@@ -101,7 +101,16 @@ async function main() {
       JSON.parse(await readFile(path.join(ROOT, ".cache/lookalikes/review-gate-ids.json"), "utf8")),
     );
   } catch {}
-  const isPending = (s) => GATED.has(s.edibility) || reviewGateIds.has(s.id);
+  // Human sign-off: ids in approved.json have passed safety review and publish
+  // even though they're dangerous/review-gated. (Committed = the sign-off record.)
+  let approvedIds = new Set();
+  try {
+    approvedIds = new Set(
+      JSON.parse(await readFile(path.join(ROOT, "lib/catalog/pending-review/approved.json"), "utf8")),
+    );
+  } catch {}
+  const isPending = (s) =>
+    (GATED.has(s.edibility) || reviewGateIds.has(s.id)) && !approvedIds.has(s.id);
   const published = ok.filter((s) => !isPending(s));
   const pending = ok.filter((s) => isPending(s));
 

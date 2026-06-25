@@ -70,6 +70,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Destroying Angel (European)",
       scientific: "Amanita virosa",
+      catalogId: "amanita-virosa",
       danger: "deadly",
       keyFeatures: ["gills always white","white sac-like volva","white spore print","radish smell"],
       distinguishingFeature: "Pure white gills that REMAIN WHITE at every stage (never pink or brown), a sack-like white volva buried at the base of the stem (often requires digging to see), WHITE spore print, and a faint radish smell rather than anise/almond. In the egg/button stage it looks superficially like a horse mushroom button and is the single most dangerous confusion. Note: in the Pacific Northwest the analogous deadly destroying angels are A. ocreata (West Coast spring) and A. bisporigera; A. virosa sensu stricto is a European species. ALL of them are lethal."
@@ -85,6 +86,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Yellow Stainer",
       scientific: "Agaricus xanthodermus",
+      catalogId: "agaricus-xanthodermus",
       danger: "toxic",
       keyFeatures: ["stains bright chrome yellow","phenol/ink smell","smell intensifies cooking"],
       distinguishingFeature: "Looks almost identical above ground but instantly stains BRIGHT CHROME YELLOW when the base of the stem is cut or the cap rim is scratched (color appears within seconds, then fades to dull brown). Smells strongly of phenol/iodine/ink/hospital disinfectant, especially when cooking - the smell intensifies on heating. Causes severe gastrointestinal distress (vomiting, cramps, diarrhea) in most people. The single most common toxic Agaricus confusion in pastures and lawns. A. arvensis bruises only slowly and faintly yellow and smells of anise/almond."
@@ -266,6 +268,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Yellow-Staining Agaricus / Yellow-Stainer",
       scientific: "Agaricus xanthodermus",
+      catalogId: "agaricus-xanthodermus",
       danger: "toxic",
       keyFeatures: ["smooth whitish cap","vivid chrome-yellow stem base","phenolic/carbolic odor"],
       distinguishingFeature: "Smooth whitish cap (lacks the dense brown concentric scales of augustus); flesh at the stem base stains immediate, vivid chrome-yellow on cutting (fades to dingy brown); strong PHENOLIC / ink / carbolic-soap odor (especially at stem base and when cooked) - the opposite of augustus's sweet almond scent. Causes significant gastrointestinal illness."
@@ -273,6 +276,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Moller's Agaricus / Inky Agaricus",
       scientific: "Agaricus moelleri (= A. praeclaresquamosus, formerly A. placomyces sensu auct. amer.)",
+      catalogId: "agaricus-moelleri",
       danger: "toxic",
       keyFeatures: ["dark grey-black cap scales","yellow-staining base","phenolic odor"],
       distinguishingFeature: "Cap covered with DARK GREY to blackish-brown small scales on a pale background (not warm tawny/cinnamon); flesh stains yellow at stem base; PHENOLIC / ink-like odor. Member of the toxic Xanthodermatei. Distinguish from augustus by greyer scale color, smaller stature, yellow-staining base, and the foul phenolic smell vs augustus's almond/anise scent."
@@ -280,6 +284,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Flat-topped Agaricus",
       scientific: "Agaricus praeclaresquamosus",
+      catalogId: "agaricus-praeclaresquamosus",
       danger: "toxic",
       keyFeatures: ["dark grey-brown radial scales","yellow-staining base","inky/carbolic odor"],
       distinguishingFeature: "Another phenolic Xanthodermatei member with dark grey-brown radial scales, yellow-staining stem base, and an inky/carbolic odor. Lacks the almond scent of augustus."
@@ -409,6 +414,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Eastern Destroying Angel",
       scientific: "Amanita virosa",
+      catalogId: "amanita-virosa",
       danger: "deadly",
       keyFeatures: ["gills never pink/brown","white spore print","basal volva/cup"],
       distinguishingFeature: "White gills that never turn pink or brown, white spore print, and a basal volva/cup. Causes amatoxin poisoning with delayed-onset liver and kidney failure. Young buttons can be intermixed in the same grassy habitat."
@@ -416,6 +422,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Yellow Stainer",
       scientific: "Agaricus xanthodermus",
+      catalogId: "agaricus-xanthodermus",
       danger: "toxic",
       keyFeatures: ["stains bright chrome yellow","phenol/ink smell"],
       distinguishingFeature: "Stains bright chrome yellow when cut or bruised, especially at the base of the stem; smells strongly of phenol/iodine/ink/hospital. Causes GI distress. A. campestris does NOT stain yellow and smells pleasantly mushroomy."
@@ -529,7 +536,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Sheep Polypore", scientific: "Albatrellus ovinus", catalogId: "albatrellus-ovinus", danger: "edible-when-cooked", keyFeatures: ["cream to buff cap","pores bruise lemon-yellow","with spruce"], distinguishingFeature: "Cream to buff cap (never blue); pores bruise lemon-yellow; associated mainly with spruce." },
     { name: "Pink-tinged Polypore", scientific: "Albatrellopsis confluens", catalogId: "albatrellopsis-confluens", danger: "edible-when-cooked", keyFeatures: ["pinkish-tan to apricot cap","fused clusters","persistently bitter"], distinguishingFeature: "Pinkish-tan to apricot cap without any blue tones; often in fused clusters; persistently bitter." },
     { name: "Scaly Yellow Polypore", scientific: "Albatrellus ellisii", catalogId: "albatrellus-ellisii", danger: "edible", keyFeatures: ["yellow-green scaly cap","bruises green","high-elevation conifer"], distinguishingFeature: "Yellow-green to olive-brown scaly cap; bruises green; high-elevation Sierra/Cascade conifer forests." },
-    { name: "Western Albatrellus", scientific: "Albatrellus subrubescens", danger: "edible", keyFeatures: ["creamy to pale violet cap","bruises orange","under pines"], distinguishingFeature: "Cap creamy to pinkish or pale violet (no blue); flesh bruises orange; usually under pines." },
+    { name: "Western Albatrellus", scientific: "Albatrellus subrubescens", catalogId: "albatrellus-subrubescens", danger: "toxic", keyFeatures: ["creamy to pale violet cap","bruises orange","under pines"], distinguishingFeature: "Cap creamy to pinkish or pale violet (no blue); flesh bruises orange; usually under pines." },
     { name: "Blue Chanterelle", scientific: "Polyozellus multiplex", catalogId: "polyozellus-multiplex", danger: "edible", keyFeatures: ["deep purple-blue throughout","wrinkled/veined underside","fused rosettes"], distinguishingFeature: "Deep purple-blue throughout, with wrinkled/veined underside (not true pores), grows in dense fused rosettes; superficially similar color but very different structure." }
   ],
   culinary: {
@@ -604,7 +611,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   toxicityNotes: "Bitter and unpalatable when raw; bitterness largely diminishes with cooking. No significant toxicity reported, but easily confused with the bitter, inedible Albatrellus confluens / Albatrellopsis confluens; misidentification can lead to disappointing or GI-upsetting meals. North American collections historically called 'A. ovinus' may represent A. avellaneus, A. confluens, or sister species - molecular work suggests true A. ovinus sensu stricto is largely European/Eurasian and Picea-restricted; verify with local experts.",
   lookalikes: [
     { name: "Pink-tinged Polypore (Forager's Polypore)", scientific: "Albatrellopsis confluens (=Albatrellus confluens)", catalogId: "albatrellopsis-confluens", danger: "inedible", keyFeatures: ["pinkish-tan to apricot cap","bitter even cooked","fused clusters"], distinguishingFeature: "Pinkish-tan to apricot or salmon cap, flesh distinctly bitter even after cooking, less pronounced yellow staining; often grows in fused clusters and overlaps in habitat." },
-    { name: "Western Albatrellus", scientific: "Albatrellus subrubescens", danger: "edible", keyFeatures: ["violet/pinkish cap tinge","bruises orange","amyloid spores","under pines"], distinguishingFeature: "Cap often with violet or pinkish tinge, bruises orange; spores amyloid (vs. inamyloid in A. ovinus); usually under pines." },
+    { name: "Western Albatrellus", scientific: "Albatrellus subrubescens", catalogId: "albatrellus-subrubescens", danger: "toxic", keyFeatures: ["violet/pinkish cap tinge","bruises orange","amyloid spores","under pines"], distinguishingFeature: "Cap often with violet or pinkish tinge, bruises orange; spores amyloid (vs. inamyloid in A. ovinus); usually under pines." },
     { name: "Blue-capped Polypore", scientific: "Albatrellus flettii (=Albatrellopsis flettii)", catalogId: "albatrellus-flettii", danger: "edible", keyFeatures: ["blue to blue-green cap","fading to buff","PNW conifers"], distinguishingFeature: "Distinct blue to blue-green cap when young, fading to buff; common PNW species under conifers." },
     { name: "Wood Hedgehog", scientific: "Hydnum repandum", catalogId: "hydnum-repandum", danger: "edible", keyFeatures: ["soft white teeth/spines","tan-orange cap","no yellow staining"], distinguishingFeature: "Underside with soft white teeth/spines rather than pores; cap typically tan-orange, never stains yellow." },
     { name: "Lemon-yellow Albatrellus", scientific: "Albatrellus citrinus", catalogId: "albatrellus-citrinus", danger: "inedible", keyFeatures: ["strongly yellow overall","Picea-associated"], distinguishingFeature: "More strongly yellow-pigmented overall, also Picea-associated; recently segregated from A. ovinus in Europe by molecular data." }
@@ -986,6 +993,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Sunshine amanita",
       scientific: "Amanita aprica",
+      catalogId: "amanita-aprica",
       danger: "toxic",
       keyFeatures: ["bright yellow-orange cap","adnate fused veil patches","spring conifer forests"],
       distinguishingFeature: "Cap bright yellow to orange-yellow with adnate (not removable) yellowish veil patches that are smoothly fused to the cap cuticle; spring-fruiting in PNW conifer forests; contains the same ibotenic acid/muscimol toxins."
@@ -993,6 +1001,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Gemmed amanita",
       scientific: "Amanita gemmata group",
+      catalogId: "amanita-gemmata",
       danger: "toxic",
       keyFeatures: ["pale yellow cap with white warts","small","low collar volva"],
       distinguishingFeature: "Cap pale yellow to buff with white warts; smaller (3-10 cm); basal volva a low collar; some collections contain ibotenic acid/muscimol and have caused poisonings."
@@ -1137,6 +1146,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Woodland white amanita / Western woodland amanita",
       scientific: "Amanita silvicola",
+      catalogId: "amanita-silvicola",
       danger: "toxic",
       keyFeatures: ["white throughout","dry floccose-cottony cap","poorly defined volva","fall under conifers"],
       distinguishingFeature: "Also white throughout but cap is dry and floccose-cottony (not smooth or viscid), often with shaggy white universal-veil remnants on the cap surface; volva is poorly defined, breaking up into rings/zones on the bulbous base rather than forming a clean sack; usually fruits in fall under conifers (Douglas-fir, hemlock) in the PNW, not in spring under oaks. Suspected toxic; do not eat."
@@ -1304,6 +1314,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Jeweled amanita / Gemmed amanita",
       scientific: "Amanita gemmata (A. gemmata-pantherina complex)",
+      catalogId: "amanita-gemmata",
       danger: "toxic",
       keyFeatures: ["lemon-yellow to buff cap","fragile evanescent ring","collar volva"],
       distinguishingFeature: "Cap LEMON-YELLOW to pale buff-yellow, often paler and smaller (3-10 cm); fragile evanescent ring; volva a less pronounced collar. In western North America A. gemmata and A. pantherina intergrade and may represent a single variable species complex; treat all yellow-to-brown small-to-medium booted amanitas with concentric bulb collars as toxic."
@@ -1545,6 +1556,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Western woodland Amanita",
       scientific: "Amanita silvicola",
+      catalogId: "amanita-silvicola",
       danger: "toxic",
       keyFeatures: ["white Amanita","powdery-pulverulent cap","less rooting base"],
       distinguishingFeature: "Very similar white Amanita of the same PNW conifer habitats and section Lepidella; cap more powdery-pulverulent and less obviously warted; stem base less prominently rooting; toxicity status uncertain but presumed to share or resemble A. smithiana toxin profile and is treated as toxic by regional authorities."
@@ -1911,6 +1923,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Satan's Bolete",
       scientific: "Rubroboletus satanas",
+      catalogId: "rubroboletus-satanas",
       danger: "toxic",
       keyFeatures: ["red pore surface","red reticulated stem","flesh strongly blues"],
       distinguishingFeature: "Red pore surface, red reticulated stem, flesh strongly blues when cut; causes severe gastrointestinal poisoning. Not normally in the same ponderosa-pine habitat but worth knowing as a Boletus-lookalike."
@@ -1994,7 +2007,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Butter-foot Bolete", scientific: "Boletus fibrillosus", catalogId: "boletus-fibrillosus", danger: "edible", keyFeatures: ["dry velvety dark-brown cap","brownish stem with darker reticulation"], distinguishingFeature: "Dry, finely hairy/velvety dark-brown cap; brownish (not whitish) stem with darker reticulation; edible" },
     { name: "Admirable Bolete", scientific: "Aureoboletus mirabilis", catalogId: "aureoboletus-mirabilis", danger: "edible", keyFeatures: ["reddish-brown shaggy dry cap","yellow pores","on rotten hemlock logs"], distinguishingFeature: "Dark reddish-brown shaggy/fibrillose dry cap, yellow pores, often fruits on rotten hemlock logs (saprotrophic-leaning); edible" },
     { name: "Bitter Bolete", scientific: "Tylopilus felleus", catalogId: "tylopilus-felleus", danger: "inedible", keyFeatures: ["pore surface pink with age","dark coarse stem reticulation","pink spore print","intensely bitter"], distinguishingFeature: "Pore surface becomes pink with age, dark brown coarse reticulation on stem, pink spore print, intensely bitter taste; primarily eastern N. America but worth checking - a nibble test reveals it" },
-    { name: "Red-pored Bolete", scientific: "Rubroboletus pulcherrimus", danger: "toxic", keyFeatures: ["bright red to orange-red pores","flesh stains blue instantly","reddish stem reticulation"], distinguishingFeature: "Bright red to orange-red pore surface, flesh stains blue instantly when cut, stem with reddish reticulation; causes severe GI distress (one historical fatality)" },
+    { name: "Red-pored Bolete", scientific: "Rubroboletus pulcherrimus", catalogId: "rubroboletus-pulcherrimus", danger: "toxic", keyFeatures: ["bright red to orange-red pores","flesh stains blue instantly","reddish stem reticulation"], distinguishingFeature: "Bright red to orange-red pore surface, flesh stains blue instantly when cut, stem with reddish reticulation; causes severe GI distress (one historical fatality)" },
     { name: "Bitter Beach Bolete", scientific: "Caloboletus rubripes", catalogId: "caloboletus-rubripes", danger: "inedible", keyFeatures: ["yellow pores bruise blue","red stem base","intensely bitter","conifers on West Coast"], distinguishingFeature: "Yellow pore surface bruising blue, red base of stem, intensely bitter taste; associated with conifers on the West Coast" },
     { name: "Zeller's Bolete", scientific: "Xerocomellus zelleri", catalogId: "xerocomellus-zelleri", danger: "edible", keyFeatures: ["dry black to dark-brown cap","red marginal cracks","yellow pores","slender stem"], distinguishingFeature: "Much smaller, dry black to dark-brown cap with red marginal cracks, yellow pores, slender stem; edible but mediocre" }
   ],
@@ -2070,7 +2083,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Zeller's Bolete", scientific: "Xerocomellus zelleri", catalogId: "xerocomellus-zelleri", danger: "edible", keyFeatures: ["dark black to dark-brown dry cap","red marginal cracks","yellow pores","terrestrial in conifer duff"], distinguishingFeature: "Much smaller; dark black to dark-brown dry cap, often with red marginal cracks; slender stem; yellow pores; terrestrial in conifer duff" },
     { name: "Bitter Bolete", scientific: "Tylopilus felleus", catalogId: "tylopilus-felleus", danger: "inedible", keyFeatures: ["pore surface aging pink","pink spore print","intensely bitter"], distinguishingFeature: "Pore surface aging pink (not yellow/olive), pink spore print, intensely bitter taste; primarily eastern North America" },
     { name: "Sheep Polypore", scientific: "Albatrellus pes-caprae", catalogId: "albatrellus-pes-caprae", danger: "edible", keyFeatures: ["matted maroon-brown cap","tough leathery context","eccentric stipe","white to cream pores"], distinguishingFeature: "Superficially similar matted-tomentose maroon-brown cap, but is a polypore with a tough leathery context and a typically eccentric stipe; pore surface white to cream, not yellow" },
-    { name: "Red-pored Bolete", scientific: "Rubroboletus pulcherrimus", danger: "toxic", keyFeatures: ["bright red to orange-red pores","flesh bruises deep blue","reddish stem reticulation"], distinguishingFeature: "Bright red to orange-red pore surface, flesh instantly bruises deep blue, reddish stem reticulation; causes severe GI illness (one historical fatality)" }
+    { name: "Red-pored Bolete", scientific: "Rubroboletus pulcherrimus", catalogId: "rubroboletus-pulcherrimus", danger: "toxic", keyFeatures: ["bright red to orange-red pores","flesh bruises deep blue","reddish stem reticulation"], distinguishingFeature: "Bright red to orange-red pore surface, flesh instantly bruises deep blue, reddish stem reticulation; causes severe GI illness (one historical fatality)" }
   ],
   culinary: {
     flavor: "Pleasantly mild with a characteristic lemony note when cooked; texture can be juicy to slightly slimy. Considered a choice edible by modern PNW field guides (Arora, Trudell & Ammirati), though Murrill historically called it 'tasteless'.",
@@ -2188,6 +2201,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Satan's Bolete",
       scientific: "Rubroboletus satanas",
+      catalogId: "rubroboletus-satanas",
       danger: "toxic",
       keyFeatures: ["bright red to orange pores","flesh stains blue instantly","pale chalky cap"],
       distinguishingFeature: "Has bright red to orange pores and instantly blue-staining flesh; pale chalky cap rather than dark mahogany; causes severe GI illness."
@@ -2317,6 +2331,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Satan's Bolete",
       scientific: "Rubroboletus satanas",
+      catalogId: "rubroboletus-satanas",
       danger: "toxic",
       keyFeatures: ["red pore surface","red stem reticulation","flesh bruises blue"],
       distinguishingFeature: "Red pore surface, stem with red reticulation, flesh bruises blue; causes severe gastrointestinal distress. Not typically found in PNW spring montane habitat, but worth noting."
@@ -2555,6 +2570,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Common Earthball",
       scientific: "Scleroderma citrinum",
+      catalogId: "scleroderma-citrinum",
       danger: "toxic",
       keyFeatures: ["thick tough leathery rind","interior turns purplish-black","much smaller"],
       distinguishingFeature: "Thick, tough leathery rind; interior quickly turns purplish-black (not white); causes GI upset. Much smaller than C. booniana."
@@ -2691,7 +2707,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   lookalikes: [
     { name: "False Chanterelle", scientific: "Hygrophoropsis aurantiaca", catalogId: "hygrophoropsis-aurantiaca", danger: "GI-upset", keyFeatures: ["true forked gills","deeper orange color","brown stem base","no apricot odor"], distinguishingFeature: "True forked gills (not blunt ridges), deeper orange color, soft thin flesh, brown stem base, no apricot odor" },
     { name: "Jack O'Lantern", scientific: "Omphalotus olivascens", catalogId: "omphalotus-olivascens", danger: "toxic", keyFeatures: ["clusters on wood","true sharp gills with greenish cast","bioluminescent gills"], distinguishingFeature: "Grows in clusters on wood (sometimes buried), has true sharp gills with greenish cast, orange inner flesh, bioluminescent gills" },
-    { name: "Woolly Chanterelle", scientific: "Turbinellus floccosus", danger: "GI-upset", keyFeatures: ["deeply vase-shaped","scaly orange-red interior","hollow center"], distinguishingFeature: "Deeply vase-shaped with scaly orange-red interior, hollow center, causes GI upset in many people" },
+    { name: "Woolly Chanterelle", scientific: "Turbinellus floccosus", catalogId: "turbinellus-floccosus", danger: "GI-upset", keyFeatures: ["deeply vase-shaped","scaly orange-red interior","hollow center"], distinguishingFeature: "Deeply vase-shaped with scaly orange-red interior, hollow center, causes GI upset in many people" },
     { name: "Rainbow Chanterelle", scientific: "Cantharellus roseocanus", catalogId: "cantharellus-roseocanus", danger: "edible", keyFeatures: ["thicker stem relative to length","brighter orange gills","pinkish cap margin when young"], distinguishingFeature: "Stockier with thicker stem relative to length, brighter orange gills, pinkish cap margin when young; associated with spruce/pine" },
     { name: "Cascade Chanterelle", scientific: "Cantharellus cascadensis", catalogId: "cantharellus-cascadensis", danger: "edible", keyFeatures: ["gills/stipe lighter than cap (two-toned)","fades white in center","later fruiting season"], distinguishingFeature: "Gills and stipe lighter than cap (more two-toned), often larger with thinner wavy caps fading white in center, later fruiting season" },
     { name: "White Chanterelle", scientific: "Cantharellus subalbidus", catalogId: "cantharellus-subalbidus", danger: "edible", keyFeatures: ["pale ivory to white throughout","bruises yellow-orange to rust"], distinguishingFeature: "Pale ivory to white cap, gills, and stem; bruises yellow-orange to rust" }
@@ -2768,7 +2784,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Cascade Chanterelle", scientific: "Cantharellus cascadensis", catalogId: "cantharellus-cascadensis", danger: "edible", keyFeatures: ["gills/stipe paler than cap (two-toned)","no pinkish bloom","bruises yellow","fades whitish in center"], distinguishingFeature: "Gills and stipe distinctly paler than cap (more two-toned); lacks pinkish cap bloom; bruises yellow more readily; thinner cap that often fades whitish in center" },
     { name: "White Chanterelle", scientific: "Cantharellus subalbidus", catalogId: "cantharellus-subalbidus", danger: "edible", keyFeatures: ["pale ivory to white throughout","bruises orange to rust"], distinguishingFeature: "Pale ivory to white cap, gills, and stem; bruises orange to rust; lacks bright orange hymenophore" },
     { name: "False Chanterelle", scientific: "Hygrophoropsis aurantiaca", catalogId: "hygrophoropsis-aurantiaca", danger: "GI-upset", keyFeatures: ["true forked sharp-edged gills","thin soft flesh","brown stem base","no apricot odor"], distinguishingFeature: "True forked gills (sharp-edged, not blunt ridges), thin soft flesh, deeper orange overall, brown stem base, no apricot odor" },
-    { name: "Woolly Chanterelle", scientific: "Turbinellus floccosus", danger: "GI-upset", keyFeatures: ["deeply vase-shaped","scaly orange-red interior","hollow center"], distinguishingFeature: "Deeply vase-shaped with scaly orange-red interior, hollow center; causes GI upset in many people" },
+    { name: "Woolly Chanterelle", scientific: "Turbinellus floccosus", catalogId: "turbinellus-floccosus", danger: "GI-upset", keyFeatures: ["deeply vase-shaped","scaly orange-red interior","hollow center"], distinguishingFeature: "Deeply vase-shaped with scaly orange-red interior, hollow center; causes GI upset in many people" },
     { name: "Jack O'Lantern", scientific: "Omphalotus olivascens", catalogId: "omphalotus-olivascens", danger: "toxic", keyFeatures: ["clusters on wood/buried roots","true sharp gills with greenish cast","bioluminescent gills"], distinguishingFeature: "Clusters on wood (often buried roots), true sharp gills with greenish cast, orange flesh, bioluminescent gills" }
   ],
   culinary: {
@@ -2966,6 +2982,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "White Matsutake / Deadly Parasol confusion",
       scientific: "Amanita silvicola",
+      catalogId: "amanita-silvicola",
       danger: "toxic",
       keyFeatures: ["free gills","fragile single veil remnants","basal volva/bulb"],
       distinguishingFeature: "Free gills, fragile single veil remnants and a basal volva/bulb; lacks the rooting stem, double ring, and decurrent gills of Catathelasma."
@@ -3034,6 +3051,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Green-spored parasol / False parasol / Vomiter",
       scientific: "Chlorophyllum molybdites",
+      catalogId: "chlorophyllum-molybdites",
       danger: "toxic",
       keyFeatures: ["grayish-green spore print","mature gills turn grayish-green","scaly cap, fairy-ring lawn habit","always take spore print"],
       distinguishingFeature: "THE most critical lookalike - the most-frequently-reported toxic mushroom in North America, causing severe vomiting, diarrhea, and dehydration within 1-3 hours. Same general size, shape, scaly cap, and fairy-ring lawn habit as C. brunneum. DEFINITIVE separation: spore print is grayish-green to dull olive-green at maturity (white in C. brunneum); mature gills turn dull grayish-green to brownish-green (stay white to dingy brown in C. brunneum). Young specimens have white gills and can be nearly inseparable on macro features - ALWAYS take a spore print on mature caps before consuming. C. molybdites historically rare in the cool maritime PNW but is expanding northward with warming summers; common in southern/central California, Denver, and the Southeast US."
@@ -3502,6 +3520,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Common Ink Cap / Tippler's Bane / Alcohol Inky Cap",
       scientific: "Coprinopsis atramentaria",
+      catalogId: "coprinopsis-atramentaria",
       danger: "toxic",
       keyFeatures: ["smooth grey-brown cap","coprine alcohol reaction","clusters from buried wood","no shaggy scales"],
       distinguishingFeature: "Smooth grey-brown cap WITHOUT the shaggy recurved scales of C. comatus; cap is bell-shaped to convex (not cylindrical/columnar), gills attached rather than fully free, no persistent ring, stem grey-tinged, and typically grows in dense clusters from buried wood or stumps. CRITICAL: contains coprine, an amino acid that inhibits acetaldehyde dehydrogenase in the same way as the anti-alcoholism drug disulfiram (Antabuse). If consumed within roughly 48-72 hours before OR after drinking any alcohol, it triggers a coprine/alcohol reaction with facial flushing, headache, palpitations, nausea, vomiting, tingling, and sweating. Symptoms can recur on re-exposure to alcohol for several days after eating the mushroom. C. comatus does NOT cause this reaction, but the two are commonly confused by beginners."
@@ -3517,6 +3536,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Magpie Inkcap",
       scientific: "Coprinopsis picacea",
+      catalogId: "coprinopsis-picacea",
       danger: "toxic",
       keyFeatures: ["white patches on blackish cap","deciduous woodland","causes GI upset"],
       distinguishingFeature: "Striking 'magpie' pattern of large irregular WHITE patches on a BLACKISH-brown background (not white with brown scales); grows in deciduous woodland (especially beech) rather than on lawns; reported to cause GI upset and sometimes confused with shaggy mane in field guides."
@@ -3637,7 +3657,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   edibility: "choice",
   toxicityNotes: "Cortinarius caperatus is THE ONLY species in the genus Cortinarius widely recommended for the table. The vast majority of Cortinarius species are inedible, and several (notably C. orellanus, C. rubellus, C. speciosissimus, and members of subgenus Orellani/Leprocybe) contain the deadly nephrotoxin ORELLANINE, which causes irreversible kidney failure with symptoms delayed 2-20 days after ingestion. Beginners should not collect any Cortinarius without expert verification. Positive ID of C. caperatus REQUIRES: persistent membranous ring (not just cobwebby cortina), wrinkled ochre cap with whitish veil remnants, rusty-brown spore print, and habitat. Some people experience GI upset; always cook thoroughly and try a small amount first",
   lookalikes: [
-    { name: "Deadly Webcap", scientific: "Cortinarius orellanus", danger: "deadly", keyFeatures: ["reddish-brown cap","cobwebby cortina no ring","rust gills","orellanine"], distinguishingFeature: "Contains lethal orellanine toxin; reddish-brown to tawny cap (not ochre/wrinkled), only a cobwebby cortina (NO persistent membranous ring), more orange-rust gills early; primarily European but the related deadly C. rubellus/C. speciosissimus occur in North America" },
+    { name: "Deadly Webcap", scientific: "Cortinarius orellanus", catalogId: "cortinarius-orellanus", danger: "deadly", keyFeatures: ["reddish-brown cap","cobwebby cortina no ring","rust gills","orellanine"], distinguishingFeature: "Contains lethal orellanine toxin; reddish-brown to tawny cap (not ochre/wrinkled), only a cobwebby cortina (NO persistent membranous ring), more orange-rust gills early; primarily European but the related deadly C. rubellus/C. speciosissimus occur in North America" },
     { name: "Fool's Webcap", scientific: "Cortinarius rubellus", catalogId: "cortinarius-rubellus", danger: "deadly", keyFeatures: ["tawny to foxy-red cap","pointed umbo","cobwebby cortina no ring","conifers and sphagnum"], distinguishingFeature: "Contains orellanine; tawny-orange to foxy-red cap, pointed umbo, only cobwebby cortina (no membranous ring), associated with conifers and sphagnum - found in PNW. Smaller and more reddish than C. caperatus" },
     { name: "Other Cortinarius species (webcaps)", scientific: "Cortinarius spp.", danger: "toxic", keyFeatures: ["cobwebby cortina no ring","no whitish-bloomed wrinkled cap","dull untested species"], distinguishingFeature: "Hundreds of species, most untested or toxic; lack the persistent membranous ring of C. caperatus and the distinctive wrinkled ochre cap with whitish bloom; have only a cobwebby cortina that disappears" },
     { name: "Fibrecaps", scientific: "Inocybe spp.", danger: "toxic", keyFeatures: ["radially-streaked fibrous cap","spermatic odor","no ring","muscarine"], distinguishingFeature: "Muscarine-containing; typically smaller, fibrous-radially-streaked caps, often unpleasant or spermatic odor, lack persistent ring; dull brown spore print" },
@@ -3745,6 +3765,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Fool's webcap",
       scientific: "Cortinarius orellanus",
+      catalogId: "cortinarius-orellanus",
       danger: "deadly",
       keyFeatures: ["orange-brown cap","rounded cap","with broadleaf trees","orellanine"],
       distinguishingFeature: "Closely related sister species in the same subgenus Orellani; also contains orellanine and is equally deadly. Differs by usually richer orange-brown coloration, more rounded (less umbonate/conical) cap, association predominantly with broadleaf trees (oak, beech) in lowland European forests, and slightly larger spores. Largely a European species; not confirmed for the PNW, but the distinction is clinically irrelevant: both kill via orellanine."
@@ -3752,6 +3773,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Surprise webcap / Red-gilled webcap",
       scientific: "Cortinarius semisanguineus",
+      catalogId: "cortinarius-semisanguineus",
       danger: "toxic",
       keyFeatures: ["blood-red gills","yellow-brown cap","yellow stem","anthraquinone dyes"],
       distinguishingFeature: "Yellow-brown to olive-brown cap with strikingly blood-red to dark crimson gills (vs. ochre-cinnamon in C. rubellus); stem yellow, not noticeably banded with yellow velar zigzags; in conifer forests across the PNW. Considered toxic/suspect (contains anthraquinone dyes used historically for textile dyeing); not confirmed to contain orellanine but should not be eaten."
@@ -3759,6 +3781,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Banded webcap / Bracelet cort",
       scientific: "Cortinarius armillatus",
+      catalogId: "cortinarius-armillatus",
       danger: "toxic",
       keyFeatures: ["red transverse stem bands","brick-red cap","associated with birch"],
       distinguishingFeature: "Larger (cap 5-15 cm), more robust, brick-red to reddish-brown cap, and KEY FEATURE: stem with several distinct cinnabar-red to brick-red transverse bands (bracelets) - not the yellow zigzag pattern of C. rubellus. Strongly associated with birch (Betula). Long considered edible but now suspect; some authors report orellanine traces. Avoid."
@@ -3797,6 +3820,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Cinnamon webcap",
       scientific: "Cortinarius cinnamomeus",
+      catalogId: "cortinarius-cinnamomeus",
       danger: "toxic",
       keyFeatures: ["cinnamon-brown cap","yellow-orange gills aging cinnamon","smooth cap","conifer bogs"],
       distinguishingFeature: "Cinnamon-brown to olive cap, yellow-orange gills aging cinnamon, smaller and more slender than C. rubellus, cap smooth rather than scaly; conifer bogs. Considered inedible/suspect; avoid all small to medium reddish-brown Cortinarius."
@@ -4192,7 +4216,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   edibility: "edible",
   toxicityNotes: "Long-established edible in Asia (the famed 'Huang Mogu' / Yellow Mushroom of the Qinghai-Tibet Plateau, harvested commercially and studied for medicinal/antitumor compounds) and historically consumed in Europe. North American collections are eaten by some foragers but reports of mild GI upset exist, possibly from confusion with other shaggy yellow agarics or from individual sensitivity; cook thoroughly and try a small portion first. Not recommended for beginners because of confusion with potentially toxic yellow Cortinarius species and immature yellow Amanita.",
   lookalikes: [
-    { name: "Death Cap (yellow forms) / Yellow-yellow Amanita group", scientific: "Amanita gemmata / Amanita aprica / Amanita pantherinoides", danger: "toxic", keyFeatures: ["free gills","basal volva or bulb","warts wash off","white spore print non-amyloid"], distinguishingFeature: "Yellow to ochre Amanitas in PNW conifer/mixed forests can be superficially similar from above. Differences: FREE gills (vs. attached/sinuate in Floccularia), a true basal volva/cup or bulb with patches (vs. fibrillose sheath and basal mycelium pad), warts on the cap (not appressed yellow fibrillose scales) that wash off, white spore print (same) but spores NON-amyloid (vs. amyloid in Floccularia). Contains ibotenic acid/muscimol (or for Amanita phalloides yellow forms, amatoxins - deadly)." },
+    { name: "Death Cap (yellow forms) / Yellow-yellow Amanita group", scientific: "Amanita gemmata / Amanita aprica / Amanita pantherinoides", catalogId: "amanita-gemmata", danger: "toxic", keyFeatures: ["free gills","basal volva or bulb","warts wash off","white spore print non-amyloid"], distinguishingFeature: "Yellow to ochre Amanitas in PNW conifer/mixed forests can be superficially similar from above. Differences: FREE gills (vs. attached/sinuate in Floccularia), a true basal volva/cup or bulb with patches (vs. fibrillose sheath and basal mycelium pad), warts on the cap (not appressed yellow fibrillose scales) that wash off, white spore print (same) but spores NON-amyloid (vs. amyloid in Floccularia). Contains ibotenic acid/muscimol (or for Amanita phalloides yellow forms, amatoxins - deadly)." },
     { name: "Deadly Webcaps (yellow forms)", scientific: "Cortinarius rubellus / Cortinarius orellanus group", catalogId: "cortinarius-rubellus", danger: "deadly", keyFeatures: ["rusty-brown spore print","cobwebby cortina","rusty-brown mature gills","orellanine"], distinguishingFeature: "Some yellow-brown Cortinarius species cause fatal kidney failure (orellanine). Differences: RUSTY-BROWN spore print (vs. white in Floccularia), cobwebby cortina (not a shaggy membranous double ring), gills rusty-brown at maturity (not pale yellow), no shaggy yellow scales sheathing the stem." },
     { name: "Honey Mushroom", scientific: "Armillaria ostoyae / A. solidipes", catalogId: "armillaria-ostoyae", danger: "edible-when-cooked", keyFeatures: ["honey-brown cap","dark tuft-like scales","clusters at conifer base","on wood"], distinguishingFeature: "Also has a ring and grows in groups, but cap is honey-brown to tawny (not bright golden-yellow), scales are dark and tuft-like (not yellow fibrillose), gills white-cream becoming pinkish-stained, grows in clusters at the base of conifers or from buried wood (not in open meadows), and is parasitic/saprotrophic on wood rather than mycorrhizal in grassland" },
     { name: "Shaggy Parasol", scientific: "Chlorophyllum olivieri / C. brunneum", catalogId: "chlorophyllum-olivieri", danger: "edible-with-caution", keyFeatures: ["whitish-grey cap with brown scales","free gills","flesh stains reddish","disturbed soils"], distinguishingFeature: "Also has shaggy scaly cap and ring, but ground color whitish-grey/tan with brown scales (not yellow), FREE gills, flesh stains reddish then brown when cut, taller and more slender, common in disturbed soils/gardens at lower elevations" },
@@ -4374,6 +4398,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Wavy-capped Psilocybe / Blue-foot",
       scientific: "Psilocybe cyanescens",
+      catalogId: "psilocybe-cyanescens",
       danger: "toxic",
       keyFeatures: ["wavy caramel-brown cap","purple-black spore print","bruises blue","no mealy odor"],
       distinguishingFeature: "PNW psychoactive species sharing wood-chip and mulch habitats with G. marginata - the most dangerous confusion. Cap caramel-brown when wet, fading to pale buff (also hygrophanous); margin wavy at maturity; PURPLE-BLACK to dark purple-brown spore print (NOT rusty brown); flesh and stem base bruise BLUE/blue-green where handled (G. marginata never bruises blue); lacks the mealy odor."
@@ -4381,6 +4406,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Stuntz's blue legs",
       scientific: "Psilocybe stuntzii",
+      catalogId: "psilocybe-stuntzii",
       danger: "toxic",
       keyFeatures: ["olive to yellow-brown cap","membranous ring","purple-black spore print","bruises blue"],
       distinguishingFeature: "PNW psychoactive species common on lawns and wood mulch in Washington and BC; cap olive-brown to yellow-brown; persistent membranous purple-black-staining ring; PURPLE-BLACK spore print; bruises BLUE. Repeatedly mistaken for G. marginata (and vice versa) - several documented poisonings."
@@ -4435,6 +4461,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Conifercone cap / Filaris",
       scientific: "Pholiotina filaris (syn. Conocybe filaris)",
+      catalogId: "pholiotina-filaris",
       danger: "deadly",
       keyFeatures: ["conical-bell tawny cap","rust-brown spores","membranous ring","amatoxins lethal"],
       distinguishingFeature: "Also amatoxin-containing and lethal; smaller and more delicate, with a conical-bell-shaped tawny cap, rust-brown spores, persistent membranous ring on a slender pale stem; typically grows on lawns, mossy ground, and wood debris rather than directly clustered on logs."
@@ -4718,6 +4745,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Rufous milkcap",
       scientific: "Lactarius rufus",
+      catalogId: "lactarius-rufus",
       danger: "edible-with-caution",
       keyFeatures: ["white latex when cut","sharp peppery taste","pale spore print","no glutinous cap"],
       distinguishingFeature: "Exudes white latex when cut; sharp peppery taste; pale spore print; gills not blackening; no glutinous cap or yellow stem base"
@@ -4859,8 +4887,8 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   edibility: "edible-with-caution",
   toxicityNotes: "Generally considered edible and rated 'choice' by some authors, but reports indicate it can cause gastric disturbances in sensitive individuals. Frequently infested with fly larvae unless collected very young - inspect carefully before cooking. Sample a small portion the first time.",
   lookalikes: [
-    { name: "Scaly Chanterelle / Woolly Chanterelle", scientific: "Turbinellus floccosus", danger: "GI-upset", keyFeatures: ["vase-shaped hollow center","orange-red inner scales","pale buff ridged underside"], distinguishingFeature: "Deeply vase-shaped hollow center with prominent orange-red scales on inner surface; pale buff (not lilac) ridged underside; causes GI upset in many people" },
-    { name: "Western Wooly Gomphus", scientific: "Turbinellus kauffmanii", danger: "GI-upset", keyFeatures: ["dry yellow-brown scaly cap","hollow funnel shape","pale buff ridged underside"], distinguishingFeature: "Larger, dry yellow-brown scaly cap, hollow funnel shape, ridged underside is pale buff/tan rather than lilac" },
+    { name: "Scaly Chanterelle / Woolly Chanterelle", scientific: "Turbinellus floccosus", catalogId: "turbinellus-floccosus", danger: "GI-upset", keyFeatures: ["vase-shaped hollow center","orange-red inner scales","pale buff ridged underside"], distinguishingFeature: "Deeply vase-shaped hollow center with prominent orange-red scales on inner surface; pale buff (not lilac) ridged underside; causes GI upset in many people" },
+    { name: "Western Wooly Gomphus", scientific: "Turbinellus kauffmanii", catalogId: "turbinellus-kauffmanii", danger: "GI-upset", keyFeatures: ["dry yellow-brown scaly cap","hollow funnel shape","pale buff ridged underside"], distinguishingFeature: "Larger, dry yellow-brown scaly cap, hollow funnel shape, ridged underside is pale buff/tan rather than lilac" },
     { name: "Violet-toothed Polypore", scientific: "Trichaptum biforme", catalogId: "trichaptum-biforme", danger: "inedible", keyFeatures: ["thin shelves on hardwood","tough leathery flesh","pore/tooth underside"], distinguishingFeature: "Grows as thin shelves on hardwood logs; tough leathery flesh; pore/tooth underside; not vase-shaped or fleshy" },
     { name: "Gomphus bonari", scientific: "Turbinellus bonarii", catalogId: "turbinellus-bonarii", danger: "GI-upset", keyFeatures: ["scaly orange-brown cap","no lilac color","deep vase shape"], distinguishingFeature: "Scaly orange-brown cap, no lilac coloration anywhere, deeper vase shape" },
     { name: "Violet cort", scientific: "Cortinarius violaceus", catalogId: "cortinarius-violaceus", danger: "inedible", keyFeatures: ["true gills not ridges","rusty-brown spore print","cobwebby cortina","dark violet throughout"], distinguishingFeature: "Has true gills (not ridges), rusty-brown spore print, distinct cap and stem with cobwebby cortina, dark violet throughout" }
@@ -6195,6 +6223,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Amanita-parasitizing Hypomyces",
       scientific: "Hypomyces hyalinus",
+      catalogId: "hypomyces-hyalinus",
       danger: "deadly",
       keyFeatures: ["parasitizes Amanita","whitish-pinkish powdery coating","host ring/volva visible"],
       distinguishingFeature: "Parasitizes Amanita species (including potentially deadly Amanitas), not Russula/Lactarius. Forms a smooth, whitish to pinkish, powdery or felt-like coating (NOT bright orange, NOT pimpled with perithecia). Host retains a visible stem-ring/volva structure. Never consume any Hypomyces growing on Amanita - amatoxins from the host may persist."
@@ -6202,6 +6231,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Bolete eater",
       scientific: "Hypomyces chrysospermus",
+      catalogId: "hypomyces-chrysospermus",
       danger: "GI-upset",
       keyFeatures: ["parasitizes boletes","white then golden-yellow","host is pored bolete"],
       distinguishingFeature: "Parasitizes boletes (Boletaceae), starting white and powdery, then turning bright golden-yellow, finally reddish-brown. Host is a pored bolete, not a gilled Russula/Lactarius. Considered inedible and reportedly causes GI upset."
@@ -6437,11 +6467,11 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   edibility: "edible-with-caution",
   toxicityNotes: "Intensely acrid (peppery) latex makes raw fruit bodies unpalatable and likely to cause GI irritation if eaten raw or undercooked. Some Slavic and Eastern European traditions parboil (discarding water) and then salt-cure or pickle acrid milkcaps to render them palatable; most North American guides list this species as 'not recommended' due to the strong peppery taste.",
   lookalikes: [
-    { name: "Bearded Milkcap", scientific: "Lactarius pubescens", danger: "inedible", keyFeatures: ["pinkish-buff cap","hairy woolly inrolled margin","under birch"], distinguishingFeature: "Smaller, paler pinkish-buff cap with distinctly hairy/woolly inrolled margin; associates with birch; smaller spores (6–8.5 x 5–6.5 μm)" },
+    { name: "Bearded Milkcap", scientific: "Lactarius pubescens", catalogId: "lactarius-pubescens", danger: "inedible", keyFeatures: ["pinkish-buff cap","hairy woolly inrolled margin","under birch"], distinguishingFeature: "Smaller, paler pinkish-buff cap with distinctly hairy/woolly inrolled margin; associates with birch; smaller spores (6–8.5 x 5–6.5 μm)" },
     { name: "Blushing Milkcap", scientific: "Lactarius controversus", catalogId: "lactarius-controversus", danger: "inedible", keyFeatures: ["chalky white cap","pink-tinted gills","under cottonwood/poplar","acrid latex"], distinguishingFeature: "Much larger and chalky white with pink-tinted gills; under cottonwood/poplar and willow rather than alder; latex also acrid" },
-    { name: "Scrobiculate Milkcap", scientific: "Lactarius scrobiculatus", danger: "inedible", keyFeatures: ["latex turns sulfur-yellow","under spruce"], distinguishingFeature: "Closely related; latex turns sulfur-yellow within seconds of exposure (alnicola latex is unchanging or only very slowly yellowing); usually under spruce" },
+    { name: "Scrobiculate Milkcap", scientific: "Lactarius scrobiculatus", catalogId: "lactarius-scrobiculatus", danger: "inedible", keyFeatures: ["latex turns sulfur-yellow","under spruce"], distinguishingFeature: "Closely related; latex turns sulfur-yellow within seconds of exposure (alnicola latex is unchanging or only very slowly yellowing); usually under spruce" },
     { name: "Olympic Milkcap", scientific: "Lactarius olympianus", catalogId: "lactarius-olympianus", danger: "inedible", keyFeatures: ["orange-tinted zoned cap","unchanging white latex","conifer associate"], distinguishingFeature: "More orange-tinted cap with clearer concentric zones; latex unchanging white; conifer associate, not specific to alder" },
-    { name: "Woolly Milkcap", scientific: "Lactarius torminosus", danger: "toxic", keyFeatures: ["pink-tinged cap","shaggy woolly margin","under birch"], distinguishingFeature: "Pink-tinged cap with conspicuously shaggy/woolly margin; under birch; known to cause severe GI upset raw" }
+    { name: "Woolly Milkcap", scientific: "Lactarius torminosus", catalogId: "lactarius-torminosus", danger: "toxic", keyFeatures: ["pink-tinged cap","shaggy woolly margin","under birch"], distinguishingFeature: "Pink-tinged cap with conspicuously shaggy/woolly margin; under birch; known to cause severe GI upset raw" }
   ],
   culinary: {
     flavor: "Raw: intensely acrid and peppery, essentially inedible. After parboiling and salt-curing or pickling (Slavic preparation): mild, slightly nutty, with firm crunchy texture",
@@ -6542,10 +6572,10 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   lookalikes: [
     { name: "Bleeding Milk Cap", scientific: "Lactarius rubrilacteus", catalogId: "lactarius-rubrilacteus", danger: "edible", keyFeatures: ["dark red latex","reddish-orange brick cap","under Douglas-fir"], distinguishingFeature: "Latex DARK RED (wine/blood-red) from the moment of cutting rather than orange; cap more reddish-orange/brick and often less brightly zoned; associated with DOUGLAS-FIR (Pseudotsuga menziesii) rather than pines; the more commonly encountered native 'milk cap' in PNW Douglas-fir forests and frequently mistaken for L. deliciosus" },
     { name: "Orange-latex Milky / Spruce Milk Cap", scientific: "Lactarius deterrimus", catalogId: "lactarius-deterrimus", danger: "edible", keyFeatures: ["orange latex turning wine-red","green-staining","under spruce"], distinguishingFeature: "Very similar orange latex and green-staining, but associated with SPRUCE (Picea); latex slowly turns wine-red on exposure; flesh often more bitter; primarily a European species, reported from eastern NA spruce plantations" },
-    { name: "Red-hot Milk Cap", scientific: "Lactarius rufus", danger: "toxic", keyFeatures: ["brick-red unzoned cap","white latex","delayed acrid taste","under pine/birch"], distinguishingFeature: "Cap uniformly brick-red to reddish-brown without orange zonation; latex WHITE (not orange); taste extremely acrid/peppery after a delay; associated with pines and birch; causes severe GI upset if eaten raw or undercooked" },
-    { name: "Woolly Milk Cap", scientific: "Lactarius torminosus", danger: "toxic", keyFeatures: ["pink woolly inrolled margin","unchanging white latex","under birch"], distinguishingFeature: "Cap pink to pinkish-buff with a distinctly WOOLLY/hairy inrolled margin; latex WHITE and unchanging; associated with birch; causes severe gastrointestinal symptoms (the name 'torminosus' means 'causing colic')" },
-    { name: "Fenugreek Milk Cap", scientific: "Lactarius helvus", danger: "toxic", keyFeatures: ["yellow-brown unzoned cap","watery clear latex","fenugreek/maple-syrup smell"], distinguishingFeature: "Cap dull yellow-brown to cinnamon, NOT zoned bright orange; latex WATERY/whey-like and clear, not orange; strong distinctive smell of fenugreek/maple syrup, especially when dried; contains toxins causing severe GI symptoms" },
-    { name: "Bearded Milk Cap", scientific: "Lactarius scrobiculatus", danger: "GI-upset", keyFeatures: ["yellow bearded margin","latex turns sulfur-yellow","acrid","conifer associate"], distinguishingFeature: "Cap yellow with a hairy/bearded inrolled margin; latex WHITE quickly turning sulfur-yellow on exposure; acrid; associated with conifers" },
+    { name: "Red-hot Milk Cap", scientific: "Lactarius rufus", catalogId: "lactarius-rufus", danger: "toxic", keyFeatures: ["brick-red unzoned cap","white latex","delayed acrid taste","under pine/birch"], distinguishingFeature: "Cap uniformly brick-red to reddish-brown without orange zonation; latex WHITE (not orange); taste extremely acrid/peppery after a delay; associated with pines and birch; causes severe GI upset if eaten raw or undercooked" },
+    { name: "Woolly Milk Cap", scientific: "Lactarius torminosus", catalogId: "lactarius-torminosus", danger: "toxic", keyFeatures: ["pink woolly inrolled margin","unchanging white latex","under birch"], distinguishingFeature: "Cap pink to pinkish-buff with a distinctly WOOLLY/hairy inrolled margin; latex WHITE and unchanging; associated with birch; causes severe gastrointestinal symptoms (the name 'torminosus' means 'causing colic')" },
+    { name: "Fenugreek Milk Cap", scientific: "Lactarius helvus", catalogId: "lactarius-helvus", danger: "toxic", keyFeatures: ["yellow-brown unzoned cap","watery clear latex","fenugreek/maple-syrup smell"], distinguishingFeature: "Cap dull yellow-brown to cinnamon, NOT zoned bright orange; latex WATERY/whey-like and clear, not orange; strong distinctive smell of fenugreek/maple syrup, especially when dried; contains toxins causing severe GI symptoms" },
+    { name: "Bearded Milk Cap", scientific: "Lactarius scrobiculatus", catalogId: "lactarius-scrobiculatus", danger: "GI-upset", keyFeatures: ["yellow bearded margin","latex turns sulfur-yellow","acrid","conifer associate"], distinguishingFeature: "Cap yellow with a hairy/bearded inrolled margin; latex WHITE quickly turning sulfur-yellow on exposure; acrid; associated with conifers" },
     { name: "Lactarius deliciosus var. areolatus / var. piceus / var. olivaceosordidus", scientific: "Lactarius deliciosus (varieties)", danger: "edible", keyFeatures: ["microscopic separation only","subtle latex color change"], distinguishingFeature: "Several poorly delimited varieties have been reported from PNW (Hesler & Smith); separable mainly on microscopic features and subtle differences in latex color change; all are similarly edible but reflect the unresolved nature of the L. deliciosus species complex in North America" }
   ],
   culinary: {
@@ -6646,7 +6676,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   lookalikes: [
     { name: "Rufous Candy Cap", scientific: "Lactarius rufulus", catalogId: "lactarius-rufulus", danger: "edible", keyFeatures: ["larger redder cap","oak-associated","solid stem","faint maple aroma"], distinguishingFeature: "Larger and redder, oak-associated (often under coast live oak), less pronounced maple aroma, solid (not hollow) stem, slightly acrid taste possible; still edible and used similarly but less prized" },
     { name: "Yellow-staining Milkcap", scientific: "Lactarius xanthogalactus", danger: "toxic", keyFeatures: ["latex turns bright yellow","grayish-orange faintly zonate cap","bitter to acrid taste"], distinguishingFeature: "Very common Northern California mis-collection; latex turns rapidly bright yellow on exposure (candy cap latex stays watery white), cap more grayish-orange and faintly zonate, taste bitter to acrid - considered poisonous (causes GI upset)" },
-    { name: "Rufous Milkcap", scientific: "Lactarius rufus", danger: "toxic", keyFeatures: ["dark brick-red cap","white latex staining paper yellow","intensely acrid taste"], distinguishingFeature: "Larger, darker brick-red cap, white unchanging latex that stains paper yellow, intensely acrid 'habanero' taste (wait a minute when chewing) - inedible/poisonous raw, causes GI upset" },
+    { name: "Rufous Milkcap", scientific: "Lactarius rufus", catalogId: "lactarius-rufus", danger: "toxic", keyFeatures: ["dark brick-red cap","white latex staining paper yellow","intensely acrid taste"], distinguishingFeature: "Larger, darker brick-red cap, white unchanging latex that stains paper yellow, intensely acrid 'habanero' taste (wait a minute when chewing) - inedible/poisonous raw, causes GI upset" },
     { name: "Subviscid Milkcap", scientific: "Lactarius subviscidus", catalogId: "lactarius-subviscidus", danger: "inedible", keyFeatures: ["viscid orange cap","scanty white latex","slightly acrid"], distinguishingFeature: "Viscid/sticky cap when wet, deep orange, scanty white latex, slightly acrid taste after chewing; not a candy cap" },
     { name: "Orange Milkcap", scientific: "Lactarius substriatus", catalogId: "lactarius-substriatus", danger: "inedible", keyFeatures: ["viscid striate margin","scarlet-orange cap","latex slowly stains yellow"], distinguishingFeature: "Viscid cap with a striate margin, scarlet-orange to brownish-orange, latex slowly stains yellow, slightly peppery taste" },
     { name: "Luculent Milkcap", scientific: "Lactarius luculentus var. laetus", catalogId: "lactarius-luculentus", danger: "inedible", keyFeatures: ["pale orange viscid cap","bitter taste","no maple smell"], distinguishingFeature: "Brightest/palest orange, viscid cap, bitter taste after chewing; no maple smell when dried" },
@@ -6775,6 +6805,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Bearded Milk Cap",
       scientific: "Lactarius torminosus",
+      catalogId: "lactarius-torminosus",
       danger: "GI-upset",
       keyFeatures: ["pinkish zoned cap","shaggy hairy inrolled margin","white latex","under birch"],
       distinguishingFeature:
@@ -7522,6 +7553,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Lilac Fibrecap / Lilac Inocybe (and related Inocybe spp.)",
       scientific: "Inocybe geophylla var. lilacina",
+      catalogId: "inocybe-geophylla",
       danger: "toxic",
       keyFeatures: ["small silky conical cap","spermatic/earthy odor","dull brown spore print"],
       distinguishingFeature: "Much smaller (cap usually <4 cm), dull silky-fibrillose conical-umbonate cap, duller lilac fading quickly to whitish, with a strong unpleasant earthy/spermatic odor; produces a DULL BROWN spore print. Contains dangerous levels of muscarine causing severe SLUDGE-syndrome cholinergic poisoning."
@@ -7529,6 +7561,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Lilac Bonnet / Lilac Mycena",
       scientific: "Mycena pura",
+      catalogId: "mycena-pura",
       danger: "toxic",
       keyFeatures: ["small fragile cap","radish/rancid odor","white spore print","thin hollow stem"],
       distinguishingFeature: "Much smaller and more fragile (cap 2-4 cm), thin hollow stem, translucent-striate cap, strong radish/rancid odor (not fruity), and a WHITE spore print. Contains muscarine and the psychoactive/toxic compound muscarine plus minor amounts of psilocybin-like compounds; reported GI and neurological effects."
@@ -7820,11 +7853,11 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   toxicityNotes: "Edible ONLY when the interior flesh (gleba) is pure, uniform white throughout. Once the gleba shows any yellow, olive, or brown discoloration, the puffball is past edibility and may cause GI upset. ALWAYS slice every specimen in half top-to-bottom before eating to (1) confirm interior is solid uniform white with no internal mushroom structure (rules out deadly Amanita button stage), (2) confirm thin eggshell-like outer rind (rules out toxic Scleroderma earthballs), and (3) rule out other puffball species.",
   lookalikes: [
     { name: "Amanita button (Death Cap, Destroying Angel, etc.)", scientific: "Amanita phalloides / Amanita ocreata / Amanita spp.", danger: "deadly", keyFeatures: ["slice vertically","internal cap/gills/stem outline","vs solid puffball interior"], distinguishingFeature: "CRITICAL: Young Amanitas in their universal veil 'egg' stage can look like small puffballs from the outside. ALWAYS slice the specimen vertically in half — an Amanita button will reveal a developing mushroom inside (outline of cap, gills, and stem visible as tissue differentiation). A true puffball is solid uniform white interior with no internal structure." },
-    { name: "Common Earthball", scientific: "Scleroderma citrinum", danger: "toxic", keyFeatures: ["thick tough rind","purplish-black marbled interior","no apical pore"], distinguishingFeature: "Outer rind is thick and tough (not eggshell-thin); interior turns purplish-black to dark grey/black very early, with marbled appearance; no apical pore (splits open irregularly). Grows on similar substrates and frequently mistaken for puffballs — causes GI illness." },
+    { name: "Common Earthball", scientific: "Scleroderma citrinum", catalogId: "scleroderma-citrinum", danger: "toxic", keyFeatures: ["thick tough rind","purplish-black marbled interior","no apical pore"], distinguishingFeature: "Outer rind is thick and tough (not eggshell-thin); interior turns purplish-black to dark grey/black very early, with marbled appearance; no apical pore (splits open irregularly). Grows on similar substrates and frequently mistaken for puffballs — causes GI illness." },
     { name: "Pear-shaped Puffball", scientific: "Apioperdon pyriforme (syn. Lycoperdon pyriforme)", catalogId: "apioperdon-pyriforme", danger: "edible", keyFeatures: ["clustered on rotting wood","fine granules not spines","white mycelial cords at base"], distinguishingFeature: "Grows in clusters on rotting wood (not soil); pear-shaped with smoother surface bearing only fine granules, lacking the prominent conical spines/gems of L. perlatum; visible white mycelial cords at base." },
     { name: "Umber-brown Puffball", scientific: "Lycoperdon umbrinum", catalogId: "lycoperdon-umbrinum", danger: "edible", keyFeatures: ["soft dark brown spines","no pock-mark scars","darker coloration"], distinguishingFeature: "Has softer, skinnier, darker brown spines that don't leave the clear pock-mark scars when shed; overall darker coloration." },
     { name: "Beautiful Puffball", scientific: "Lycoperdon pulcherrimum", catalogId: "lycoperdon-pulcherrimum", danger: "edible", keyFeatures: ["long slender curved spines converging at tips"], distinguishingFeature: "Long, slender, often curved spines that converge at tips; less robust conical 'gem' pattern than L. perlatum." },
-    { name: "Pigskin Poison Puffball", scientific: "Scleroderma areolatum", danger: "toxic", keyFeatures: ["thick leathery rind","dark purple-black interior","small scaly markings"], distinguishingFeature: "Thick leathery rind, dark purple-black interior at maturity, small scaly markings rather than conical spines; causes GI upset." }
+    { name: "Pigskin Poison Puffball", scientific: "Scleroderma areolatum", catalogId: "scleroderma-areolatum", danger: "toxic", keyFeatures: ["thick leathery rind","dark purple-black interior","small scaly markings"], distinguishingFeature: "Thick leathery rind, dark purple-black interior at maturity, small scaly markings rather than conical spines; causes GI upset." }
   ],
   culinary: {
     flavor: "Mild, bland, somewhat nutty; not a prized edible but pleasant. Texture is firm marshmallow-like when young; readily absorbs flavors of accompanying ingredients.",
@@ -7903,6 +7936,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Livid Pinkgill / Lead Poisoner",
       scientific: "Entoloma sinuatum",
+      catalogId: "entoloma-sinuatum",
       danger: "toxic",
       keyFeatures: ["pink to salmon spore print","gills turn pink at maturity"],
       distinguishingFeature: "CRITICAL: Pink to salmon spore print (vs. white in L. decastes) and gills that turn pink with maturity. Causes severe gastrointestinal poisoning. Always take a spore print before eating any white-gilled clustered mushroom — pink spores = do not eat."
@@ -8072,6 +8106,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Green-spored parasol / False parasol / Vomiter",
       scientific: "Chlorophyllum molybdites",
+      catalogId: "chlorophyllum-molybdites",
       danger: "toxic",
       keyFeatures: ["green spore print","mature gills turn greenish-gray","stem lacks snakeskin banding","in lawns/pastures"],
       distinguishingFeature: "The most-reported cause of mushroom poisoning in North America. CRITICAL distinction: spore print GREEN (gray-green to dull olive); mature gills turn dull greenish-gray (true parasol gills stay white). Stem lacks the strong snakeskin/zigzag dark brown banding of M. procera (more uniformly pale to faintly fibrillose). Typically grows in lawns, parks, and pastures in warmer/southern climates, but occasional in PNW grasslands. Causes severe gastrointestinal poisoning (violent vomiting and diarrhea) within 1-3 hours."
@@ -8118,6 +8153,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Destroying angel (button stage)",
       scientific: "Amanita virosa / Amanita bisporigera complex",
+      catalogId: "amanita-virosa",
       danger: "deadly",
       keyFeatures: ["all-white buttons","saccate volva at base","pure white free gills","lethal amatoxins"],
       distinguishingFeature: "All-white buttons with a saccate volva at the base (parasol lacks any volva, only a bulb); gills pure white, free, not crowded the same way; never has shaggy brown scales on the cap. Contains lethal amatoxins. Always slice the bulb of any parasol-like find to confirm there is no sack."
@@ -8247,6 +8283,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Sweating Mushroom / Ivory Funnel",
       scientific: "Clitocybe dealbata",
+      catalogId: "clitocybe-dealbata",
       danger: "toxic",
       keyFeatures: ["chalky white cap, no umbo","crowded decurrent gills","mealy odor","muscarine poisoning"],
       distinguishingFeature: "MOST DANGEROUS LOOKALIKE. Also grows in lawn fairy rings and is similar in size. Distinguished by: chalky white to dull grayish-white cap (never warm cinnamon-tan) with NO central umbo; gills crowded/close and clearly DECURRENT (running down the stem) versus Marasmius oreades' well-spaced adnexed-to-nearly-free gills; mealy/farinaceous odor (not sweet); brittle (not pliant) stem that snaps rather than twists. Contains muscarine, causing severe SLUDGE/cholinergic poisoning (sweating, salivation, lacrimation, bradycardia, GI distress) within 15-90 minutes."
@@ -8276,6 +8313,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Green-spored Parasol",
       scientific: "Chlorophyllum molybdites",
+      catalogId: "chlorophyllum-molybdites",
       danger: "toxic",
       keyFeatures: ["cap 10-30 cm","green spore print","ring on stem","gills greenish in age"],
       distinguishingFeature: "Also forms lawn fairy rings but is MUCH larger (cap 10-30 cm), with a scaly white-and-tan cap, a prominent ring on the stem, and a diagnostic green spore print; gills turn greenish in age. The most common cause of mushroom poisoning in North America (severe GI distress)."
@@ -8852,6 +8890,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Eastern jack-o'-lantern",
       scientific: "Omphalotus illudens",
+      catalogId: "omphalotus-illudens",
       danger: "toxic",
       keyFeatures: ["pure pumpkin-orange cap","no olive cast","illudin toxins"],
       distinguishingFeature: "Sister species replacing O. olivascens east of the Rockies; lacks the olive/dusky-green cast - cap is purely bright pumpkin-orange. Also toxic with the same illudin chemistry; not present in PNW. Distinguished molecularly by Kirchmair et al. 2004."
@@ -8867,6 +8906,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Woolly chanterelle / Scaly vase chanterelle",
       scientific: "Turbinellus floccosus",
+      catalogId: "turbinellus-floccosus",
       danger: "toxic",
       keyFeatures: ["vase-shaped fruitbody","orange-red scales inside","wrinkles not blade gills","GI upset"],
       distinguishingFeature: "Large vase-shaped fruitbody with conspicuous orange-red scales on the inner cap surface; outer surface with shallow wrinkles, not blade gills; mycorrhizal with conifers; causes GI upset in many people."
@@ -9144,6 +9184,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Big Laughing Gym",
       scientific: "Gymnopilus junonius",
+      catalogId: "gymnopilus-junonius",
       danger: "toxic",
       keyFeatures: ["grows on wood","fibrillose-scaly cap","rust-brown spore print"],
       distinguishingFeature: "Grows on wood (stumps, buried roots) rather than soil; cap surface fibrillose-scaly rather than granular-powdery; spore print rust-brown and much darker; contains psilocybin/other toxins in some populations."
@@ -9151,6 +9192,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Sharp-scaly Pholiota",
       scientific: "Pholiota squarrosa",
+      catalogId: "pholiota-squarrosa",
       danger: "toxic",
       keyFeatures: ["clustered on wood","dry recurved scales","GI upset with alcohol"],
       distinguishingFeature: "Densely clustered on wood at base of conifers or hardwoods; dry recurved scales (not granular powder); smaller stature; causes GI upset, especially with alcohol."
@@ -9275,6 +9317,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Shaggy Scalycap",
       scientific: "Pholiota squarrosa",
+      catalogId: "pholiota-squarrosa",
       danger: "toxic",
       keyFeatures: ["dry cap, recurved scales","buff-yellow overall","clustered at base of trees","GI upset with alcohol"],
       distinguishingFeature: "Cap DRY (not viscid/sticky) with recurved/upturned shaggy scales; paler buff-yellow overall; clusters at base of conifers and hardwoods rather than high on trunks; smaller; causes GI upset, especially with alcohol."
@@ -9314,6 +9357,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Big Laughing Gym",
       scientific: "Gymnopilus junonius",
+      catalogId: "gymnopilus-junonius",
       danger: "toxic",
       keyFeatures: ["dry orange-tawny fibrillose cap","persistent membranous ring","very bitter taste"],
       distinguishingFeature: "Larger and more robust, dry orange-tawny fibrillose cap (not viscid, no dark appressed scales), persistent membranous ring, very bitter taste; some populations contain psilocybin."
@@ -9587,7 +9631,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     { name: "Lung oyster", scientific: "Pleurotus pulmonarius", catalogId: "pleurotus-pulmonarius", danger: "edible", keyFeatures: ["whitish to pale tan cap","thinner flesh","warm-season fruiting"], distinguishingFeature: "Paler (whitish to pale tan) cap, thinner flesh, fruits in warm season (late April-September); not dangerous, simply a sister species." },
     { name: "Aspen oyster", scientific: "Pleurotus populinus", catalogId: "pleurotus-populinus", danger: "edible", keyFeatures: ["on quaking aspen","paler cap"], distinguishingFeature: "Restricted to quaking aspen (Populus tremuloides) wood; paler cap; edible." },
     { name: "Elm oyster", scientific: "Hypsizygus ulmarius", catalogId: "hypsizygus-ulmarius", danger: "edible", keyFeatures: ["true central stem","adnate gills","from wounds on living hardwoods"], distinguishingFeature: "True central stem, gills adnate (not decurrent), grows from wounds high on living hardwoods." },
-    { name: "Ivory funnel", scientific: "Clitocybe dealbata", danger: "toxic", keyFeatures: ["grows on ground","funnel-shaped","small","contains muscarine"], distinguishingFeature: "Small, grows on the ground (not wood), funnel-shaped; contains muscarine." },
+    { name: "Ivory funnel", scientific: "Clitocybe dealbata", catalogId: "clitocybe-dealbata", danger: "toxic", keyFeatures: ["grows on ground","funnel-shaped","small","contains muscarine"], distinguishingFeature: "Small, grows on the ground (not wood), funnel-shaped; contains muscarine." },
     { name: "Toxic sawgill", scientific: "Lentinellus ursinus", catalogId: "lentinellus-ursinus", danger: "GI-upset", keyFeatures: ["serrate gill edges","finely hairy cap","very bitter taste"], distinguishingFeature: "Gills with jagged/serrate edges, finely hairy cap, very bitter taste." }
   ],
   culinary: {
@@ -9880,7 +9924,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   edibility: "edible-when-cooked",
   toxicityNotes: "One of the few Ramaria species considered a worthwhile edible, but MUST be correctly identified - many other Ramaria species cause significant gastrointestinal distress (cramping, nausea, diarrhea, vomiting). Even R. botrytis can cause mild GI upset in sensitive individuals, when undercooked, or when eaten in quantity; bitter branch tips are best trimmed off and the fleshy base used. Always cook thoroughly, sample a small portion the first time, and avoid older specimens with fading tips that can be confused with toxic look-alikes.",
   lookalikes: [
-    { name: "Beautiful Coral / Yellow-tipped Coral", scientific: "Ramaria formosa", danger: "GI-upset", keyFeatures: ["salmon-pink with yellow tips","thin jagged branches","unpleasant smell"], distinguishingFeature: "Branches are more uniformly salmon-pink with distinctly yellow tips (not vinaceous-red); thinner, more jagged branches; well-known cause of severe GI distress (nausea, vomiting, diarrhea); often smells unpleasant" },
+    { name: "Beautiful Coral / Yellow-tipped Coral", scientific: "Ramaria formosa", catalogId: "ramaria-formosa", danger: "GI-upset", keyFeatures: ["salmon-pink with yellow tips","thin jagged branches","unpleasant smell"], distinguishingFeature: "Branches are more uniformly salmon-pink with distinctly yellow tips (not vinaceous-red); thinner, more jagged branches; well-known cause of severe GI distress (nausea, vomiting, diarrhea); often smells unpleasant" },
     { name: "Pink-tipped Coral (look-alike)", scientific: "Ramaria botrytoides", catalogId: "ramaria-botrytoides", danger: "GI-upset", keyFeatures: ["smooth spores under microscope"], distinguishingFeature: "Macroscopically very similar; reliably separated only by smooth (non-striate) spores under microscope; reported to cause GI upset" },
     { name: "Fading-pink Coral", scientific: "Ramaria rubrievanescens", catalogId: "ramaria-rubrievanescens", danger: "edible-with-caution", keyFeatures: ["pink tips fade rapidly","under spruce","larger spores"], distinguishingFeature: "Pink tips fade rapidly after picking or with maturity; typically under spruce; larger spores 9.0-15.5 x 4.2-6.8 microns; edibility uncertain" },
     { name: "Persistent-pink Coral", scientific: "Ramaria rubripermanens", catalogId: "ramaria-rubripermanens", danger: "edible-with-caution", keyFeatures: ["pink tips persist","under beech/spruce","shorter spores"], distinguishingFeature: "Pink tips persist; usually under beech/spruce; shorter spores (9-13 x 3.5-5.0 microns); generally considered edible but easily confused with toxic relatives" },
@@ -9964,7 +10008,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   toxicityNotes: "Considered a good edible and one of the best PNW coral mushrooms when collected young, firm, and white-fleshed. As with all Ramaria, eat in moderation and cook thoroughly - even edible yellow corals can cause mild GI upset in sensitive individuals or when overconsumed. Avoid older or waterlogged specimens. Critical to distinguish from R. flavigelatinosa and other yellow Ramaria that cause GI distress.",
   lookalikes: [
     { name: "Jellied False Coral / Gelatinous-fleshed Yellow Coral", scientific: "Ramaria flavigelatinosa", catalogId: "ramaria-flavigelatinosa", danger: "GI-upset", keyFeatures: ["gelatinous translucent flesh","fall fruiting"], distinguishingFeature: "Branch flesh distinctly gelatinous/translucent when cut (use hand lens on cross-section); often fruits in fall rather than spring; causes GI upset in many people" },
-    { name: "Beautiful Coral / Salmon Coral", scientific: "Ramaria formosa (sensu lato, western)", danger: "GI-upset", keyFeatures: ["pink to salmon-orange branches","yellow tips","summer/fall fruiting"], distinguishingFeature: "Pink to salmon-orange branches with yellow tips (not yellow throughout); summer/fall fruiting; well-known laxative effect" },
+    { name: "Beautiful Coral / Salmon Coral", scientific: "Ramaria formosa (sensu lato, western)", catalogId: "ramaria-formosa", danger: "GI-upset", keyFeatures: ["pink to salmon-orange branches","yellow tips","summer/fall fruiting"], distinguishingFeature: "Pink to salmon-orange branches with yellow tips (not yellow throughout); summer/fall fruiting; well-known laxative effect" },
     { name: "Golden Coral", scientific: "Ramaria aurea", catalogId: "ramaria-aurea", danger: "edible-with-caution", keyFeatures: ["egg-yolk gold to orange-yellow throughout","warty spores","fall fruiting"], distinguishingFeature: "Deeper egg-yolk gold to orange-yellow throughout including branches; fall fruiting under hardwoods/conifers; warty (not smooth) spores; reports of GI upset in some" },
     { name: "Yellow-tipped Coral", scientific: "Ramaria flava", catalogId: "ramaria-flava", danger: "edible-with-caution", keyFeatures: ["lemon-yellow branches with paler tips","stains brownish/wine when cut","fall fruiting"], distinguishingFeature: "More lemon-yellow branches with paler tips; flesh stains brownish or wine when cut; fall fruiting; reports of mild GI upset" },
     { name: "Large-footed Coral", scientific: "Ramaria magnipes", catalogId: "ramaria-magnipes", danger: "edible", keyFeatures: ["pale yellow","massive base","longer spores"], distinguishingFeature: "Very similar pale yellow spring coral with a similarly massive base; distinguished by longer spores (Marr & Stuntz monograph) - microscopy required for certain ID" },
@@ -10259,6 +10303,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Emetic russula / The sickener",
       scientific: "Russula emetica",
+      catalogId: "russula-emetica",
       danger: "toxic",
       keyFeatures: ["scarlet to cherry-red cap","cuticle peels easily","brittle chalky gills","intensely acrid taste"],
       distinguishingFeature: "Cap bright scarlet to cherry-red (never purple, lilac, or green); cuticle peels easily showing white flesh beneath; gills BRITTLE and chalky (not flexible); taste intensely acrid and burning even from a tiny nibble; causes severe gastrointestinal upset (vomiting, diarrhea) within 30-120 minutes. Common under conifers throughout the PNW."
@@ -10387,6 +10432,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Beechwood sickener",
       scientific: "Russula nobilis (= R. mairei)",
+      catalogId: "russula-nobilis",
       danger: "toxic",
       keyFeatures: ["uniform scarlet-red cap","strongly acrid taste","coconut odor","under beech"],
       distinguishingFeature: "Cap a brighter, more uniform scarlet-red (no paler retracting margin); taste strongly acrid/peppery within seconds; cuticle peels only about 1/3 of the radius; flesh often with a coconut-like odor; almost exclusively under beech (Fagus); FeSO4 reaction weaker pink. Causes GI upset."
@@ -10394,6 +10440,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "The sickener",
       scientific: "Russula emetica (and the R. emetica complex incl. R. silvicola)",
+      catalogId: "russula-emetica",
       danger: "toxic",
       keyFeatures: ["blood-red viscid cap","cuticle peels nearly entirely","white gills and stem","intensely acrid taste"],
       distinguishingFeature: "Cap brilliant blood-red or scarlet, viscid, cuticle peeling nearly entirely; gills and stem pure white; taste intensely acrid/peppery; usually in sphagnum or wet conifer duff. Causes pronounced GI upset (vomiting, diarrhea)."
@@ -10401,6 +10448,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
     {
       name: "Quelet's russula",
       scientific: "Russula queletii",
+      catalogId: "russula-queletii",
       danger: "toxic",
       keyFeatures: ["vinaceous-purple to wine-violet cap","pink/purple-flushed stem","acrid taste","under spruce"],
       distinguishingFeature: "Cap dark vinaceous-purple to wine-violet (not pink-fleshed), stem usually flushed pink or purple; taste moderately to strongly acrid; under spruce / oak-pine; cuticle peels only a short distance. Inedible / mildly GI-toxic."
@@ -10544,7 +10592,7 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   toxicityNotes: "Widely regarded as one of the finest edible Russulas in Europe and eastern North America, sometimes eaten raw in salads in European tradition. HOWEVER, in the Pacific Northwest extreme caution is warranted because (1) the species is uncommon in the West and most green Russulas encountered will be undescribed sister taxa whose edibility has not been individually tested; (2) the green cap can be confused with the dangerously poisonous death cap (Amanita phalloides), now widespread in PNW urban and oak habitats. NEVER collect a green-capped mushroom without first checking for the presence of a partial veil/ring on the stem and a sac-like volva at the base - both indicate Amanita. Always cook thoroughly; novice foragers should avoid this group entirely in the PNW.",
   lookalikes: [
     { name: "Death cap", scientific: "Amanita phalloides", catalogId: "amanita-phalloides", danger: "deadly", keyFeatures: ["pale yellow-green to bronze cap","free white gills","white ring/skirt","sac-like white volva"], distinguishingFeature: "CRITICAL LOOKALIKE - the most dangerous mushroom in North America, now naturalized in PNW oak woodlands and urban areas. Cap smooth, NOT cracked/quilted, usually pale yellow-green to olive-green or bronze with faint radial streaks (not patches); WHITE gills that are FREE (not attached); a membranous white RING (skirt) high on the stem; a prominent sac-like white VOLVA enclosing the base (often buried - always dig the whole mushroom); white spore print. Contains amatoxins; a single cap can kill an adult. ALWAYS check for ring and volva on any green-capped mushroom." },
-    { name: "Subnigricans (poisonous brittlegill)", scientific: "Russula subnigricans", danger: "deadly", keyFeatures: ["dark grey-brown to blackish cap","reddens but does not blacken when cut","deadly rhabdomyolysis"], distinguishingFeature: "Cap is DARK GREY-BROWN to blackish-brown, not green - so it would not normally be confused with R. virescens by sight, but listed here for completeness as the genus Russula's only confirmed deadly species (rhabdomyolysis from cycloprop-2-ene carboxylic acid). Flesh of R. subnigricans reddens slowly when cut and does NOT then blacken (unlike harmless R. nigricans which reddens then blackens). Mostly East Asian, rare in North America. Any dark, blackening Russula should be approached with caution." },
+    { name: "Subnigricans (poisonous brittlegill)", scientific: "Russula subnigricans", catalogId: "russula-subnigricans", danger: "deadly", keyFeatures: ["dark grey-brown to blackish cap","reddens but does not blacken when cut","deadly rhabdomyolysis"], distinguishingFeature: "Cap is DARK GREY-BROWN to blackish-brown, not green - so it would not normally be confused with R. virescens by sight, but listed here for completeness as the genus Russula's only confirmed deadly species (rhabdomyolysis from cycloprop-2-ene carboxylic acid). Flesh of R. subnigricans reddens slowly when cut and does NOT then blacken (unlike harmless R. nigricans which reddens then blackens). Mostly East Asian, rare in North America. Any dark, blackening Russula should be approached with caution." },
     { name: "Russula parvovirescens", scientific: "Russula parvovirescens", catalogId: "russula-parvovirescens", danger: "edible", keyFeatures: ["blue-green cap with large patches","smaller","mycorrhizal with oak"], distinguishingFeature: "Eastern North American sister species split out from R. virescens in 2006; smaller stature, more blue-green cap with very large crustose patches; mycorrhizal with oak; edible and treated as interchangeable with R. virescens culinarily" },
     { name: "Russula crustosa", scientific: "Russula crustosa", catalogId: "russula-crustosa", danger: "edible", keyFeatures: ["yellow-green to olive crustose patches","larger polygonal patches","hardwood habitat"], distinguishingFeature: "Closely related species in the virescens-crustosa group; cap with yellow-green, ochre, or olive-green crustose patches (less pure green than R. virescens); patches typically larger and more polygonal; same hardwood habitat; considered edible" },
     { name: "Green brittlegill", scientific: "Russula aeruginea", catalogId: "russula-aeruginea", danger: "edible", keyFeatures: ["pure grass-green smooth uncracked cap","smaller","with birch/conifers","mild taste"], distinguishingFeature: "Cap pure grass-green to blue-green but SMOOTH and uncracked - lacks the quilted/crazy-paving pattern of R. virescens; typically smaller; associated with birch and conifers; mild taste; edible but not choice" },
@@ -10621,12 +10669,12 @@ export const CURATED_CATALOG: MushroomSpecies[] = [
   toxicityNotes: "One of the few Russula species universally rated as a choice edible. As with all wild mushrooms, eat only well-cooked, fresh, firm specimens that have been positively identified by the combination of features (conifer habitat, pink-flushed stem, brown-staining flesh and gills, shrimp/crab odor in mature specimens, and the green ferrous sulfate reaction). Avoid water-logged or insect-riddled specimens. A small minority of foragers report mild GI sensitivity to Russulas in general - try a small portion the first time.",
   lookalikes: [
     { name: "Olive Russula", scientific: "Russula olivacea", catalogId: "russula-olivacea", danger: "edible", keyFeatures: ["olive-green concentric-wrinkled cap","no crab odor","FeSO4 negative or salmon"], distinguishingFeature: "Cap typically with olive-green tones and a finely wrinkled, concentric (circumferential) pattern; lacks shrimp/crab odor; stem does not bruise yellow-brown; ferrous sulfate reaction NEGATIVE (or salmon, not green); reported to cause GI distress in some people if undercooked" },
-    { name: "Sickener", scientific: "Russula emetica", danger: "GI-upset", keyFeatures: ["scarlet to cherry-red cap","pure white stem","very acrid taste","FeSO4 pink"], distinguishingFeature: "Bright scarlet to cherry-red cap; pure white stem (no pink flush); white gills and white spore print; flesh does NOT brown; taste VERY acrid/peppery; iron salts give pink reaction; associated with sphagnum and conifers; causes vomiting if eaten raw or undercooked" },
+    { name: "Sickener", scientific: "Russula emetica", catalogId: "russula-emetica", danger: "GI-upset", keyFeatures: ["scarlet to cherry-red cap","pure white stem","very acrid taste","FeSO4 pink"], distinguishingFeature: "Bright scarlet to cherry-red cap; pure white stem (no pink flush); white gills and white spore print; flesh does NOT brown; taste VERY acrid/peppery; iron salts give pink reaction; associated with sphagnum and conifers; causes vomiting if eaten raw or undercooked" },
     { name: "Rosy Russula", scientific: "Russula sanguinea (= R. sanguinaria)", catalogId: "russula-sanguinea", danger: "GI-upset", keyFeatures: ["blood-red cap","pink-flushed stem","sharply acrid taste","FeSO4 pink/salmon"], distinguishingFeature: "Blood-red cap and pink-flushed stem (can superficially resemble R. xerampelina); but taste sharply acrid/peppery; flesh does not brown when cut; lacks shellfish odor; iron salts reaction pink/salmon, not green; pine associate" },
     { name: "Almond-scented Russula", scientific: "Russula grata (= R. laurocerasi)", catalogId: "russula-grata", danger: "inedible", keyFeatures: ["bitter almond/marzipan odor","yellow-brown to honey cap","deeply striate margin","acrid taste"], distinguishingFeature: "Strong odor of bitter almonds/marzipan/cherry pits (not shrimp); cap yellow-brown to honey; deeply striate margin; acrid taste" },
     { name: "Stubby Brittlegill", scientific: "Russula brevipes", catalogId: "russula-brevipes", danger: "edible", keyFeatures: ["dull white to buff funnel cap","short stout stem","no shrimp odor","FeSO4 pink"], distinguishingFeature: "Large, dull white to buff, funnel-shaped cap with short stout stem; gills crowded and white; no pink flush on stem; no shrimp odor; ferrous sulfate reaction pink, not green" },
     { name: "Sister shrimp russulas", scientific: "Russula elaeodes / R. graveolens / R. semirubra / R. isabelliniceps / R. olivaceovinacea", catalogId: "russula-elaeodes", danger: "edible", keyFeatures: ["shrimp/crab odor","yellow-brown bruising","ochre spore print","FeSO4 green"], distinguishingFeature: "Members of the R. xerampelina species complex; share the shrimp/crab odor, yellow-brown bruising, ochre spore print, and green iron-salts reaction. Differ in cap color (dark brown with blackish center in elaeodes; honey tan in isabelliniceps; purple with green margin in olivaceovinacea). All are considered edible and choice and are treated together in PNW Key Council key as varieties of R. xerampelina." },
-    { name: "Russula queletii", scientific: "Russula queletii", danger: "GI-upset", keyFeatures: ["purplish cap and stem","acrid taste","FeSO4 pink","spruce associate"], distinguishingFeature: "Purplish cap and purple-flushed stem reminiscent of R. xerampelina, but taste acrid/peppery; spruce associate (European); does not brown; iron salts reaction pink" }
+    { name: "Russula queletii", scientific: "Russula queletii", catalogId: "russula-queletii", danger: "GI-upset", keyFeatures: ["purplish cap and stem","acrid taste","FeSO4 pink","spruce associate"], distinguishingFeature: "Purplish cap and purple-flushed stem reminiscent of R. xerampelina, but taste acrid/peppery; spruce associate (European); does not brown; iron salts reaction pink" }
   ],
   culinary: {
     flavor: "Considered one of the finest-tasting Russulas - mild, nutty, faintly seafood-like in keeping with its odor; firm flesh that holds its texture well when cooked. The shellfish odor largely cooks off, leaving a rich, savory, slightly crab-like umami flavor. Often ranked alongside chanterelles and boletes by foragers who know it.",
