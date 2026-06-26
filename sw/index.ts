@@ -26,7 +26,9 @@ const serwist = new Serwist({
       handler: new CacheFirst({
         cacheName: "foray-photos",
         plugins: [
-          new ExpirationPlugin({ maxEntries: 1200, maxAgeSeconds: 60 * 60 * 24 * 365, purgeOnQuotaError: true }),
+          // Cap must exceed the full offline photo set (currently ~4.6k renditions
+          // across 394 species) or a full/region download silently evicts itself.
+          new ExpirationPlugin({ maxEntries: 9000, maxAgeSeconds: 60 * 60 * 24 * 365, purgeOnQuotaError: true }),
         ],
       }),
     },
